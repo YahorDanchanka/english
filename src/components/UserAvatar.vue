@@ -23,4 +23,5 @@ const props = defineProps<{ name: string }>()
   padding: 7px
   height: 65px
   margin-bottom: 5px
+  user-select: none
 </style>
