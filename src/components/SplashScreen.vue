@@ -35,8 +35,14 @@ watch(
   () => {
     /** Заставка */
     if (step.value === 0) {
-      const audio = new Audio('/assets/audio/supercell.mp3')
-      audio.play()
+      const supercellAudio = new Audio('/assets/audio/supercell.mp3')
+
+      supercellAudio.addEventListener('ended', () => {
+        const royaleAudio = new Audio('/assets/audio/royale.mp3')
+        royaleAudio.play()
+      })
+
+      supercellAudio.play().catch(() => {})
     }
   },
   { immediate: true }
