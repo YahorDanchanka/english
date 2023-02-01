@@ -14,7 +14,12 @@
         <ProgressBar class="user-info__progress-bar" :value="progress" />
       </header>
       <div class="page__islands islands">
-        <AppIsland class="islands__item islands__item_right" title="English for IT Industry" :icon="KeyboardIcon" />
+        <AppIsland
+          class="islands__item islands__item_right"
+          title="English for IT Industry"
+          :icon="KeyboardIcon"
+          @click="visitSection"
+        />
         <AppIsland class="islands__item" title="Computers today" :icon="MonitorIcon" />
         <AppIsland class="islands__item islands__item_right" title="Hardware" :icon="CPUIcon" />
         <AppIsland class="islands__item islands__item_center" title="Software" :icon="DevOpsIcon" />
@@ -35,6 +40,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import SplashScreen from 'src/components/SplashScreen.vue'
 import UserAvatar from 'src/components/UserAvatar.vue'
 import ProgressBar from 'src/components/ProgressBar.vue'
@@ -47,7 +53,9 @@ import ReflectionIcon from 'assets/images/islands/reflection.png'
 import CSharpIcon from 'assets/images/islands/csharp.png'
 import SecurityIcon from 'assets/images/islands/security.png'
 
-const isSplashScreenVisible = ref(true)
+const router = useRouter()
+
+const isSplashScreenVisible = ref(false)
 const progress = ref(50)
 const pebbles = ref([
   { left: 172, top: 155 },
@@ -86,6 +94,10 @@ function onLoadFinish() {
   setTimeout(() => {
     isSplashScreenVisible.value = false
   }, 1000)
+}
+
+function visitSection() {
+  router.push({ name: 'section', params: { section: 'test' } })
 }
 </script>
 
