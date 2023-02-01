@@ -2,7 +2,7 @@
   <q-page class="page" padding>
     <header class="page__header">
       <q-btn icon="home" flat round @click="router.push({ name: 'home' })" />
-      <q-btn icon="settings" flat round />
+      <q-btn icon="settings" flat round @click="router.push({ name: 'settings' })" />
     </header>
     <Swiper
       class="page__slider slider"
