@@ -25,7 +25,7 @@
         <q-icon name="navigate_before" class="slider__navigation-button slider__navigation-button_prev" />
         <q-icon name="navigate_next" class="slider__navigation-button slider__navigation-button_next" />
       </template>
-      <swiper-slide v-for="section in sections">
+      <swiper-slide v-for="section in sections" @click="router.push({ name: 'task-list' })">
         <div class="card">
           <div class="card__title">{{ section.title }}</div>
           <div class="card__body">

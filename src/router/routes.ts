@@ -8,6 +8,7 @@ const routes: RouteRecordRaw[] = [
       { name: 'home', path: '', component: () => import('pages/IndexPage.vue') },
       { name: 'settings', path: 'settings', component: () => import('pages/SettingsPage.vue') },
       { name: 'section', path: ':section', component: () => import('pages/SectionPage.vue') },
+      { name: 'task-list', path: 'task-list', component: () => import('pages/TaskList.vue') },
     ],
   },
 
