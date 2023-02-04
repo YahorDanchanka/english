@@ -1,4 +1,4 @@
-export type Task = SelectionTask | TypingTask | MatchingTask | TextInputTask | SortableTask
+export type Task = (SelectionTask | TypingTask | MatchingTask | TextInputTask | SortableTask) & { interface: string }
 
 export interface SelectionTask {
   title: string
@@ -8,7 +8,7 @@ export interface SelectionTask {
 }
 
 export function isSelectionTask(obj: any): obj is SelectionTask {
-  return ['title', 'options', 'correctOptionIndex'].every((property) => obj.hasOwnProperty(property))
+  return obj.interface === 'SelectionTask'
 }
 
 export interface TypingTask {
@@ -18,7 +18,7 @@ export interface TypingTask {
 }
 
 export function isTypingTask(obj: any): obj is TypingTask {
-  return ['title', 'word'].every((property) => obj.hasOwnProperty(property))
+  return obj.interface === 'TypingTask'
 }
 
 export interface MatchingTask {
@@ -28,18 +28,13 @@ export interface MatchingTask {
 }
 
 export function isMatchingTask(obj: any): obj is MatchingTask {
-  return (
-    ['content', 'correct', 'value'].every((property) => obj.hasOwnProperty(property)) &&
-    ['type'].every((property) => !obj.hasOwnProperty(property))
-  )
+  return obj.interface === 'MatchingTask'
 }
 
-export interface TextInputTask extends MatchingTask {
-  type: string
-}
+export interface TextInputTask extends MatchingTask {}
 
 export function isTextInputTask(obj: any): obj is TextInputTask {
-  return ['type', 'content', 'correct', 'value'].every((property) => obj.hasOwnProperty(property))
+  return obj.interface === 'TextInputTask'
 }
 
 export interface SortableTask {
@@ -49,5 +44,5 @@ export interface SortableTask {
 }
 
 export function isSortableTask(obj: any): obj is SortableTask {
-  return ['options', 'leftCol', 'rightCol'].every((property) => obj.hasOwnProperty(property))
+  return obj.interface === 'SortableTask'
 }

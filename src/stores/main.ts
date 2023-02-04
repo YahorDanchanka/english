@@ -29,17 +29,20 @@ export const useStore = defineStore('main', () => {
                     title: 'According to the guide, which is not a common way of greeting.',
                     options: ['saying "Pleased to meet you"', 'kissing each other’s hands', 'bowing', 'shaking hands'],
                     correctOptionIndex: 0,
+                    interface: 'SelectionTask',
                   },
                   {
                     title: 'Test.',
                     options: ['six', 'four', 'nine', 'sixth'],
                     correctOptionIndex: 2,
+                    interface: 'SelectionTask',
                   },
                 ],
                 [
                   {
                     title: 'The manager said, "I am happy to see you".',
                     word: 'css inp[u]t wi[d][t]h by [c]ontent',
+                    interface: 'TypingTask',
                   },
                 ],
                 [
@@ -56,6 +59,7 @@ export const useStore = defineStore('main', () => {
                       option2: '',
                       option3: '',
                     },
+                    interface: 'MatchingTask',
                   },
                   {
                     content:
@@ -68,6 +72,7 @@ export const useStore = defineStore('main', () => {
                       option1: '',
                       option2: '',
                     },
+                    interface: 'MatchingTask',
                   },
                 ],
               ],
@@ -79,11 +84,11 @@ export const useStore = defineStore('main', () => {
                 title: 'The manager advises his colleague to bow.',
                 options: ['False', 'True'],
                 correctOptionIndex: 0,
+                interface: 'SelectionTask',
               },
             ],
             [
               {
-                type: 'text-input',
                 content:
                   '<p><strong>Manager</strong>: When you meet Mr. Yakamoto be very {{{option1}}}. He is very important client.</p> <p><strong>Colleague</strong>: It is the Japanese {{{option2}}} to bow. Should i do that?</p>',
                 correct: {
@@ -94,6 +99,7 @@ export const useStore = defineStore('main', () => {
                   option1: '',
                   option2: '',
                 },
+                interface: 'TextInputTask',
               },
             ],
             [
@@ -105,6 +111,7 @@ export const useStore = defineStore('main', () => {
                 ],
                 leftCol: [],
                 rightCol: [],
+                interface: 'SortableTask',
               },
             ],
           ],
