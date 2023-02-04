@@ -96,6 +96,17 @@ export const useStore = defineStore('main', () => {
                 },
               },
             ],
+            [
+              {
+                options: [
+                  { value: 'little pc', correct: 'handheld pc' },
+                  { value: 'middle pc', correct: 'computer' },
+                  { value: 'large pc', correct: 'server' },
+                ],
+                leftCol: [],
+                rightCol: [],
+              },
+            ],
           ],
         },
       ],
