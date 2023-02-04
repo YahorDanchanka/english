@@ -1,9 +1,6 @@
 <template>
   <q-page class="page" padding>
-    <header class="page__header">
-      <q-btn icon="west" flat round @click="router.back()" />
-      <q-btn icon="settings" flat round @click="router.push({ name: 'settings' })" />
-    </header>
+    <TheHeader class="page__header" navigation-back />
     <div class="card">
       <div class="card__title">Subsection title</div>
       <div class="card__body">
@@ -24,6 +21,7 @@ import { useRouter, useRoute } from 'vue-router'
 import { useStore } from 'stores/main'
 import { Task } from 'src/types'
 import AppButton from 'components/AppButton.vue'
+import TheHeader from 'components/TheHeader.vue'
 
 const router = useRouter()
 const route = useRoute()
@@ -45,10 +43,6 @@ function runExercise(index: number) {
 
 <style lang="sass" scoped>
 .page__header
-  display: flex
-  flex-wrap: wrap
-  justify-content: space-between
-  width: 100%
   margin-bottom: 8px
 
 .card__body

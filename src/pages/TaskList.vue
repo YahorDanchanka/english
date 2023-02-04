@@ -1,10 +1,6 @@
 <template>
   <q-page class="page" padding>
-    <header class="page__header">
-      <q-btn icon="home" flat round @click="router.push({ name: 'home' })" />
-      <div class="page__title">Meeting people</div>
-      <q-btn icon="settings" flat round @click="router.push({ name: 'settings' })" />
-    </header>
+    <TheHeader class="page__header" title="Meeting people" />
     <div class="board">
       <div class="board__wrapper">
         <div class="row q-col-gutter-lg">
@@ -78,6 +74,7 @@
 import { computed } from 'vue'
 import { useStore } from 'stores/main'
 import { useRoute, useRouter } from 'vue-router'
+import TheHeader from 'components/TheHeader.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -93,16 +90,7 @@ const store = useStore()
 
 <style lang="sass" scoped>
 .page__header
-  display: flex
-  flex-wrap: wrap
-  align-items: center
-  justify-content: space-between
-  width: 100%
   margin-bottom: 8px
-
-.page__title
-  font-size: 2em
-  text-shadow: 0 5px 4px rgba(0, 0, 0, 0.25)
 
 .board
   background: #995B31

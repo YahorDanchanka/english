@@ -1,9 +1,6 @@
 <template>
   <q-page class="page" padding>
-    <header class="page__header">
-      <q-btn icon="home" flat round @click="router.push({ name: 'home' })" />
-      <q-btn icon="settings" flat round @click="router.push({ name: 'settings' })" />
-    </header>
+    <TheHeader />
     <Swiper
       class="page__slider slider"
       :modules="modules"
@@ -60,6 +57,7 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import { useStore } from 'stores/main'
 import { Subsection } from 'src/types'
+import TheHeader from 'components/TheHeader.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -76,13 +74,6 @@ const subsections = computed<Subsection[]>(
   display: flex
   flex-wrap: wrap
   align-items: center
-
-.page__header
-  display: flex
-  flex-wrap: wrap
-  justify-content: space-between
-  width: 100%
-  margin-bottom: 8px
 
 .page__slider
   margin-bottom: 12px

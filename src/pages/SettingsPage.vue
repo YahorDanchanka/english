@@ -1,8 +1,6 @@
 <template>
   <q-page class="page" padding>
-    <header class="page__header">
-      <q-btn icon="west" flat round @click="router.back()" />
-    </header>
+    <TheHeader class="page__header" view="back" />
     <div class="card">
       <div class="card__title">Settings</div>
       <div class="card__body">
@@ -24,6 +22,7 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import AppToggle from 'components/AppToggle.vue'
 import AppButton from 'components/AppButton.vue'
+import TheHeader from 'components/TheHeader.vue'
 
 const router = useRouter()
 
@@ -36,10 +35,6 @@ const toggles = ref({
 
 <style lang="sass" scoped>
 .page__header
-  display: flex
-  flex-wrap: wrap
-  justify-content: space-between
-  width: 100%
   margin-bottom: 8px
 
 .toggle
