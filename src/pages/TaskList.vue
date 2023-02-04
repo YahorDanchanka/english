@@ -5,7 +5,7 @@
       <div class="board__wrapper">
         <div class="row q-col-gutter-lg">
           <div class="col-6">
-            <div class="board__task board__task_left task">
+            <div class="board__task task" style="margin-top: 0">
               <div class="task__circle"></div>
               <div class="task__caption">Words</div>
               <hr class="task__hr" />
@@ -35,7 +35,7 @@
             </div>
           </div>
           <div class="col-6">
-            <div class="board__task board__task_left task">
+            <div class="board__task task">
               <div class="task__circle task__circle_yellow"></div>
               <div class="task__caption">Exercise</div>
               <hr class="task__hr" />
@@ -71,7 +71,6 @@
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue'
 import { useStore } from 'stores/main'
 import { useRoute, useRouter } from 'vue-router'
 import TheHeader from 'components/TheHeader.vue'
@@ -103,19 +102,17 @@ const store = useStore()
   border-radius: 16px
   padding: 23px
   border: 5px solid #A35623
-  min-height: 500px
 
 .board__task
-  max-width: 116px
+  margin-top: -50px
 
   &_right
     margin-top: 80px
-    max-width: 102px
 
 .task
   background: #D9D9D9
   border-radius: 16px
-  padding: 6.84px 25px 23px 25px
+  padding: 6.84px 0 25px 0
   text-align: center
   font-size: 1rem
 
@@ -143,6 +140,7 @@ const store = useStore()
 .task__hr
   border: 1px solid black
   margin-bottom: 16.52px
+  width: 60%
 
   &:last-child
     margin-bottom: 0
