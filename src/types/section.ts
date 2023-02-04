@@ -1,4 +1,5 @@
 import { Task } from 'src/types/task'
+import { Exercise } from 'src/types/exercise'
 
 export interface Section {
   id: string | number
@@ -11,6 +12,6 @@ export interface Subsection {
   title: string
   description?: string
   image: string
-  texts?: { text: string; tasks: Task[][] }[]
-  tasks?: Task[][]
+  texts?: { text: string; exercises: Exercise[] }[]
+  listen?: Exercise[]
 }

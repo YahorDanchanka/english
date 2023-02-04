@@ -5,9 +5,12 @@
       <div class="card__title">{{ subsection.title }}</div>
       <div class="card__body">
         <div class="text-center">
-          <AppButton class="q-mb-md" label="Exercise 1" @click="runExercise(0)" />
-          <AppButton class="q-mb-md" label="Exercise 2" @click="runExercise(1)" />
-          <AppButton label="Exercise 3" @click="runExercise(2)" />
+          <AppButton
+            v-for="exerciseIndex in subsection.listen.length"
+            :class="{ 'q-mb-md': exerciseIndex !== subsection.listen.length }"
+            :label="`Exercise ${exerciseIndex}`"
+            @click="runExercise(exerciseIndex - 1)"
+          />
         </div>
       </div>
     </div>
@@ -33,7 +36,7 @@ const subsection = computed<Subsection>(
 
 function runExercise(index: number) {
   // @ts-ignore
-  store.activeExercise = subsection.value.tasks[index]
+  store.activeExercise = subsection.value.listen[index]
   router.push({ name: 'exercise' })
 }
 </script>

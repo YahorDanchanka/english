@@ -1,6 +1,8 @@
 <template>
   <div class="typing-task">
-    <div class="typing-task__title">{{ task.title }}</div>
+    <div class="typing-task__title">
+      <q-badge class="badge badge_squared" :label="taskIndex + 1" rounded /> {{ task.title }}
+    </div>
     <div class="typing-task__word">
       <input
         class="typing-task__letter"
@@ -20,7 +22,7 @@ import { computed } from 'vue'
 import { TypingTask } from 'src/types'
 import { set } from 'lodash'
 
-const props = defineProps<{ task: TypingTask }>()
+const props = defineProps<{ task: TypingTask; taskIndex: number }>()
 const emit = defineEmits(['update:task'])
 
 const formattedWord = computed(() => props.task.word.replace(/\[.+?]/g, '_'))

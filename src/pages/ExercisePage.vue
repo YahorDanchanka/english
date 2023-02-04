@@ -4,12 +4,33 @@
     <div class="card">
       <div class="card__title">Subsection title</div>
       <div class="card__body">
-        <template v-for="(task, taskIndex) in store.activeExercise">
-          <SelectionTask v-if="isSelectionTask(task)" v-model:task="store.activeExercise[taskIndex]" />
-          <TypingTask v-if="isTypingTask(task)" v-model:task="store.activeExercise[taskIndex]" />
-          <MatchingTask v-if="isMatchingTask(task)" v-model:task="store.activeExercise[taskIndex]" />
-          <TextInputTask v-if="isTextInputTask(task)" v-model:task="store.activeExercise[taskIndex]" />
-          <SortableTask v-if="isSortableTask(task)" v-model:task="store.activeExercise[taskIndex]" />
+        <div v-html="store.activeExercise?.content"></div>
+        <template v-for="(task, taskIndex) in store.activeExercise?.tasks">
+          <SelectionTask
+            v-if="isSelectionTask(task)"
+            v-model:task="store.activeExercise.tasks[taskIndex]"
+            :task-index="taskIndex"
+          />
+          <TypingTask
+            v-if="isTypingTask(task)"
+            v-model:task="store.activeExercise.tasks[taskIndex]"
+            :task-index="taskIndex"
+          />
+          <MatchingTask
+            v-if="isMatchingTask(task)"
+            v-model:task="store.activeExercise.tasks[taskIndex]"
+            :task-index="taskIndex"
+          />
+          <TextInputTask
+            v-if="isTextInputTask(task)"
+            v-model:task="store.activeExercise.tasks[taskIndex]"
+            :task-index="taskIndex"
+          />
+          <SortableTask
+            v-if="isSortableTask(task)"
+            v-model:task="store.activeExercise.tasks[taskIndex]"
+            :task-index="taskIndex"
+          />
         </template>
         <div class="q-mt-md text-center">
           <AppButton label="Accept answer" @click="acceptAnswer" />

@@ -23,104 +23,136 @@ export const useStore = defineStore('main', () => {
           texts: [
             {
               text: '<ol> <li>What do you say and do when you meet a friend?</li> <li>Do people kiss when they greet<br />in your country? Wht do you <br />think of this?</li> </ol> <h1>Etiquette</h1> <p>People around the world say hello and goodbye in different ways. In Asia, many people <strong>bow</strong> when they <strong>greet</strong> each other. This might seem strange to someone in the Middle East. There men sometimes greet each other with a kiss on cheek. In most countries, people shake hands. But in America and Europe the handshake is firm, while in Asia it is often soft. So what do you do when you meet people from other countries? Don&rsquo;t let these customs confuse you. Just be polite. When you meet, say &ldquo;Pleased to meet you&rdquo; and ask &ldquo;How are you&rdquo; When it is time to leave, say &ldquo;It was nice meeting you&rdquo; and &ldquo;I hope we meet again&rdquo;.</p>',
-              tasks: [
-                [
-                  {
-                    title: 'According to the guide, which is not a common way of greeting.',
-                    options: ['saying "Pleased to meet you"', 'kissing each other’s hands', 'bowing', 'shaking hands'],
-                    correctOptionIndex: 0,
-                    interface: 'SelectionTask',
-                  },
-                  {
-                    title: 'Test.',
-                    options: ['six', 'four', 'nine', 'sixth'],
-                    correctOptionIndex: 2,
-                    interface: 'SelectionTask',
-                  },
-                ],
-                [
-                  {
-                    title: 'The manager said, "I am happy to see you".',
-                    word: 'css inp[u]t wi[d][t]h by [c]ontent',
-                    interface: 'TypingTask',
-                  },
-                ],
-                [
-                  {
-                    content:
-                      '<p>Most nations have different {{{option1}}} for greeting strangers.</p><p>Japanese {{{option2}}} often to {{{option3}}} each other.</p>',
-                    correct: {
-                      option1: 'customs',
-                      option2: 'bow',
-                      option3: 'businessmen',
+              exercises: [
+                {
+                  content:
+                    '<p>Listen and read this extract from an etiquette guide. Then, choose the correct answers. How many customs are mentioned in the text?</p><audio controls src="/assets/audio/royale.mp3"></audio>',
+                  tasks: [
+                    {
+                      title: 'According to the guide, which is not a common way of greeting.',
+                      options: [
+                        'saying "Pleased to meet you"',
+                        'kissing each other’s hands',
+                        'bowing',
+                        'shaking hands',
+                      ],
+                      correctOptionIndex: 0,
+                      interface: 'SelectionTask',
                     },
-                    value: {
-                      option1: '',
-                      option2: '',
-                      option3: '',
+                    {
+                      title: 'Test.',
+                      options: ['six', 'four', 'nine', 'sixth'],
+                      correctOptionIndex: 2,
+                      interface: 'SelectionTask',
                     },
-                    interface: 'MatchingTask',
-                  },
-                  {
-                    content:
-                      '<p>What is your name?</p><p>My name is {{{option1}}}</p><p>Oh, your age {{{option2}}}</p>',
-                    correct: {
-                      option1: 'yahor',
-                      option2: '17',
+                  ],
+                },
+                {
+                  content: '<p>Complete the word or phrase with the same meaning as underlined part.</p>',
+                  tasks: [
+                    {
+                      title: 'The manager said, "I am happy to see you".',
+                      word: 'css inp[u]t wi[d][t]h by [c]ontent',
+                      interface: 'TypingTask',
                     },
-                    value: {
-                      option1: '',
-                      option2: '',
+                  ],
+                },
+                {
+                  content: '<p>Read the sentence pairs. Choose where the words best fit in the blanks.</p>',
+                  tasks: [
+                    {
+                      content:
+                        '<p>Most nations have different {{{option1}}} for greeting strangers.</p><p>Japanese {{{option2}}} often to {{{option3}}} each other.</p>',
+                      correct: {
+                        option1: 'customs',
+                        option2: 'bow',
+                        option3: 'businessmen',
+                      },
+                      value: {
+                        option1: '',
+                        option2: '',
+                        option3: '',
+                      },
+                      interface: 'MatchingTask',
                     },
-                    interface: 'MatchingTask',
-                  },
-                ],
+                  ],
+                },
               ],
             },
           ],
-          tasks: [
-            [
-              {
-                title: 'The manager advises his colleague to bow.',
-                options: ['False', 'True'],
-                correctOptionIndex: 0,
-                interface: 'SelectionTask',
-              },
-            ],
-            [
-              {
-                content:
-                  '<p><strong>Manager</strong>: When you meet Mr. Yakamoto be very {{{option1}}}. He is very important client.</p> <p><strong>Colleague</strong>: It is the Japanese {{{option2}}} to bow. Should i do that?</p>',
-                correct: {
-                  option1: 'polite',
-                  option2: 'always',
+          listen: [
+            {
+              content:
+                '<p>Listen to a conversation between a manager and his colleague. Mark the following statements as true or false.</p><audio controls src="/assets/audio/royale.mp3"></audio>',
+              tasks: [
+                {
+                  title: 'The manager advises his colleague to bow.',
+                  options: ['False', 'True'],
+                  correctOptionIndex: 0,
+                  interface: 'SelectionTask',
                 },
-                value: {
-                  option1: '',
-                  option2: '',
+              ],
+            },
+            {
+              content:
+                '<p>Listen to a conversation between a manager and his colleague. Complete the conversation.</p><audio controls src="/assets/audio/royale.mp3"></audio>',
+              tasks: [
+                {
+                  content:
+                    '<p><strong>Manager</strong>: When you meet Mr. Yakamoto be very {{{option1}}}. He is very important client.</p> <p><strong>Colleague</strong>: It is the Japanese {{{option2}}} to bow. Should i do that?</p>',
+                  correct: {
+                    option1: 'polite',
+                    option2: 'always',
+                  },
+                  value: {
+                    option1: '',
+                    option2: '',
+                  },
+                  interface: 'TextInputTask',
                 },
-                interface: 'TextInputTask',
-              },
-            ],
-            [
-              {
-                options: [
-                  { value: 'little pc', correct: 'handheld pc' },
-                  { value: 'middle pc', correct: 'computer' },
-                  { value: 'large pc', correct: 'server' },
-                ],
-                leftCol: [],
-                rightCol: [],
-                interface: 'SortableTask',
-              },
-            ],
+              ],
+            },
+            {
+              content:
+                '<p>Complete these dialogues with the words in the box. After completing the dialogues, check yourself with audio.</p><audio controls src="/assets/audio/royale.mp3"></audio>',
+              tasks: [
+                {
+                  content:
+                    '<p><strong>Manager</strong>: When you meet Mr. Yakamoto be very {{{option1}}}. He is very important client.</p> <p><strong>Colleague</strong>: It is the Japanese {{{option2}}} to bow. Should i do that?</p>',
+                  correct: {
+                    option1: 'polite',
+                    option2: 'always',
+                  },
+                  value: {
+                    option1: '',
+                    option2: '',
+                  },
+                  interface: 'MatchingTask',
+                },
+              ],
+            },
+            {
+              content: 'Match the pictures with the answer.',
+              tasks: [
+                {
+                  options: [
+                    { value: '<img src="https://dummyimage.com/72x64/000/fff" />', correct: 'handheld pc' },
+                    { value: 'middle pc', correct: 'computer' },
+                    { value: 'large pc', correct: 'server' },
+                  ],
+                  leftCol: [],
+                  rightCol: [],
+                  interface: 'SortableTask',
+                },
+              ],
+            },
           ],
         },
       ],
     },
   ])
 
-  const activeExercise = ref<Exercise>([])
+  const activeExercise = ref<Exercise>()
 
   return {
     sections,

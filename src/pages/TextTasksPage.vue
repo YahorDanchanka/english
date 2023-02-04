@@ -6,9 +6,12 @@
       <div class="card__body">
         <div v-html="text.text"></div>
         <div class="text-center">
-          <AppButton class="q-mb-md" label="Exercise 1" @click="runExercise(0)" />
-          <AppButton class="q-mb-md" label="Exercise 2" @click="runExercise(1)" />
-          <AppButton class="q-mb-md" label="Exercise 3" @click="runExercise(2)" />
+          <AppButton
+            v-for="exerciseIndex in text.exercises.length"
+            :class="{ 'q-mb-md': exerciseIndex !== text.exercises.length }"
+            :label="`Exercise ${exerciseIndex}`"
+            @click="runExercise(exerciseIndex - 1)"
+          />
         </div>
       </div>
     </div>
@@ -31,16 +34,10 @@ const section = computed<Section>(() => store.sections.find((section) => section
 const subsection = computed<Subsection>(
   () => section.value.subsections.find((subsection) => subsection.id === route.params['subsection'])!
 )
-const text = computed<{ text: string; tasks: Task[][] }>(
-  () =>
-    // @ts-ignore
-    (store.sections.find((section) => section.id === route.params['section'])?.subsections || []).find(
-      (subsection) => subsection.id === route.params['subsection']
-    )!.texts[0]
-)
+const text = computed(() => subsection.value.texts![+route.params['text']])
 
 function runExercise(index: number) {
-  store.activeExercise = text.value.tasks[index]
+  store.activeExercise = text.value.exercises[index]
   router.push({ name: 'exercise' })
 }
 </script>

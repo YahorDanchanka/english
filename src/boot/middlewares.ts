@@ -14,10 +14,12 @@ export default boot(({ router }) => {
 
     if (to.name === 'section') {
       next(disallowMiddleware(!store.sections.find((section) => section.id === to.params['section']), to, from))
-    } else if (to.name === 'task-list' || to.name === 'text-tasks' || to.name === 'listen-tasks') {
+    } else if (to.name === 'task-list' || to.name === 'listen-tasks') {
       next(disallowMiddleware(!(section && subsection), to, from))
+    } else if (to.name === 'text-tasks') {
+      next(disallowMiddleware(!(subsection && subsection.texts && subsection.texts[+to.params['text']]), to, from))
     } else if (to.name === 'exercise') {
-      next(disallowMiddleware(store.activeExercise.length === 0, to, from))
+      next(disallowMiddleware(store.activeExercise === undefined, to, from))
     } else {
       next()
     }

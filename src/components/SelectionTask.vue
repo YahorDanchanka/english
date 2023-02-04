@@ -1,6 +1,8 @@
 <template>
   <div class="selection-task">
-    <div class="selection-task__title">{{ task.title }}</div>
+    <div class="selection-task__title">
+      <q-badge class="badge badge_squared" :label="taskIndex + 1" rounded /> {{ task.title }}
+    </div>
     <ol class="selection-task__options" type="A">
       <li
         class="selection-task__option"
@@ -17,7 +19,7 @@
 <script lang="ts" setup>
 import { SelectionTask } from 'src/types'
 
-const props = defineProps<{ task: SelectionTask }>()
+const props = defineProps<{ task: SelectionTask; taskIndex: number }>()
 const emit = defineEmits(['update:task'])
 
 function selectOption(optionIndex: number) {

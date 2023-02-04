@@ -21,7 +21,7 @@
               @click="
                 router.push({
                   name: 'text-tasks',
-                  params: { section: route.params['section'], subsection: route.params['subsection'] },
+                  params: { section: route.params['section'], subsection: route.params['subsection'], text: 0 },
                 })
               "
             >
@@ -85,13 +85,6 @@ const section = computed<Section>(() => store.sections.find((section) => section
 const subsection = computed<Subsection>(
   () => section.value.subsections.find((subsection) => subsection.id === route.params['subsection'])!
 )
-
-// const hasTextTasks = computed<boolean>(
-//   () =>
-//     !!(store.sections.find((section) => section.id === route.params['section'])?.subsections || []).find(
-//       (subsection) => subsection.id === route.params['subsection']
-//     )?.textTasks
-// )
 </script>
 
 <style lang="sass" scoped>

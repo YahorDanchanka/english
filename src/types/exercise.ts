@@ -1,3 +1,3 @@
 import { Task } from 'src/types/task'
 
-export type Exercise = Task[]
+export type Exercise = { content: string; tasks: Task[] }

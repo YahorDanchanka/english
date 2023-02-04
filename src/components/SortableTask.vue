@@ -1,5 +1,5 @@
 <template>
-  <div class="sortable-task row">
+  <div class="sortable-task row q-col-gutter-lg">
     <draggable class="col-6" itemKey="id" v-model="leftCol">
       <template #item="{ element }">
         <div class="sortable-task__option" v-html="element.value"></div>
@@ -49,3 +49,21 @@ const rightCol = computed({
   },
 })
 </script>
+
+<style lang="sass" scoped>
+.sortable-task__option
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  align-items: center
+  border: 3px solid #6D6D6D
+  padding: 7px 15px
+  border-radius: 56px
+  margin-bottom: 20px
+  text-align: center
+  height: 80px
+  overflow: hidden
+
+  :deep(img)
+    height: 100%
+</style>
