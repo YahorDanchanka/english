@@ -1,6 +1,6 @@
 <template>
   <q-page class="page" padding>
-    <TheHeader class="page__header" title="Meeting people" />
+    <TheHeader class="page__header" :title="subsection.title" />
     <div class="board">
       <div class="board__wrapper">
         <div class="row q-col-gutter-lg">
@@ -71,13 +71,20 @@
 </template>
 
 <script lang="ts" setup>
-import { useStore } from 'stores/main'
+import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { useStore } from 'stores/main'
+import { Section, Subsection } from 'src/types'
 import TheHeader from 'components/TheHeader.vue'
 
 const route = useRoute()
 const router = useRouter()
 const store = useStore()
+
+const section = computed<Section>(() => store.sections.find((section) => section.id === route.params['section'])!)
+const subsection = computed<Subsection>(
+  () => section.value.subsections.find((subsection) => subsection.id === route.params['subsection'])!
+)
 
 // const hasTextTasks = computed<boolean>(
 //   () =>

@@ -2,7 +2,7 @@
   <q-page class="page" padding>
     <TheHeader class="page__header" navigation-back />
     <div class="card">
-      <div class="card__title">Subsection title</div>
+      <div class="card__title">{{ subsection.title }}</div>
       <div class="card__body">
         <div class="text-center">
           <AppButton class="q-mb-md" label="Exercise 1" @click="runExercise(0)" />
@@ -18,7 +18,7 @@
 import { computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useStore } from 'stores/main'
-import { Subsection } from 'src/types'
+import { Section, Subsection } from 'src/types'
 import AppButton from 'components/AppButton.vue'
 import TheHeader from 'components/TheHeader.vue'
 
@@ -26,12 +26,9 @@ const router = useRouter()
 const route = useRoute()
 const store = useStore()
 
+const section = computed<Section>(() => store.sections.find((section) => section.id === route.params['section'])!)
 const subsection = computed<Subsection>(
-  () =>
-    // @ts-ignore
-    (store.sections.find((section) => section.id === route.params['section'])?.subsections || []).find(
-      (subsection) => subsection.id === route.params['subsection']
-    )!
+  () => section.value.subsections.find((subsection) => subsection.id === route.params['subsection'])!
 )
 
 function runExercise(index: number) {

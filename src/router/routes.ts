@@ -8,21 +8,10 @@ const routes: RouteRecordRaw[] = [
     children: [
       { name: 'home', path: '', component: () => import('pages/IndexPage.vue') },
       { name: 'settings', path: 'settings', component: () => import('pages/SettingsPage.vue') },
-
       {
         name: 'exercise',
         path: 'exercise',
         component: () => import('pages/ExercisePage.vue'),
-        beforeEnter(to, from, next) {
-          const store = useStore()
-
-          if (store.activeExercise.length === 0) {
-            // @ts-ignore
-            next(from.name === undefined ? { name: 'home' } : false)
-          } else {
-            next()
-          }
-        },
       },
       {
         name: 'listen-tasks',
