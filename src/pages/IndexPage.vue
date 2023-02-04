@@ -18,7 +18,7 @@
           class="islands__item islands__item_right"
           title="English for IT Industry"
           :icon="KeyboardIcon"
-          @click="visitSection"
+          @click="visitSection(store.sections[0])"
         />
         <AppIsland class="islands__item" title="Computers today" :icon="MonitorIcon" />
         <AppIsland class="islands__item islands__item_right" title="Hardware" :icon="CPUIcon" />
@@ -41,6 +41,8 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { useStore } from 'stores/main'
+import { Section } from 'src/types'
 import SplashScreen from 'src/components/SplashScreen.vue'
 import UserAvatar from 'src/components/UserAvatar.vue'
 import ProgressBar from 'src/components/ProgressBar.vue'
@@ -54,6 +56,7 @@ import CSharpIcon from 'assets/images/islands/csharp.png'
 import SecurityIcon from 'assets/images/islands/security.png'
 
 const router = useRouter()
+const store = useStore()
 
 const isSplashScreenVisible = ref(false)
 const progress = ref(50)
@@ -96,8 +99,8 @@ function onLoadFinish() {
   }, 1000)
 }
 
-function visitSection() {
-  router.push({ name: 'section', params: { section: 'test' } })
+function visitSection(section: Section) {
+  router.push({ name: 'section', params: { section: section.id } })
 }
 </script>
 

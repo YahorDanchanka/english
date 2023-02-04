@@ -25,18 +25,23 @@
         <q-icon name="navigate_before" class="slider__navigation-button slider__navigation-button_prev" />
         <q-icon name="navigate_next" class="slider__navigation-button slider__navigation-button_next" />
       </template>
-      <swiper-slide v-for="section in sections" @click="router.push({ name: 'task-list' })">
+      <swiper-slide
+        v-for="subsection in subsections"
+        @click="
+          router.push({ name: 'task-list', params: { section: route.params['section'], subsection: subsection.id } })
+        "
+      >
         <div class="card">
-          <div class="card__title">{{ section.title }}</div>
+          <div class="card__title">{{ subsection.title }}</div>
           <div class="card__body">
             Description:
             {{
-              section.description ||
+              subsection.description ||
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam placerat, purus vitae feugiat tincidunt, ligula nibh tincidunt mauris, eget placerat urna sem at purus. Phasellus semper euismod suscipit.'
             }}
           </div>
           <div class="card__image">
-            <img alt="Job interview" :src="section.image" />
+            <img alt="Job interview" :src="subsection.image" />
           </div>
         </div>
       </swiper-slide>
@@ -47,19 +52,23 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { Pagination, Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import { useStore } from 'stores/main'
+import { Subsection } from 'src/types'
 
+const route = useRoute()
 const router = useRouter()
 const store = useStore()
 const modules = [Pagination, Navigation]
 
-const sections = computed(() => store.sections)
+const subsections = computed<Subsection[]>(
+  () => store.sections.find((section) => section.id == route.params['section'])?.subsections || []
+)
 </script>
 
 <style lang="sass" scoped>

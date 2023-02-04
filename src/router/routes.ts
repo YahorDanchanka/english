@@ -1,4 +1,5 @@
 import { RouteRecordRaw } from 'vue-router'
+import { useStore } from 'stores/main'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -7,8 +8,25 @@ const routes: RouteRecordRaw[] = [
     children: [
       { name: 'home', path: '', component: () => import('pages/IndexPage.vue') },
       { name: 'settings', path: 'settings', component: () => import('pages/SettingsPage.vue') },
+
+      {
+        name: 'exercise',
+        path: 'exercise',
+        component: () => import('pages/ExercisePage.vue'),
+        beforeEnter(to, from, next) {
+          const store = useStore()
+
+          if (store.activeExercise.length === 0) {
+            // @ts-ignore
+            next(from.name === undefined ? { name: 'home' } : false)
+          } else {
+            next()
+          }
+        },
+      },
+      { name: 'text-tasks', path: ':section/:subsection/text', component: () => import('pages/TextTasksPage.vue') },
+      { name: 'task-list', path: ':section/:subsection/task-list', component: () => import('pages/TaskList.vue') },
       { name: 'section', path: ':section', component: () => import('pages/SectionPage.vue') },
-      { name: 'task-list', path: 'task-list', component: () => import('pages/TaskList.vue') },
     ],
   },
 

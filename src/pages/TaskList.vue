@@ -20,7 +20,15 @@
             </div>
           </div>
           <div class="col-6">
-            <div class="board__task board__task_right task">
+            <div
+              class="board__task board__task_right task"
+              @click="
+                router.push({
+                  name: 'text-tasks',
+                  params: { section: route.params['section'], subsection: route.params['subsection'] },
+                })
+              "
+            >
               <div class="task__circle task__circle_green"></div>
               <div class="task__caption">Text</div>
               <hr class="task__hr" />
@@ -37,9 +45,20 @@
 </template>
 
 <script lang="ts" setup>
-import { useRouter } from 'vue-router'
+import { computed } from 'vue'
+import { useStore } from 'stores/main'
+import { useRoute, useRouter } from 'vue-router'
 
+const route = useRoute()
 const router = useRouter()
+const store = useStore()
+
+// const hasTextTasks = computed<boolean>(
+//   () =>
+//     !!(store.sections.find((section) => section.id === route.params['section'])?.subsections || []).find(
+//       (subsection) => subsection.id === route.params['subsection']
+//     )?.textTasks
+// )
 </script>
 
 <style lang="sass" scoped>
