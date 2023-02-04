@@ -38,6 +38,36 @@
               <hr class="task__hr" />
             </div>
           </div>
+          <div class="col-6">
+            <div class="board__task board__task_left task">
+              <div class="task__circle task__circle_yellow"></div>
+              <div class="task__caption">Exercise</div>
+              <hr class="task__hr" />
+              <hr class="task__hr" />
+              <hr class="task__hr" />
+              <hr class="task__hr" />
+              <hr class="task__hr" />
+            </div>
+          </div>
+          <div
+            class="col-6"
+            @click="
+              router.push({
+                name: 'listen-tasks',
+                params: { section: route.params['section'], subsection: route.params['subsection'] },
+              })
+            "
+          >
+            <div class="board__task board__task_right task">
+              <div class="task__circle task__circle_blue"></div>
+              <div class="task__caption">Listen</div>
+              <hr class="task__hr" />
+              <hr class="task__hr" />
+              <hr class="task__hr" />
+              <hr class="task__hr" />
+              <hr class="task__hr" />
+            </div>
+          </div>
         </div>
       </div>
     </div>

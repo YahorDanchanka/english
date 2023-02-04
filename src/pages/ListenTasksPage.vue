@@ -7,11 +7,9 @@
     <div class="card">
       <div class="card__title">Subsection title</div>
       <div class="card__body">
-        <div v-html="text.text"></div>
         <div class="text-center">
           <AppButton class="q-mb-md" label="Exercise 1" @click="runExercise(0)" />
-          <AppButton class="q-mb-md" label="Exercise 2" @click="runExercise(1)" />
-          <AppButton class="q-mb-md" label="Exercise 3" @click="runExercise(2)" />
+          <AppButton label="Exercise 2" @click="runExercise(1)" />
         </div>
       </div>
     </div>
@@ -22,23 +20,24 @@
 import { computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useStore } from 'stores/main'
-import { Task } from 'src/types'
+import { Subsection } from 'src/types'
 import AppButton from 'components/AppButton.vue'
 
 const router = useRouter()
 const route = useRoute()
 const store = useStore()
 
-const text = computed<{ text: string; tasks: Task[][] }>(
+const subsection = computed<Subsection>(
   () =>
     // @ts-ignore
     (store.sections.find((section) => section.id === route.params['section'])?.subsections || []).find(
       (subsection) => subsection.id === route.params['subsection']
-    )!.texts[0]
+    )!
 )
 
 function runExercise(index: number) {
-  store.activeExercise = text.value.tasks[index]
+  // @ts-ignore
+  store.activeExercise = subsection.value.tasks[index]
   router.push({ name: 'exercise' })
 }
 </script>

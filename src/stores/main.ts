@@ -70,15 +70,32 @@ export const useStore = defineStore('main', () => {
                     },
                   },
                 ],
-                [
-                  {
-                    title: 'The manager advises his colleague to bow.',
-                    options: ['False', 'True'],
-                    correctOptionIndex: 0,
-                  },
-                ],
               ],
             },
+          ],
+          tasks: [
+            [
+              {
+                title: 'The manager advises his colleague to bow.',
+                options: ['False', 'True'],
+                correctOptionIndex: 0,
+              },
+            ],
+            [
+              {
+                type: 'text-input',
+                content:
+                  '<p><strong>Manager</strong>: When you meet Mr. Yakamoto be very {{{option1}}}. He is very important client.</p> <p><strong>Colleague</strong>: It is the Japanese {{{option2}}} to bow. Should i do that?</p>',
+                correct: {
+                  option1: 'polite',
+                  option2: 'always',
+                },
+                value: {
+                  option1: '',
+                  option2: '',
+                },
+              },
+            ],
           ],
         },
       ],

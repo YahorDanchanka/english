@@ -1,4 +1,4 @@
-export type Task = SelectionTask | TypingTask | MatchingTask
+export type Task = SelectionTask | TypingTask | MatchingTask | TextInputTask
 
 export interface SelectionTask {
   title: string
@@ -28,5 +28,16 @@ export interface MatchingTask {
 }
 
 export function isMatchingTask(obj: any): obj is MatchingTask {
-  return ['content'].every((property) => obj.hasOwnProperty(property))
+  return (
+    ['content', 'correct', 'value'].every((property) => obj.hasOwnProperty(property)) &&
+    ['type'].every((property) => !obj.hasOwnProperty(property))
+  )
+}
+
+export interface TextInputTask extends MatchingTask {
+  type: string
+}
+
+export function isTextInputTask(obj: any): obj is TextInputTask {
+  return ['type', 'content', 'correct', 'value'].every((property) => obj.hasOwnProperty(property))
 }

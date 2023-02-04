@@ -12,5 +12,5 @@ export interface Subsection {
   description?: string
   image: string
   texts?: { text: string; tasks: Task[][] }[]
-  exercises?: Task[]
+  tasks?: Task[][]
 }
