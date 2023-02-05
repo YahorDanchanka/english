@@ -1,6 +1,6 @@
 <template>
   <form class="selection-task-form">
-    {{ task }}
+    <div class="q-mb-md">{{ task }}</div>
     <div class="row q-col-gutter-md">
       <div class="col-12">
         <q-btn icon="add" @click="addOption" />
