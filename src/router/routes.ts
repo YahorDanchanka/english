@@ -9,6 +9,11 @@ const routes: RouteRecordRaw[] = [
       { name: 'home', path: '', component: () => import('pages/IndexPage.vue') },
       { name: 'settings', path: 'settings', component: () => import('pages/SettingsPage.vue') },
       {
+        name: 'generator',
+        path: 'generator',
+        component: () => import('pages/GeneratorPage.vue'),
+      },
+      {
         name: 'exercise',
         path: 'exercise',
         component: () => import('pages/ExercisePage.vue'),
