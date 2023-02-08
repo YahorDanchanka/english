@@ -1,6 +1,6 @@
 <template>
-  <q-page class="page" padding>
-    <TheHeader />
+  <q-page class="section-page page" padding>
+    <TheHeader class="page__header" />
     <Swiper
       class="page__slider slider"
       :modules="modules"
@@ -15,6 +15,7 @@
         prevEl: '.slider__navigation-button_prev',
         nextEl: '.slider__navigation-button_next',
       }"
+      loop
       navigation
     >
       <template v-slot:container-start>
@@ -23,24 +24,22 @@
         <q-icon name="navigate_next" class="slider__navigation-button slider__navigation-button_next" />
       </template>
       <swiper-slide
+        class="section-page__slide"
         v-for="subsection in subsections"
         @click="
           router.push({ name: 'task-list', params: { section: route.params['section'], subsection: subsection.id } })
         "
       >
-        <div class="card">
-          <div class="card__title">{{ subsection.title }}</div>
-          <div class="card__body">
+        <AppCard class="section-page__card text-center" :title="subsection.title">
+          <p>
             Description:
             {{
               subsection.description ||
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam placerat, purus vitae feugiat tincidunt, ligula nibh tincidunt mauris, eget placerat urna sem at purus. Phasellus semper euismod suscipit.'
             }}
-          </div>
-          <div class="card__image">
-            <img alt="Job interview" :src="subsection.image" />
-          </div>
-        </div>
+          </p>
+          <img :src="subsection.image" />
+        </AppCard>
       </swiper-slide>
     </Swiper>
     <img class="page__island" src="~assets/images/island.svg" alt="Island" />
@@ -58,6 +57,7 @@ import 'swiper/css/navigation'
 import { useStore } from 'stores/main'
 import { Subsection } from 'src/types'
 import TheHeader from 'components/TheHeader.vue'
+import AppCard from 'components/AppCard.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -74,6 +74,9 @@ const subsections = computed<Subsection[]>(
   display: flex
   flex-wrap: wrap
   align-items: center
+
+.page__header
+  margin-bottom: auto
 
 .page__slider
   margin-bottom: 12px
@@ -99,4 +102,17 @@ const subsections = computed<Subsection[]>(
 
   &_next
     right: -15px
+
+:deep(.section-page__slide)
+  display: flex
+  flex-wrap: wrap
+  height: auto
+
+.section-page__card p
+  font-size: 0.875em
+  margin-bottom: 25px
+  line-height: 17px
+
+.section-page__card img
+  max-width: 200px
 </style>

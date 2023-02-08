@@ -39,9 +39,6 @@ function setModelValue(event: InputEvent, letterIndex: number) {
 </script>
 
 <style lang="sass" scoped>
-.typing-task__title
-  margin-bottom: 36px
-
 .typing-task__word
   display: flex
   flex-wrap: wrap

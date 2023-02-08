@@ -1,23 +1,17 @@
 <template>
-  <q-page class="page" padding>
+  <q-page class="task-list-page page" padding>
     <TheHeader class="page__header" :title="subsection.title" />
-    <div class="board">
+    <div class="task-list-page__board board">
       <div class="board__wrapper">
-        <div class="row q-col-gutter-lg">
-          <div class="col-6">
-            <div class="board__task task" style="margin-top: 0">
-              <div class="task__circle"></div>
-              <div class="task__caption">Words</div>
-              <hr class="task__hr" />
-              <hr class="task__hr" />
-              <hr class="task__hr" />
-              <hr class="task__hr" />
-              <hr class="task__hr" />
-            </div>
-          </div>
+        <div class="row" v-if="!hasTasks">
+          <div class="col-12 text-center">Tasks not found :(</div>
+        </div>
+        <div class="row q-col-gutter-lg" v-else>
           <div class="col-6">
             <div
               class="board__task board__task_right task"
+              style="margin-top: 0"
+              v-if="subsection.texts?.length"
               @click="
                 router.push({
                   name: 'text-tasks',
@@ -34,19 +28,9 @@
               <hr class="task__hr" />
             </div>
           </div>
-          <div class="col-6">
-            <div class="board__task task">
-              <div class="task__circle task__circle_yellow"></div>
-              <div class="task__caption">Exercise</div>
-              <hr class="task__hr" />
-              <hr class="task__hr" />
-              <hr class="task__hr" />
-              <hr class="task__hr" />
-              <hr class="task__hr" />
-            </div>
-          </div>
           <div
             class="col-6"
+            v-if="subsection.listen?.length"
             @click="
               router.push({
                 name: 'listen-tasks',
@@ -85,9 +69,19 @@ const section = computed<Section>(() => store.sections.find((section) => section
 const subsection = computed<Subsection>(
   () => section.value.subsections.find((subsection) => subsection.id === route.params['subsection'])!
 )
+
+const hasTasks = computed(() => Boolean(subsection.value.texts?.length || subsection.value.listen?.length))
 </script>
 
 <style lang="sass" scoped>
+.task-list-page
+  display: flex
+  flex-wrap: wrap
+  flex-direction: column
+
+.task-list-page__board
+  flex-grow: 1
+
 .page__header
   margin-bottom: 8px
 
@@ -96,12 +90,14 @@ const subsection = computed<Subsection>(
   padding: 18px
   border-radius: 16px
   border: 5px solid #7A4019
+  height: 80vh
 
 .board__wrapper
   background: #B56C3A
   border-radius: 16px
   padding: 23px
   border: 5px solid #A35623
+  height: 100%
 
 .board__task
   margin-top: -50px
@@ -138,7 +134,9 @@ const subsection = computed<Subsection>(
   text-transform: uppercase
 
 .task__hr
-  border: 1px solid black
+  border: none
+  height: 1px
+  background-color: black
   margin-bottom: 16.52px
   width: 60%
 

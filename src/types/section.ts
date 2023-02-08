@@ -1,4 +1,3 @@
-import { Task } from 'src/types/task'
 import { Exercise } from 'src/types/exercise'
 
 export interface Section {

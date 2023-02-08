@@ -1,20 +1,16 @@
 <template>
-  <q-page class="page" padding>
+  <q-page class="text-tasks-page page" padding>
     <TheHeader class="page__header" navigation-back />
-    <div class="card">
-      <div class="card__title">{{ subsection.title }}</div>
-      <div class="card__body">
-        <div v-html="text.text"></div>
-        <div class="text-center">
-          <AppButton
-            v-for="exerciseIndex in text.exercises.length"
-            :class="{ 'q-mb-md': exerciseIndex !== text.exercises.length }"
-            :label="`Exercise ${exerciseIndex}`"
-            @click="runExercise(exerciseIndex - 1)"
-          />
-        </div>
+    <AppCard :title="subsection.title">
+      <div v-html="text.text"></div>
+      <div class="text-center" v-for="exerciseIndex in text.exercises.length">
+        <AppButton
+          :class="{ 'q-mb-md': exerciseIndex !== text.exercises.length }"
+          :label="`Exercise ${exerciseIndex}`"
+          @click="runExercise(exerciseIndex - 1)"
+        />
       </div>
-    </div>
+    </AppCard>
   </q-page>
 </template>
 
@@ -25,6 +21,7 @@ import { useStore } from 'stores/main'
 import { Section, Subsection, Task } from 'src/types'
 import AppButton from 'components/AppButton.vue'
 import TheHeader from 'components/TheHeader.vue'
+import AppCard from 'components/AppCard.vue'
 
 const router = useRouter()
 const route = useRoute()
@@ -46,13 +43,8 @@ function runExercise(index: number) {
 .page__header
   margin-bottom: 8px
 
-.card__body
+.text-tasks-page :deep(.app-card__body)
+  font-size: 0.875em
   text-align: justify
-
-.card__body :deep(h1)
-  font-size: 2em
-  margin-top: 0
-  line-height: 39px
-  margin-bottom: 10px
-  text-align: center
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
 </style>

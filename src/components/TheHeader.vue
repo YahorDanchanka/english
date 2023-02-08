@@ -46,10 +46,10 @@ const progress = ref(50)
 
 .header_view_navigation
   display: flex
-  flex-wrap: wrap
   align-items: center
   justify-content: space-between
   width: 100%
+  text-align: center
 
 .header__avatar, .header__level
   margin-right: 16px
@@ -64,6 +64,6 @@ const progress = ref(50)
   height: 24px
 
 .header__title
-  font-size: 2em
+  font-size: 1.9em
   text-shadow: 0 5px 4px rgba(0, 0, 0, 0.25)
 </style>
