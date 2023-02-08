@@ -43,6 +43,7 @@
 </template>
 
 <script lang="ts" setup>
+import { useQuasar } from 'quasar'
 import { useRouter } from 'vue-router'
 import { useStore } from 'stores/main'
 import { isMatchingTask, isSelectionTask, isSortableTask, isTextInputTask, isTypingTask } from 'src/types'
@@ -57,9 +58,58 @@ import AppCard from 'components/AppCard.vue'
 
 const router = useRouter()
 const store = useStore()
+const $q = useQuasar()
 
 function acceptAnswer() {
-  router.back()
+  const tasks = store.activeExercise!.tasks
+  let rightAnswersCount = 0
+  let totalAnswers = 0
+
+  tasks.forEach((task) => {
+    if (isSelectionTask(task)) {
+      totalAnswers++
+
+      if (task.value && task.value === task.correctOptionIndex) {
+        rightAnswersCount++
+      }
+    }
+
+    if (isTypingTask(task)) {
+      totalAnswers++
+
+      if (task.value && task.value.toLowerCase() === task.word.replace(/\[|]/g, '').toLowerCase()) {
+        rightAnswersCount++
+      }
+    }
+
+    if (isMatchingTask(task) || isTextInputTask(task)) {
+      for (const key in task.correct) {
+        totalAnswers++
+
+        if (task.value[key]?.toLowerCase() === task.correct[key]?.toLowerCase()) {
+          rightAnswersCount++
+        }
+      }
+    }
+
+    if (isSortableTask(task)) {
+      task.options.forEach((option) => {
+        totalAnswers++
+        const colIndex = task.leftCol.findIndex((leftColOption) => leftColOption === option.value)
+
+        if (task.leftCol[colIndex] == option.value && task.rightCol[colIndex] == option.correct) {
+          rightAnswersCount++
+        }
+      })
+    }
+  })
+
+  $q.dialog({
+    title: 'Результат',
+    message: `${rightAnswersCount}/${totalAnswers}`,
+  }).onDismiss(() => {
+    router.back()
+  })
 }
 </script>
 

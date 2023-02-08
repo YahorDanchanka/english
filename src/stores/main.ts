@@ -144,7 +144,7 @@ export const useStore = defineStore('main', () => {
                     option3: 'pleased to',
                     option4: 'shake hands',
                     option5: 'firm',
-                    option6: 'nice meeting youп',
+                    option6: 'nice meeting you',
                   },
                   value: {
                     option1: '',

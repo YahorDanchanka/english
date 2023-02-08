@@ -23,8 +23,8 @@ export function isTypingTask(obj: any): obj is TypingTask {
 
 export interface MatchingTask {
   content: string
-  correct: object
-  value: object
+  correct: { [key: string]: string }
+  value: { [key: string]: string }
 }
 
 export function isMatchingTask(obj: any): obj is MatchingTask {

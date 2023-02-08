@@ -48,6 +48,16 @@ const rightCol = computed({
     )
   },
 })
+
+emit(
+  'update:task',
+  cloneDeep({ ...props.task, leftCol: leftCol.value.map((v) => v.value), rightCol: rightCol.value.map((v) => v.value) })
+)
+
+emit(
+  'update:task',
+  cloneDeep({ ...props.task, rightCol: rightCol.value.map((v) => v.value), leftCol: leftCol.value.map((v) => v.value) })
+)
 </script>
 
 <style lang="sass" scoped>
