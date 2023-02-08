@@ -1,7 +1,7 @@
 <template>
   <q-page class="text-tasks-page page" padding>
     <TheHeader class="page__header" navigation-back />
-    <AppCard :title="subsection.title">
+    <AppCard class="text-tasks-page__card" :title="subsection.title">
       <div v-html="text.text"></div>
       <div class="text-center" v-for="exerciseIndex in text.exercises.length">
         <AppButton
@@ -40,8 +40,13 @@ function runExercise(index: number) {
 </script>
 
 <style lang="sass" scoped>
-.page__header
-  margin-bottom: 8px
+.text-tasks-page
+  display: flex
+  flex-wrap: wrap
+  flex-direction: column
+
+.text-tasks-page__card
+  flex-grow: 1
 
 .text-tasks-page :deep(.app-card__body)
   font-size: 0.875em

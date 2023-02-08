@@ -114,9 +114,6 @@ function acceptAnswer() {
 </script>
 
 <style lang="sass" scoped>
-.page__header
-  margin-bottom: 8px
-
 .card__body
   text-align: justify
 

@@ -82,9 +82,6 @@ const hasTasks = computed(() => Boolean(subsection.value.texts?.length || subsec
 .task-list-page__board
   flex-grow: 1
 
-.page__header
-  margin-bottom: 8px
-
 .board
   background: #995B31
   padding: 18px

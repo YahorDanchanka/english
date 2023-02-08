@@ -1,19 +1,16 @@
 <template>
-  <q-page class="page" padding>
+  <q-page class="settings-page page" padding>
     <TheHeader class="page__header" view="back" />
-    <div class="card">
-      <div class="card__title">Settings</div>
-      <div class="card__body">
-        <AppToggle class="toggle" label="Sound effects" v-model="toggles.soundEffects" />
-        <AppToggle class="toggle" label="Vibration" v-model="toggles.vibration" />
-        <AppToggle class="toggle" label="Music" v-model="toggles.music" />
-        <div class="buttons">
-          <AppButton class="btn" label="Privacy & Policy" />
-          <AppButton class="btn" label="Parent’s Guide" />
-          <AppButton class="btn" label="Credits" />
-        </div>
+    <AppCard class="settings-page__card" title="Settings">
+      <AppToggle class="toggle" label="Sound effects" v-model="toggles.soundEffects" />
+      <AppToggle class="toggle" label="Vibration" v-model="toggles.vibration" />
+      <AppToggle class="toggle" label="Music" v-model="toggles.music" />
+      <div class="buttons">
+        <AppButton class="btn" label="Privacy & Policy" />
+        <AppButton class="btn" label="Parent’s Guide" />
+        <AppButton class="btn" label="Credits" />
       </div>
-    </div>
+    </AppCard>
   </q-page>
 </template>
 
@@ -23,6 +20,7 @@ import { useRouter } from 'vue-router'
 import AppToggle from 'components/AppToggle.vue'
 import AppButton from 'components/AppButton.vue'
 import TheHeader from 'components/TheHeader.vue'
+import AppCard from 'components/AppCard.vue'
 
 const router = useRouter()
 
@@ -34,8 +32,13 @@ const toggles = ref({
 </script>
 
 <style lang="sass" scoped>
-.page__header
-  margin-bottom: 8px
+.settings-page
+  display: flex
+  flex-wrap: wrap
+  flex-direction: column
+
+.settings-page__card
+  flex-grow: 1
 
 .toggle
   justify-content: space-between

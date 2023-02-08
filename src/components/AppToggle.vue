@@ -49,7 +49,7 @@ function toggle() {
 .toggle__thumb
   width: 38px
   height: 38px
-  background: var(--q-primary)
+  background: #D9D9D9
   border: 1px solid #959494
   border-radius: 50%
   position: absolute

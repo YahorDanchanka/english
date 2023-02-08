@@ -1,7 +1,7 @@
 <template>
-  <q-page class="page" padding>
+  <q-page class="listen-tasks-page page" padding>
     <TheHeader class="page__header" navigation-back />
-    <AppCard :title="subsection.title">
+    <AppCard class="listen-tasks-page__card" :title="subsection.title">
       <div class="text-center" v-for="exerciseIndex in subsection.listen.length">
         <AppButton
           :class="{ 'q-mb-md': exerciseIndex !== subsection.listen.length }"
@@ -39,8 +39,13 @@ function runExercise(index: number) {
 </script>
 
 <style lang="sass" scoped>
-.page__header
-  margin-bottom: 8px
+.listen-tasks-page
+  display: flex
+  flex-wrap: wrap
+  flex-direction: column
+
+.listen-tasks-page__card
+  flex-grow: 1
 
 .card__body
   text-align: justify
