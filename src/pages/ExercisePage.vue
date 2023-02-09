@@ -10,6 +10,12 @@
           v-model:task="store.activeExercise.tasks[taskIndex]"
           :task-index="taskIndex"
         />
+        <MultipleSelectionTask
+          class="exercise-page__task"
+          v-if="isMultipleSelectionTask(task)"
+          v-model:task="store.activeExercise.tasks[taskIndex]"
+          :task-index="taskIndex"
+        />
         <TypingTask
           class="exercise-page__task"
           v-if="isTypingTask(task)"
@@ -46,7 +52,14 @@
 import { useQuasar } from 'quasar'
 import { useRouter } from 'vue-router'
 import { useStore } from 'stores/main'
-import { isMatchingTask, isSelectionTask, isSortableTask, isTextInputTask, isTypingTask } from 'src/types'
+import {
+  isMatchingTask,
+  isMultipleSelectionTask,
+  isSelectionTask,
+  isSortableTask,
+  isTextInputTask,
+  isTypingTask,
+} from 'src/types'
 import SelectionTask from 'components/SelectionTask.vue'
 import AppButton from 'components/AppButton.vue'
 import TypingTask from 'components/TypingTask.vue'
@@ -55,6 +68,7 @@ import TextInputTask from 'components/TextInputTask.vue'
 import TheHeader from 'components/TheHeader.vue'
 import SortableTask from 'components/SortableTask.vue'
 import AppCard from 'components/AppCard.vue'
+import MultipleSelectionTask from 'components/MultipleSelectionTask.vue'
 
 const router = useRouter()
 const store = useStore()
@@ -69,7 +83,19 @@ function acceptAnswer() {
     if (isSelectionTask(task)) {
       totalAnswers++
 
-      if (task.value && task.value === task.correctOptionIndex) {
+      if (task.value !== undefined && task.value === task.correctOptionIndex) {
+        rightAnswersCount++
+      }
+    }
+
+    if (isMultipleSelectionTask(task)) {
+      totalAnswers++
+
+      if (
+        task.value !== undefined &&
+        task.value.length === task.correctOptionIndexes.length &&
+        task.value.every((valIndex) => task.correctOptionIndexes.includes(valIndex))
+      ) {
         rightAnswersCount++
       }
     }
@@ -77,7 +103,7 @@ function acceptAnswer() {
     if (isTypingTask(task)) {
       totalAnswers++
 
-      if (task.value && task.value.toLowerCase() === task.word.replace(/\[|]/g, '').toLowerCase()) {
+      if (task.value !== undefined && task.value.toLowerCase() === task.word.replace(/\[|]/g, '').toLowerCase()) {
         rightAnswersCount++
       }
     }

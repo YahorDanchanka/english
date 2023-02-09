@@ -1,4 +1,11 @@
-export type Task = (SelectionTask | TypingTask | MatchingTask | TextInputTask | SortableTask) & { interface: string }
+export type Task = (
+  | SelectionTask
+  | MultipleSelectionTask
+  | TypingTask
+  | MatchingTask
+  | TextInputTask
+  | SortableTask
+) & { interface: string }
 
 export interface SelectionTask {
   title: string
@@ -9,6 +16,17 @@ export interface SelectionTask {
 
 export function isSelectionTask(obj: any): obj is SelectionTask {
   return obj.interface === 'SelectionTask'
+}
+
+export interface MultipleSelectionTask {
+  title: string
+  options: string[]
+  correctOptionIndexes: number[]
+  value?: number[]
+}
+
+export function isMultipleSelectionTask(obj: any): obj is MultipleSelectionTask {
+  return obj.interface === 'MultipleSelectionTask'
 }
 
 export interface TypingTask {

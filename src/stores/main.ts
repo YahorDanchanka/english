@@ -166,7 +166,7 @@ export const useStore = defineStore('main', () => {
           image: '/assets/images/it.png',
           texts: [
             {
-              text: '<ol><li>1</li><li>2</li></ol>',
+              text: '<ol><li>What is Information Technology?</li><li>What do Information Technology professionals do?</li></ol><h1>IT Departnemt Restructing</h1><p>DataPro Inc. is growing, and so our workload is increasing. Bout our IT department is not dealing with this increase effectively. So I am dividing the IT department into three sections: quality assurance, data processing and information security.</p><p>The responsibilities of each section are:<br><strong>Quality Assurance:</strong><br>Testing hardware<br>Providing technical support<br><strong>Data Processing:</strong><br>Writing code<br>Organizing data<br><strong>Information Security:</strong><br>Encoding online data transfers<br>Updating security software</p>',
               exercises: [
                 {
                   content:
@@ -363,6 +363,238 @@ export const useStore = defineStore('main', () => {
                     option3: '',
                     option4: '',
                     option5: '',
+                  },
+                  interface: 'TextInputTask',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: 'ss3',
+          title: 'Conversations',
+          image: '/assets/images/talking.png',
+          texts: [
+            {
+              text: '<ol> <li>What do you talk about with some one who you don&rsquo;t know?</li> <li>What do you do when a conversation going poorly?</li> </ol> <h1>By Haigh Trenchard</h1> <p>It happens to every one. Somebody introduces you to a friend and then walks away. Now you&rsquo;re standing with somebody you don&rsquo;t know. What do you talk about?</p> <p>The weather is always a possibility. But there isn&rsquo;t always much to say. To make conversation flow, it&rsquo;s better to ask questions. Ask the person what they do for living, and what their job involves. Discussing your own former jobs is a good option, too.</p> <p>Other safe topics include your home town and your education. You can also speak about hobbies and sports. But avoid asking people about their religion, age, politics and marital status until you know then better.</p>',
+              exercises: [
+                {
+                  content: '<p>Fill in the blanks with the correct words from the word bank</p>',
+                  tasks: [
+                    {
+                      content:
+                        "<p>What does Hendi do for a {{{option1}}}?</p><p>Graham's job {{{option2}}} buying supplies.</p><p>{{{option3}}} personal topics with strangers.</p><p>Helen's conversation with Rick didn't {{{option4}}}.</p><p>Flona chose not to {{{option5}}} religion with clients.</p><p>To keep the conversation you can speak about the {{{option6}}}</p><p>Let me {{{option7}}} you to my colleague</p>",
+                      correct: {
+                        option1: 'living',
+                        option2: 'involves',
+                        option3: 'avoid',
+                        option4: 'flow',
+                        option5: 'discuss',
+                        option6: 'weather',
+                        option7: 'introduce',
+                      },
+                      value: {
+                        option1: '',
+                        option2: '',
+                        option3: '',
+                        option4: '',
+                        option5: '',
+                        option6: '',
+                        option7: '',
+                      },
+                      interface: 'MatchingTask',
+                    },
+                  ],
+                },
+                {
+                  content: '<p>Match the words with the definitions</p>',
+                  tasks: [
+                    {
+                      options: [
+                        { value: 'small talk', correct: 'a polite conversation about everyday things' },
+                        { value: 'weather', correct: 'the temperature, rain, clouds and wind' },
+                        { value: 'topic', correct: 'a subject for conversation or study' },
+                        { value: 'religion', correct: 'a belief or worship of a god or gods' },
+                        { value: 'marital states', correct: 'the condition of either being married or single' },
+                        { value: 'sport', correct: 'a game or activity with rules' },
+                        { value: 'politics', correct: 'a goverment activities' },
+                        { value: 'living', correct: "one's source of income" },
+                      ],
+                      leftCol: [],
+                      rightCol: [],
+                      interface: 'SortableTask',
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              text: '<h1>Introduction Etiquette</h1><p>Imagine you are at a conference, talking to a <strong>colleague</strong>. Suddenly an old friend greets you. Of course you are happy to see him and you start talking excitedly. Stop! What about your colleague? Don\'t leave her alone. <strong>Introduce </strong>your friend and &nbsp;colleague by saying "<strong>I\'d like you you to meet</strong> ..." or "<strong>Let me introduce you to</strong> ..." Make sure each person understand your <strong>relationship </strong>with the other, and mention each person\'s <strong>occupation</strong>. Think of something the two have <strong>in common</strong> and steer the <strong>conversation </strong>in that direction. This way, neither of them will fell <strong>left out</strong>.<br><br></p>',
+              exercises: [
+                {
+                  content:
+                    '<p>Read this extract from an etiquette guide, then mark the following statements as True or False</p>',
+                  tasks: [
+                    {
+                      title: 'End a conversation with a colleague before talking to friend',
+                      options: ['True', 'False'],
+                      correctOptionIndex: 1,
+                      interface: 'SelectionTask',
+                    },
+                    {
+                      title: 'Do not talk about work when introducing two people',
+                      options: ['True', 'False'],
+                      correctOptionIndex: 0,
+                      interface: 'SelectionTask',
+                    },
+                    {
+                      title: "Mentioning people's common interest makes them feel included",
+                      options: ['True', 'False'],
+                      correctOptionIndex: 0,
+                      interface: 'SelectionTask',
+                    },
+                  ],
+                },
+                {
+                  content: '<p>Choose the word that is closest in meaning to the underlined part</p>',
+                  tasks: [
+                    {
+                      title: 'James likes to talk about his job',
+                      options: ['relationship', 'coleague', 'occupation'],
+                      correctOptionIndex: 2,
+                      interface: 'SelectionTask',
+                    },
+                    {
+                      title: 'Change the topic away from politics',
+                      options: ['mention', 'steer the conversation', 'introduct'],
+                      correctOptionIndex: 1,
+                      interface: 'SelectionTask',
+                    },
+                    {
+                      title: 'Karen is talking to a person with whom she works',
+                      options: ['colleague', 'relationship', 'occupation'],
+                      correctOptionIndex: 0,
+                      interface: 'SelectionTask',
+                    },
+                    {
+                      title: 'Let me tell you the name of my friend, Bob Hawkins',
+                      options: ['steer the conversation away from', 'leave out', 'introduce you to'],
+                      correctOptionIndex: 2,
+                      interface: 'SelectionTask',
+                    },
+                  ],
+                },
+                {
+                  content: '<p>Choose the response that answers the question</p>',
+                  tasks: [
+                    {
+                      title: 'Have I met your friend before?',
+                      options: ["No, Mary. I'd like you to meet Polly", 'Yes. My friend Polly feels left out'],
+                      correctOptionIndex: 0,
+                      interface: 'SelectionTask',
+                    },
+                    {
+                      title: "What's your relationship with Helen?",
+                      options: ["She didn't mention your name", "She's my colleague"],
+                      correctOptionIndex: 1,
+                      interface: 'SelectionTask',
+                    },
+                    {
+                      title: 'Can I introduce you to my colleague, Daniel?',
+                      options: ['Sure! Nice to meet you, Daniel', "Don't mention it"],
+                      correctOptionIndex: 0,
+                      interface: 'SelectionTask',
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+          listen: [
+            {
+              content: '',
+              tasks: [
+                // remade
+                {
+                  title:
+                    'Listen to a conversation between a businessman and a colleague. Check the topics that are suggested to talk about',
+                  options: ['age', 'work', 'religion', 'weather', 'marital status', 'education'],
+                  correctOptionIndexes: [1, 3],
+                  interface: 'MultipleSelectionTask',
+                },
+              ],
+            },
+            {
+              content: '',
+              tasks: [
+                {
+                  content:
+                    "<p><strong>Businessman</strong>: Sarah, I have to take a phone call, Please make {{{option1}}} with Mr, Jensen until I'm free.</p> <p><strong>Colleague</strong>: But I don't know him! I have nothing to talk to him about.</p> <p><strong>Businessman</strong>: Just ask him what he does for a {{{option2}}}.</p> <p><strong>Colleague</strong>: But I already know what his work {{{option3}}}. After all, he's our consultant.</p> <p><strong>Businessman</strong>: Then why don't you {{{option4}}} weather?</p> <p><strong>Colleague</strong>: It's not a very interesting {{{option5}}}.</p> <p><strong>Businessman</strong>: Well, I'm sure you'll think of something. Just don't up bring up his {{{option6}}}.</p> <p><strong>Colleague</strong>: Good to know, thanks.</p>",
+                  correct: {
+                    option1: 'small talk',
+                    option2: 'living',
+                    option3: 'involves',
+                    option4: 'discuss',
+                    option5: 'topic',
+                    option6: 'marital status',
+                  },
+                  value: {
+                    option1: '',
+                    option2: '',
+                    option3: '',
+                    option4: '',
+                    option5: '',
+                    option6: '',
+                  },
+                  interface: 'TextInputTask',
+                },
+              ],
+            },
+            {
+              content:
+                '<p>Listen to a conversation between two men and women. Mark the following statements as True or False</p>',
+              tasks: [
+                {
+                  title: 'The woman is introduced to the friend of a colleague',
+                  options: ['True', 'False'],
+                  correctOptionIndex: 0,
+                  interface: 'SelectionTask',
+                },
+                {
+                  title: "The speakers are at the woman's birthday party",
+                  options: ['True', 'False'],
+                  correctOptionIndex: 1,
+                  interface: 'SelectionTask',
+                },
+                {
+                  title: 'All three speakers are in the same soccer league',
+                  options: ['True', 'False'],
+                  correctOptionIndex: 1,
+                  interface: 'SelectionTask',
+                },
+              ],
+            },
+            {
+              content: '',
+              tasks: [
+                {
+                  content:
+                    "<p><strong>Man 1</strong>: Sarah, I'd like you to meet {{{option1}}}, John. John, this is Sarah.</p> <p><strong>Woman</strong>: Hi John, it's a pleasure to meet you.</p> <p><strong>Man 2</strong>: And nice to meet you, too. How do you do two know {{{option2}}}?</p> <p><strong>Woman</strong>: Oh, we work together.</p> <p><strong>Man 2</strong>: That's right. Bob mentioned that some of his colleagues were coming to {{{option3}}} party.</p> <p><strong>Man 1</strong>: You know, Sarah, you and John have something {{{option4}}}.</p> <p><strong>Woman</strong>: {{{option5}}}? What's that?</p> <p><strong>Man 1</strong>: {{{option6}}} in the same adult soccer league.</p>",
+                  correct: {
+                    option1: 'my friend',
+                    option2: 'one another',
+                    option3: 'his birthday',
+                    option4: 'in common',
+                    option5: 'really',
+                    option6: 'you both',
+                  },
+                  value: {
+                    option1: '',
+                    option2: '',
+                    option3: '',
+                    option4: '',
+                    option5: '',
+                    option6: '',
                   },
                   interface: 'TextInputTask',
                 },

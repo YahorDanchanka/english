@@ -3,11 +3,11 @@
     <TheHeader class="page__header" :title="subsection.title" />
     <div class="task-list-page__board board">
       <div class="board__wrapper">
-        <div class="row" v-if="!hasTasks">
+        <div class="row" v-if="taskPathes.length === 0">
           <div class="col-12 text-center">Tasks not found :(</div>
         </div>
         <div class="row q-col-gutter-lg" v-else>
-          <div class="col-6">
+          <div class="col-6" style="display: none">
             <div
               class="board__task board__task_right task"
               style="margin-top: 0"
@@ -30,6 +30,7 @@
           </div>
           <div
             class="col-6"
+            style="display: none"
             v-if="subsection.listen?.length"
             @click="
               router.push({
@@ -41,6 +42,28 @@
             <div class="board__task board__task_right task">
               <div class="task__circle task__circle_blue"></div>
               <div class="task__caption">Listen</div>
+              <hr class="task__hr" />
+              <hr class="task__hr" />
+              <hr class="task__hr" />
+              <hr class="task__hr" />
+              <hr class="task__hr" />
+            </div>
+          </div>
+          <div class="col-6" v-for="(taskPath, taskPathIndex) in taskPathes">
+            <div
+              class="board__task task"
+              :class="{ board__task_right: taskPathIndex % 2 !== 0 }"
+              :style="taskPathIndex === 0 ? { 'margin-top': '0' } : null"
+              @click="goToCategoryTask(taskPath)"
+            >
+              <div
+                class="task__circle"
+                :class="{
+                  task__circle_green: (taskPathIndex + 1) % 2 === 0,
+                  task__circle_yellow: (taskPathIndex + 1) % 3 === 0,
+                }"
+              ></div>
+              <div class="task__caption">{{ taskPath.label }}</div>
               <hr class="task__hr" />
               <hr class="task__hr" />
               <hr class="task__hr" />
@@ -70,7 +93,38 @@ const subsection = computed<Subsection>(
   () => section.value.subsections.find((subsection) => subsection.id === route.params['subsection'])!
 )
 
-const hasTasks = computed(() => Boolean(subsection.value.texts?.length || subsection.value.listen?.length))
+const taskPathes = computed<{ label: string; path: string }[]>(() => {
+  const result = []
+
+  if (subsection.value.texts !== undefined) {
+    for (const index in subsection.value.texts) {
+      result.push({ label: 'Text', path: `texts[${index}]` })
+    }
+  }
+
+  if (subsection.value.listen !== undefined) {
+    result.push({ label: 'Listen', path: 'listen' })
+  }
+
+  return result
+})
+
+function goToCategoryTask(taskPath: { label: string; path: string }) {
+  if (taskPath.path.startsWith('texts')) {
+    const textId = taskPath.path.replace(/\D/g, '')
+    router.push({
+      name: 'text-tasks',
+      params: { section: route.params['section'], subsection: route.params['subsection'], text: textId },
+    })
+
+    return
+  }
+
+  router.push({
+    name: 'listen-tasks',
+    params: { section: route.params['section'], subsection: route.params['subsection'] },
+  })
+}
 </script>
 
 <style lang="sass" scoped>
@@ -121,9 +175,6 @@ const hasTasks = computed(() => Boolean(subsection.value.texts?.length || subsec
 
   &_yellow
     background-color: #FFC700
-
-  &_blue
-    background-color: #000F94
 
 .task__caption
   color: #3D3030
