@@ -372,6 +372,89 @@ export const useStore = defineStore('main', () => {
         },
         {
           id: 'ss3',
+          title: 'Stress',
+          image: '/assets/images/brain.png',
+          texts: [
+            {
+              text: '<p>Speaking about stress we should say that:</p> <ol> <li>&ldquo;Stress as a&nbsp;<em>stimulus.</em>&rdquo;</li> <li>&ldquo;Stress as a&nbsp;<em>response.</em>&rdquo;</li> <li>&ldquo;Stress as an&nbsp;<em>interaction</em>&nbsp;between an organism and its environment.&rdquo;</li> </ol> <p>If we experience too much stress in the workplace, we become psychologically overwhelmed and unable to avoid the tensions found in our jobs.</p> <p><strong>What is workplace stress?</strong></p> <p>Work-related stress happens when your mind and body respond to high work demands you&rsquo;re unable to cope with. Eventually, you may arrive at a point where you can&rsquo;t keep up with your to-do list &mdash; often because there are too many tasks on it.&nbsp;</p> <p>Tight deadlines and larger workloads mean more pressure, increasing workplace stress.</p> <p><strong>When is workplace stress too much?</strong></p> <p>Stress isn\'t always bad. A little bit of stress can help you stay focused, energetic, and able to meet new challenges in the workplace. It\'s what keeps you on your toes during a presentation or alerts to prevent accidents or costly mistakes.</p> <p>But long hours, tight deadlines, and ever-increasing demands can leave you feeling worried, drained, and overwhelmed. And when stress exceeds your ability to cope, it stops being helpful and starts causing damage to your mind and body&mdash;as well as to your job satisfaction.</p> <p>You can&rsquo;t control everything in your work environment, but that doesn&rsquo;t mean you&rsquo;re powerless, even when you&rsquo;re stuck in a difficult situation. If stress on the job is interfering with your work performance, health, or personal life, it&rsquo;s time to take action. No matter what you do for a living, what your ambitions are, or how stressful your job is, there are plenty of things you can do to reduce your overall stress levels and regain a sense of control at work.</p> <p>Common causes of workplace stress include:</p> <ul type="disc"> <li>Longer working hours impacting work&ndash;life balance</li> <li>Job insecurity</li> <li>Low salary</li> <li>Increasing work demands</li> <li>Unrealistic deadlines</li> <li>Limited opportunities for growth, development, or advancement</li> <li>Challenging or difficult colleagues</li> <li>Too many meetings</li> <li>Email overload</li> <li>Incompetent or uncaring managers and supervisors</li> <li>Meaningless targets</li> <li>Constantly changing technology</li> <li>Lack of social support</li> </ul> <p><strong>Stress at work warning signs</strong></p> <p>When you feel overwhelmed at work, you lose confidence and may become angry, irritable, or withdrawn. Other signs and symptoms of stress at work include:</p> <ul> <li>Feeling anxious, irritable, or depressed</li> <li>Apathy, loss of interest in work</li> <li>Problems sleeping</li> <li>Fatigue</li> <li>Trouble concentrating</li> <li>Muscle tension or headaches</li> <li>Stomach problems</li> <li>Social withdrawal</li> <li>Loss of sex drive</li> <li>Using alcohol or drugs to cope</li> <li>Unhealthy eating</li> <li>Recreational drug use</li> </ul>',
+              exercises: [
+                {
+                  content: '<p>Match the words with the definitions</p>',
+                  tasks: [
+                    {
+                      options: [
+                        {
+                          value: 'environment',
+                          correct: 'the conditions that you live or work in and the way that they influence how you',
+                        },
+                        { value: 'deadline', correct: 'a time or day by which something must be done' },
+                        {
+                          value: 'exceed',
+                          correct: 'to be greater than a number or amount, or to go beyond a permitted limit',
+                        },
+                        {
+                          value: 'avoid',
+                          correct: 'to prevent something from happening or to not allow yourself to do something',
+                        },
+                        { value: 'cause', correct: 'to make something happen, especially something bad' },
+                        { value: 'regain', correct: 'to get something back again' },
+                        { value: 'fatigue', correct: 'extreme tiredness' },
+                        {
+                          value: 'worry',
+                          correct:
+                            'to think about problems or unpleasant things in a way that makes you feel unhappy and frightened',
+                        },
+                        { value: 'irritable', correct: 'becoming annoyed very easily' },
+                      ],
+                      leftCol: [],
+                      rightCol: [],
+                      interface: 'SortableTask',
+                    },
+                  ],
+                },
+                {
+                  content: '<p>Mark the following statements as True or False</p>',
+                  tasks: [
+                    {
+                      title: 'A little bit of stress can be useful for you',
+                      options: ['True', 'False'],
+                      correctOptionIndex: 0,
+                      interface: 'SelectionTask',
+                    },
+                    {
+                      title:
+                        'Work-related stress happens when your mind and body react to high work demands you fail to cope with',
+                      options: ['True', 'False'],
+                      correctOptionIndex: 0,
+                      interface: 'SelectionTask',
+                    },
+                    {
+                      title:
+                        'You can’t control everything in your work environment, unfortunately you can do nothing to regain a sense of control at work',
+                      options: ['True', 'False'],
+                      correctOptionIndex: 1,
+                      interface: 'SelectionTask',
+                    },
+                    {
+                      title: 'Stress suffered at work can result in damage to your physical and mental health',
+                      options: ['True', 'False'],
+                      correctOptionIndex: 0,
+                      interface: 'SelectionTask',
+                    },
+                    {
+                      title: 'There are many easy ways to cope with stress',
+                      options: ['True', 'False'],
+                      correctOptionIndex: 0,
+                      interface: 'SelectionTask',
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: 'ss4',
           title: 'Conversations',
           image: '/assets/images/talking.png',
           texts: [
