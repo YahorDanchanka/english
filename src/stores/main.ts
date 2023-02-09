@@ -685,6 +685,328 @@ export const useStore = defineStore('main', () => {
             },
           ],
         },
+        {
+          id: 'ss5',
+          title: 'Presentations',
+          image: '/assets/images/presentation.png',
+          texts: [
+            {
+              text: '<p>You may be asked to give a <strong>presentation </strong>to staff or senior executives. In this situation, please take time to prepare carefully. Review your presentation and ensure that all relevant information is included in a succinct manner. In general, <strong>display </strong>information clearly. Use <strong>diagrams,</strong> <strong>tables</strong>, <strong>charts</strong>, and <strong>graphs </strong>where necessary. In addition, it is highly recommended that you bring extra <strong>copies </strong>of all <strong>handouts</strong>. Copy machines are available for use in the copy room.</p> <h2>Presentation Delivery</h2> <p>Arrive a few minutes early in order to set up your presentation. All conference rooms are equipped with laptop connections and <strong>projectors</strong>. <strong>Slides </strong>may also be used, if desired. If you include the use of <strong>images </strong>from outside sources, ensure that they are property <strong>resized</strong>. More specific information on computer use and Image manipulation can be found in Appendix A of this book (p. 152).</p> <h2>Room and Equipment Reservations</h2> <p>Please <strong>reserve </strong>the space for your presentation no less than three days in advance. Sign-up sheets for conference rooms are located in Room B32. You may also reserve the use of a projector, screen, and <strong>laser pointer</strong>. These sheets are kept at the front desk and are available on request.</p>',
+              exercises: [
+                {
+                  content: '<p>Read the excerpt from the personnel guidelines. Then, choose the correct answer.</p>',
+                  tasks: [
+                    {
+                      title: 'What Is the main topic of the article?',
+                      options: [
+                        'the schedule of presentations',
+                        'how to prepare for a presentation',
+                        'a request for new presentation equipment',
+                        "changes to the company's presentation policy",
+                      ],
+                      correctOptionIndex: 1,
+                      interface: 'SelectionTask',
+                    },
+                    {
+                      title: 'Which of the following is NOT a type of graph?',
+                      options: ['slide', 'diagram', 'table', 'chart'],
+                      correctOptionIndex: 0,
+                      interface: 'SelectionTask',
+                    },
+                    {
+                      title: 'What are employees asked to do?',
+                      options: [
+                        'include diagrams in all presentations',
+                        'avoid using images from outside sources',
+                        'reduce paper waste by limiting copies',
+                        'request rooms for presentations three days early',
+                      ],
+                      correctOptionIndex: 3,
+                      interface: 'SelectionTask',
+                    },
+                  ],
+                },
+                {
+                  content: '<p>Match the words or phrases with thе definitions</p>',
+                  tasks: [
+                    {
+                      options: [
+                        { value: 'resize', correct: 'to make something smaller or bigger' },
+                        { value: 'table', correct: 'an arrangement of data in columns' },
+                        { value: 'projector', correct: 'a device used to show images' },
+                        { value: 'presentation', correct: 'the act of showing and commenting on information' },
+                        { value: 'slide', correct: 'a transparent sheet showing information' },
+                        { value: 'diagram', correct: 'a chart or drawing that explains information' },
+                        { value: 'laser point', correct: 'a device used to draw attention to an area with light' },
+                      ],
+                      leftCol: [],
+                      rightCol: [],
+                      interface: 'SortableTask',
+                    },
+                  ],
+                },
+                {
+                  content: '<p>Read the sentence pairs. Choose which word best fits each blank</p>',
+                  tasks: [
+                    {
+                      content:
+                        '<ol style="list-style-type: upper-alpha;"> <li> <p>Graph and charts are a way to {{{option1}}} information</p> </li> <li>{{{option2}}} handouts the day before a presentation so you can check them for mistakes</li> </ol>',
+                      correct: {
+                        option1: 'display',
+                        option2: 'prepare',
+                      },
+                      value: {
+                        option1: '',
+                        option2: '',
+                      },
+                      interface: 'MatchingTask',
+                    },
+                    {
+                      content:
+                        '<ol style="list-style-type: upper-alpha;"> <li> <p>It\'s important to {{{option1}}} images so they can be seen clearly.</p> </li> <li>Be sure to {{{option2}}} a room so that the space is available.</li> </ol>',
+                      correct: {
+                        option1: 'resize',
+                        option2: 'reserve',
+                      },
+                      value: {
+                        option1: '',
+                        option2: '',
+                      },
+                      interface: 'MatchingTask',
+                    },
+                    {
+                      content:
+                        '<ol style="list-style-type: upper-alpha;"> <li> <p>The {{{option1}}} can be a picture or an illustration</p> </li> <li>It\'s hard to read the data in that {{{option2}}}</li> </ol>',
+                      correct: {
+                        option1: 'image',
+                        option2: 'chart',
+                      },
+                      value: {
+                        option1: '',
+                        option2: '',
+                      },
+                      interface: 'MatchingTask',
+                    },
+                    {
+                      content:
+                        '<ol style="list-style-type: upper-alpha;"> <li> <p>Create a {{{option1}}} that shows the total sales for each month</p> </li> <li>I need a {{{option2}}} of that memo; I can\'t find my original</li> </ol>',
+                      correct: {
+                        option1: 'graph',
+                        option2: 'copy',
+                      },
+                      value: {
+                        option1: '',
+                        option2: '',
+                      },
+                      interface: 'MatchingTask',
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              text: "<ol><li>What is the importance of body language in a presentation?</li><li>How might acceptable body language vary from country to country?</li></ol><h1></h1><p>Presentations can be nerve-wracking. A survey once asked whether people were more afraid of death, or speaking in front of an audience. Most people said that they were more afraid of public speaking! When your manager or boss is part of your <strong>audience</strong>, presentations can be even scarier.</p> <p>So what can you do to make a great impression? Here are some tips.</p> <p>After you know your <strong>topic</strong>, make an <strong>outline </strong>of your presentation. Then <strong>practice </strong>it. Try to <strong>memorize </strong>your key points. This way, you can avoid reading your slides <strong>verbatim</strong>. This will help you sound natural and keep your listeners' attention.</p> <p><strong>Body language</strong> is also very important. As you give your presentation, make a lot of <strong>eye contact</strong>.</p> <p><strong>Glance </strong>briefly at your <strong>notes</strong> only when needed. Don't fold your arms in front of your body. Instead, stand with an open posture.</p> <p>Most importantly, don't <strong>bore </strong>your audience! You can maintain interest by keeping your points succinct. If you find yourself staying too long on one point, <strong>move on</strong> to the next. Also, be sure to do a quick <strong>review </strong>at the end. <strong>Summarize </strong>your key themes and points and leave a little time to <strong>take </strong>questions at the end.</p>",
+              exercises: [
+                {
+                  content: '<p>Read the section. Then, choose the correct answers</p>',
+                  tasks: [
+                    {
+                      title: 'What is the section mainly about?',
+                      options: [
+                        'ways to conduct a successful presentation',
+                        'common mistakes people make in presentations',
+                        'how to recover when a presentation starts to fall',
+                        'methods of making presentations less. stressful',
+                      ],
+                      correctOptionIndex: 3,
+                      interface: 'SelectionTask',
+                    },
+                    {
+                      title: 'What does the author recommend?',
+                      options: [
+                        'taking questions from the audience as they come up',
+                        'putting the outline of the presentation on a slide',
+                        'reviewing the important points at the end',
+                        'glancing at your notes before moving on to new topics',
+                      ],
+                      correctOptionIndex: 2,
+                      interface: 'SelectionTask',
+                    },
+                    {
+                      title: 'Why are succinct points important?',
+                      options: [
+                        'They aid in memorizing information',
+                        'They assist in improving body language',
+                        "They help in keeping an audience's interest",
+                        'They facilitate in creating an outline',
+                      ],
+                      correctOptionIndex: 2,
+                      interface: 'SelectionTask',
+                    },
+                  ],
+                },
+                {
+                  content: '<p>Match the words or phrases with the definitions</p>',
+                  tasks: [
+                    {
+                      options: [
+                        { value: 'note', correct: 'a short piece of information' },
+                        { value: 'bore', correct: 'to cause someone to lose interest' },
+                        { value: 'topic', correct: 'a subject or main idea' },
+                        { value: 'verbatim', correct: 'word-for-word' },
+                        { value: 'take', correct: 'to allow or accept' },
+                        { value: 'glance', correct: 'to look quckly' },
+                        { value: 'move on', correct: 'to progress from one point to the next' },
+                      ],
+                      leftCol: [],
+                      rightCol: [],
+                      interface: 'SortableTask',
+                    },
+                  ],
+                },
+                {
+                  content: '<p>Read the sentence pairs. Choose which word or phrase best fits each blank</p>',
+                  tasks: [
+                    {
+                      content:
+                        '<ol style="list-style-type: upper-alpha;"> <li>Make a(n) {{{option1}}} before writing a whole presentation</li> <li>A person appears confident if he or she makes eye contact with a(n) {{{option2}}}</li> </ol>',
+                      correct: {
+                        option1: 'outline',
+                        option2: 'audience',
+                      },
+                      value: {
+                        option1: '',
+                        option2: '',
+                      },
+                      interface: 'MatchingTask',
+                    },
+                    {
+                      content:
+                        '<ol style="list-style-type: upper-alpha;"> <li>A presenter should try to {{{option1}}} the presentation as part of a review</li> <li>It\'s more effective to {{{option2}}} key points than to read a presentation verbatim</li> </ol>',
+                      correct: {
+                        option1: 'summarize',
+                        option2: 'memorize',
+                      },
+                      value: {
+                        option1: '',
+                        option2: '',
+                      },
+                      interface: 'MatchingTask',
+                    },
+                    {
+                      content:
+                        '<ol style="list-style-type: upper-alpha;"> <li>{{{option1}}} the key points at the end of a presentation</li> <li>Presenters who do not {{{option2}}} a few times first will often make mistakes</li> </ol>',
+                      correct: {
+                        option1: 'review',
+                        option2: 'practice',
+                      },
+                      value: {
+                        option1: '',
+                        option2: '',
+                      },
+                      interface: 'MatchingTask',
+                    },
+                    {
+                      content:
+                        '<ol style="list-style-type: upper-alpha;"> <li>Although some forms of {{{option1}}} can mean different things in different areas, a smile is always understood</li> <li>Before visiting a nation, find out whether making {{{option2}}} is considered polite or rude</li> </ol>',
+                      correct: {
+                        option1: 'body language',
+                        option2: 'eye contact',
+                      },
+                      value: {
+                        option1: '',
+                        option2: '',
+                      },
+                      interface: 'MatchingTask',
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+          listen: [
+            {
+              content:
+                '<p>Listen to a conversation between a manager and an employee. Mark the following statements as True or False</p>',
+              tasks: [
+                {
+                  title: 'The woman needs help preparing her presentation.',
+                  options: ['True', 'False'],
+                  correctOptionIndex: 1,
+                  interface: 'SelectionTask',
+                },
+                {
+                  title: 'The woman thinks that handouts are optional',
+                  options: ['True', 'False'],
+                  correctOptionIndex: 0,
+                  interface: 'SelectionTask',
+                },
+                {
+                  title: 'The man should create graphs and charts first',
+                  options: ['True', 'False'],
+                  correctOptionIndex: 1,
+                  interface: 'SelectionTask',
+                },
+              ],
+            },
+            {
+              content: '<p>Listen again and complete the conversation</p>',
+              tasks: [
+                {
+                  content:
+                    "<p><strong>Manager</strong>: I'd like to see our gross earnings and profit margins broken down into graphs and tables. Make it as clear {{{option1}}}.</p> <p><strong>Employee</strong>: Of course. What about {{{option2}}}?</p> <p><strong>Manager</strong>: It's your presentation, so I'll leave that up to you. If you need a {{{option3}}}, use the copy room.</p> <p><strong>Employee</strong>: Okay. I'll do that.</p> <p><strong>Manager</strong>: Oh and Jim! One {{{option4}}}!</p> <p><strong>Employee</strong>: What is it?</p> <p><strong>Manager</strong>: {{{option5}}} to reserve the conference room. Please take care of that before anything else.</p> <p><strong>Employee</strong>: Understood! I'll do that {{{option6}}}.&nbsp;</p>",
+                  correct: {
+                    option1: 'living',
+                    option2: 'involves',
+                    option3: 'avoid',
+                    option4: 'flow',
+                    option5: 'discuss',
+                    option6: 'weather',
+                    option7: 'introduce',
+                  },
+                  value: {
+                    option1: '',
+                    option2: '',
+                    option3: '',
+                    option4: '',
+                    option5: '',
+                    option6: '',
+                    option7: '',
+                  },
+                  interface: 'TextInputTask',
+                },
+              ],
+            },
+            {
+              content: '<p>Listen again and complete the conversation</p>',
+              tasks: [
+                {
+                  content:
+                    "<p><strong>Coworker 1</strong>: Linda, thanks so much for letting me practice my presentation with you. I really appreciate it. So, what {{{option1}}}?</p> <p><strong>Coworker 2</strong>: Well, tor the most part, I thought it was great! Your {{{option2}}}&nbsp;was really good. You kept eye contact really well, and you had an open posture.</p> <p><strong>Coworker 1</strong>: Thanks! That's good to hear. Was there anything that you think I should change?</p> <p><strong>Coworker 2</strong>: Let's see. yeah, there are a few spots {{{option3}}}. First of all, there were parts where you read the slides {{{option4}}}.</p> <p><strong>Coworker 1</strong>: Uh, yes. I find it hard to {{{option5}}}.</p> <p><strong>Coworker 2</strong>: Oh, okay. Well, I think it sounded a little unnatural. So, maybe you could just {{{option6}}} the slides, and then rephrase them in your own words.</p>",
+                  correct: {
+                    option1: 'did you think',
+                    option2: 'body language',
+                    option3: 'that need work',
+                    // note
+                    option4: '',
+                    option5: 'memorize staff',
+                    option6: 'glance at',
+                  },
+                  value: {
+                    option1: '',
+                    option2: '',
+                    option3: '',
+                    option4: '',
+                    option5: '',
+                    option6: '',
+                    option7: '',
+                  },
+                  interface: 'TextInputTask',
+                },
+              ],
+            },
+          ],
+        },
       ],
     },
   ])

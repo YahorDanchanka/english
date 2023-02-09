@@ -38,6 +38,13 @@ defineProps<{ title: string | number }>()
     margin-bottom: 10px
     text-align: center
 
+  :deep(h2)
+    font-size: 1.6em
+    margin-top: 0
+    line-height: normal
+    margin-bottom: 10px
+    text-align: center
+
   :deep(ol), :deep(ul)
     margin: 0 0 20px 0
 
