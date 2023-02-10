@@ -1,6 +1,8 @@
 <template>
   <div class="app-card">
-    <div class="app-card__title" :class="{ 'app-card__title_small': title.length >= 16 }">{{ title }}</div>
+    <div class="app-card__title" v-if="title" :class="{ 'app-card__title_small': title.length >= 16 }">
+      <slot name="title" :title="title">{{ title }}</slot>
+    </div>
     <div class="app-card__body">
       <slot />
     </div>
@@ -8,7 +10,7 @@
 </template>
 
 <script lang="ts" setup>
-defineProps<{ title: string | number }>()
+defineProps<{ title?: string }>()
 </script>
 
 <style lang="sass" scoped>

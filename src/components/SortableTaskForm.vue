@@ -1,41 +1,58 @@
 <template>
-  <form class="selection-task-form">
-    <div class="q-mb-md">{{ task }}</div>
-    <div class="row q-col-gutter-md">
-      <div class="col-12">
-        <q-btn icon="add" @click="addOption" />
-      </div>
-      <template v-for="option in task.options">
-        <div class="col-5">
-          <q-input label="Value" v-model="option.value" />
-        </div>
-        <div class="col-5">
-          <q-input label="Correct" v-model="option.correct" />
-        </div>
-        <div class="col-2 text-center">
-          <q-btn icon="remove" round @click="removeOption(option)" />
-        </div>
-      </template>
+  <form class="sortable-task-form row q-col-gutter-md">
+    <div class="col-12">
+      <q-btn icon="add" color="primary" round @click="addOption" />
     </div>
+    <template v-for="(option, optionIndex) in task.options">
+      <div class="col-5">
+        <q-input
+          label="Value"
+          :modelValue="option.value"
+          outlined
+          @update:modelValue="(val) => updateOption(optionIndex, 'value', val)"
+        />
+      </div>
+      <div class="col-5">
+        <q-input
+          label="Correct"
+          :modelValue="option.correct"
+          outlined
+          @update:modelValue="(val) => updateOption(optionIndex, 'correct', val)"
+        />
+      </div>
+      <div class="col-2 text-center">
+        <q-btn icon="delete" color="negative" round @click="removeOption(optionIndex)" />
+      </div>
+    </template>
   </form>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue'
+<script lang="ts" setup>
 import { cloneDeep } from 'lodash'
 import { SortableTask } from 'src/types'
 
-const props = withDefaults(defineProps<{ task?: SortableTask & { interface: 'SortableTask' } }>(), {
-  task: () => ({ options: [], leftCol: [], rightCol: [], interface: 'SortableTask' }),
-})
+const props = defineProps<{ task: SortableTask }>()
+const emit = defineEmits(['update:task'])
 
-const task = ref(cloneDeep(props.task))
+function updateOption(optionIndex: number, key: string, val: string) {
+  const clonedTask = cloneDeep(props.task)
 
-function addOption() {
-  task.value.options.push({ value: '', correct: '' })
+  if (clonedTask.options[optionIndex]) {
+    clonedTask.options[optionIndex] = { ...clonedTask.options[optionIndex], ...{ [key]: val } }
+  }
+
+  emit('update:task', clonedTask)
 }
 
-function removeOption(option: SortableTask['options'][0]) {
-  task.value.options = task.value.options.filter((o) => o !== option)
+function addOption() {
+  const clonedTask = cloneDeep(props.task)
+  clonedTask.options.push({ value: '', correct: '' })
+  emit('update:task', clonedTask)
+}
+
+function removeOption(optionIndex: number) {
+  const clonedTask = cloneDeep(props.task)
+  clonedTask.options = clonedTask.options.filter((o, i) => i !== optionIndex)
+  emit('update:task', clonedTask)
 }
 </script>

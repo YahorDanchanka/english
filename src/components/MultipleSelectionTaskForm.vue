@@ -20,7 +20,7 @@
       <li
         class="selection-task-form__option"
         v-for="(option, optionIndex) in task.options"
-        :class="{ 'selection-task-form__option_active': optionIndex === task.correctOptionIndex }"
+        :class="{ 'selection-task-form__option_active': task.correctOptionIndexes.includes(optionIndex) }"
         @click="setActiveOption(optionIndex)"
       >
         {{ option }}
@@ -31,9 +31,10 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { SelectionTask } from 'src/types'
+import { MultipleSelectionTask } from 'src/types'
+import { xor } from 'lodash'
 
-const props = defineProps<{ task: SelectionTask }>()
+const props = defineProps<{ task: MultipleSelectionTask }>()
 const emit = defineEmits(['update:task'])
 
 const stringOptions = computed<string>({
@@ -52,7 +53,7 @@ const stringOptions = computed<string>({
 })
 
 function setActiveOption(optionIndex: number) {
-  emit('update:task', { ...props.task, correctOptionIndex: optionIndex })
+  emit('update:task', { ...props.task, correctOptionIndexes: xor(props.task.correctOptionIndexes, [optionIndex]) })
 }
 </script>
 
