@@ -1,5 +1,8 @@
 <template>
   <form class="exercise-form">
+    <div class="for-test-only">
+      <q-input v-model="stringExercise" filled type="textarea" />
+    </div>
     <label for="" class="exercise-form__label">Content</label>
     <textarea class="exercise-form__editor" ref="editor"></textarea>
     <AppCard class="shadow-1 q-mb-md" title="Tasks">
@@ -20,24 +23,25 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import tinymce from 'tinymce'
 import { Exercise } from 'src/types'
 import AppCard from 'components/AppCard.vue'
 import TaskForm from 'components/TaskForm.vue'
-import { clone, zipObject } from 'lodash'
 
 const editor = ref<HTMLTextAreaElement | null>(null)
 const exercise = ref<Exercise>({
   content: '',
-  tasks: [
-    {
-      title: 'According to the guide, which is not a common way of greeting.',
-      options: ['saying "Pleased to meet you"', 'kissing each other’s hands', 'bowing', 'shaking hands'],
-      correctOptionIndex: 1,
-      interface: 'SelectionTask',
-    },
-  ],
+  tasks: [],
+})
+
+const stringExercise = computed({
+  get() {
+    return JSON.stringify(exercise.value)
+  },
+  set(newVal) {
+    exercise.value = JSON.parse(newVal)
+  },
 })
 
 function addTask() {
@@ -76,6 +80,7 @@ onMounted(() => {
   tinymce.init({
     target: editor.value!,
     height: 200,
+    plugins: 'code',
     setup(editor) {
       editor.on('change', () => {
         exercise.value.content = editor.getContent()

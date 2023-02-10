@@ -16,7 +16,12 @@
           :icon="KeyboardIcon"
           @click="visitSection(store.sections[0])"
         />
-        <AppIsland class="islands__item" title="Computers today" :icon="MonitorIcon" />
+        <AppIsland
+          class="islands__item"
+          title="Computers today"
+          :icon="MonitorIcon"
+          @click="visitSection(store.sections[1])"
+        />
         <AppIsland class="islands__item islands__item_right" title="Hardware" :icon="CPUIcon" />
         <AppIsland class="islands__item islands__item_center" title="Software" :icon="DevOpsIcon" />
         <AppIsland class="islands__item" title="Modern IT" :icon="ReflectionIcon" />

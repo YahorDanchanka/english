@@ -38,6 +38,7 @@ const isTextInputTask = computed({
 onMounted(() => {
   tinymce.init({
     target: editor.value!,
+    plugins: 'code',
     setup(editor) {
       editor.on('change', () => {
         const content = editor.getContent()
