@@ -20,6 +20,8 @@ export default boot(({ router }) => {
       next(disallowMiddleware(!(subsection && subsection.texts && subsection.texts[+to.params['text']]), to, from))
     } else if (to.name === 'exercise') {
       next(disallowMiddleware(store.activeExercise === undefined, to, from))
+    } else if (to.name === 'subsection-words' || to.name === 'subsection-words-check') {
+      next(disallowMiddleware(!(section && subsection && subsection.words && subsection.words.length > 0), to, from))
     } else {
       next()
     }

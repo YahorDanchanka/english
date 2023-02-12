@@ -1,5 +1,6 @@
 <template>
   <div class="app-card">
+    <slot name="afterbegin" />
     <div class="app-card__title" v-if="title" :class="{ 'app-card__title_small': title.length >= 16 }">
       <slot name="title" :title="title">{{ title }}</slot>
     </div>
@@ -20,6 +21,19 @@ defineProps<{ title?: string }>()
   color: #4D3A3A
   border-radius: 20px
   padding: 25px 15px
+
+  &_with_circle::before
+    content: ''
+    display: inline-block
+    width: 26px
+    height: 26px
+    background: #EA5858
+    border: 1px solid black
+    border-radius: 50%
+    margin-bottom: 10px
+
+  &_bordered
+    border: 1px solid black
 
 .app-card__title
   font-weight: 500

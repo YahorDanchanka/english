@@ -7,8 +7,29 @@
 
 @font-face
   font-family: 'Montserrat'
+  src: url('assets/fonts/Montserrat/Montserrat-ExtraBold.ttf')
+  font-weight: 800
+  font-style: normal
+  font-display: swap
+
+@font-face
+  font-family: 'Montserrat'
+  src: url('assets/fonts/Montserrat/Montserrat-SemiBold.ttf')
+  font-weight: 600
+  font-style: normal
+  font-display: swap
+
+@font-face
+  font-family: 'Montserrat'
   src: url('assets/fonts/Montserrat/Montserrat-Medium.ttf')
   font-weight: 500
+  font-style: normal
+  font-display: swap
+
+@font-face
+  font-family: 'Montserrat'
+  src: url('assets/fonts/Montserrat/Montserrat-Regular.ttf')
+  font-weight: 400
   font-style: normal
   font-display: swap
 
@@ -57,6 +78,7 @@ body
   height: 15px
   background-color: #D9D9D9
   border-radius: 50%
+  cursor: pointer
 
 .pagination__bullet_active
   background: #A0A0A0
@@ -69,3 +91,22 @@ body
 
 .q-card
   color: black
+
+.slider
+  font-size: 1rem
+
+.slider__pagination
+  margin-bottom: 19px
+
+.slider__navigation-button
+  position: absolute
+  top: calc(50% - 0.5em)
+  font-size: 4em
+  z-index: 2
+  cursor: pointer
+
+.slider__navigation-button_prev
+  left: 0
+
+.slider__navigation-button_next
+  right: 0

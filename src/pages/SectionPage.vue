@@ -1,6 +1,6 @@
 <template>
-  <q-page class="section-page page" padding>
-    <TheHeader class="page__header" />
+  <q-page class="section-page page">
+    <TheHeader class="section-page__header page__header q-layout-padding" />
     <Swiper
       class="page__slider slider"
       :modules="modules"
@@ -24,7 +24,7 @@
         <q-icon name="navigate_next" class="slider__navigation-button slider__navigation-button_next" />
       </template>
       <swiper-slide
-        class="section-page__slide"
+        class="section-page__slide slider__slide"
         v-for="subsection in subsections"
         @click="
           router.push({ name: 'task-list', params: { section: route.params['section'], subsection: subsection.id } })
@@ -75,8 +75,9 @@ const subsections = computed<Subsection[]>(
   flex-wrap: wrap
   align-items: center
 
-.page__header
+.section-page__header
   margin-bottom: auto
+  padding-bottom: 0
 
 .page__slider
   margin-bottom: 12px
@@ -85,23 +86,13 @@ const subsections = computed<Subsection[]>(
   margin: 0 auto auto auto
 
 .slider
-  position: relative
   padding: 0 34px
 
-.slider__pagination
-  margin-bottom: 19px
+.slider__navigation-button_prev
+  left: -15px
 
-.slider__navigation-button
-  position: absolute
-  top: 50%
-  font-size: 4em
-  z-index: 2
-
-  &_prev
-    left: -15px
-
-  &_next
-    right: -15px
+.slider__navigation-button_next
+  right: -15px
 
 :deep(.section-page__slide)
   display: flex

@@ -1,4 +1,4 @@
-import { Exercise } from 'src/types/exercise'
+import { Exercise, Word } from 'src/types'
 
 export interface Section {
   id: string | number
@@ -13,4 +13,5 @@ export interface Subsection {
   image: string
   texts?: { text: string; exercises: Exercise[] }[]
   listen?: Exercise[]
+  words?: Word[]
 }

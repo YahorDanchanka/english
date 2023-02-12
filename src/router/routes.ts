@@ -1,5 +1,4 @@
 import { RouteRecordRaw } from 'vue-router'
-import { useStore } from 'stores/main'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -17,6 +16,16 @@ const routes: RouteRecordRaw[] = [
         name: 'exercise',
         path: 'exercise',
         component: () => import('pages/ExercisePage.vue'),
+      },
+      {
+        name: 'subsection-words-check',
+        path: ':section/:subsection/words/check',
+        component: () => import('pages/SubsectionWordsCheckPage.vue'),
+      },
+      {
+        name: 'subsection-words',
+        path: ':section/:subsection/words',
+        component: () => import('pages/SubsectionWordsPage.vue'),
       },
       {
         name: 'listen-tasks',

@@ -1,12 +1,7 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import { Exercise, Section } from 'src/types'
-// import BrainImage from 'assets/images/sections/brain.png'
-// import TalkingImage from 'assets/images/sections/talking.png'
-// import PresentationImage from 'assets/images/sections/presentation.png'
-// import AgreementImage from 'assets/images/sections/agreement.png'
-// import Agreement1Image from 'assets/images/sections/agreement1.png'
-// import WebBrowserImage from 'assets/images/sections/web-browser.png'
+import { wordsFor11 } from 'stores/data/words'
 
 export const useStore = defineStore('main', () => {
   const sections = ref<Section[]>([
@@ -159,6 +154,7 @@ export const useStore = defineStore('main', () => {
               ],
             },
           ],
+          words: wordsFor11,
         },
         {
           id: 'ss2',
