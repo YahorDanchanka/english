@@ -4,7 +4,7 @@
     :class="{ header_view_profile: view === 'profile', header_view_navigation: view === 'navigation' }"
   >
     <template v-if="view === 'profile'">
-      <UserAvatar class="header__avatar" name="One2Ti" />
+      <UserAvatar class="header__avatar" name="One2Ti" @click="router.push({ name: 'profile' })" />
       <div class="header__level">LVL 1</div>
       <ProgressBar class="header__progress-bar" :value="progress" />
     </template>
@@ -50,6 +50,10 @@ const progress = ref(50)
   justify-content: space-between
   width: 100%
   text-align: center
+
+.header__avatar
+  width: 60px
+  cursor: pointer
 
 .header__avatar, .header__level
   margin-right: 16px

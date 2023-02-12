@@ -18,6 +18,11 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/ExercisePage.vue'),
       },
       {
+        name: 'profile',
+        path: 'profile',
+        component: () => import('pages/ProfilePage.vue'),
+      },
+      {
         name: 'subsection-words-check',
         path: ':section/:subsection/words/check',
         component: () => import('pages/SubsectionWordsCheckPage.vue'),
