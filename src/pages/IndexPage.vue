@@ -1,6 +1,6 @@
 <template>
   <q-page
-    class="page"
+    class="start-page page"
     :padding="!isSplashScreenVisible"
     :class="{ animate__animated: !isSplashScreenVisible, animate__fadeIn: !isSplashScreenVisible }"
   >
@@ -8,6 +8,29 @@
       <SplashScreen style="min-height: inherit" @finish="onLoadFinish" />
     </template>
     <template v-else>
+      <!-- Animation objects -->
+      <img
+        class="start-page__icon start-page__icon_island"
+        src="~assets/images/icons/island.png"
+        alt="Island icon"
+        style="right: 35px"
+      />
+      <img
+        class="start-page__icon start-page__icon_ship start-page__icon_ship1"
+        src="~assets/images/icons/ship.png"
+        alt="Ship icon"
+      />
+      <img
+        class="start-page__icon start-page__icon_island"
+        src="~assets/images/icons/island.png"
+        alt="Island icon"
+        style="left: 35px; top: 500px"
+      />
+      <img
+        class="start-page__icon start-page__icon_ship start-page__icon_ship2"
+        src="~assets/images/icons/ship2.png"
+        alt="Ship icon"
+      />
       <TheHeader view="profile" />
       <div class="page__islands islands">
         <AppIsland
@@ -125,4 +148,45 @@ function visitSection(section: Section) {
 .islands__pebble
   position: absolute
   user-select: none
+
+.start-page
+  position: relative
+  overflow: hidden
+
+.start-page__icon
+  position: absolute
+  right: 72px
+  top: 250px
+  user-select: none
+
+.start-page__icon_ship
+  max-width: 50px
+
+.start-page__icon_ship1
+  animation: ship-moving 10s linear infinite
+
+.start-page__icon_ship2
+  animation: ship-moving1 10s linear infinite
+
+.start-page__icon_island
+  max-width: 40px
+
+@keyframes ship-moving
+  from
+    right: -50px
+    top: 250px
+
+  to
+    right: 500px
+    top: 450px
+
+
+@keyframes ship-moving1
+  from
+    left: -50px
+    top: 550px
+
+  to
+    left: 500px
+    top: 750px
 </style>
