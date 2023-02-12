@@ -70,10 +70,10 @@ function goToCheckPage() {
   padding: 0 34px
 
 .slider__navigation-button_prev
-  left: -15px
+  left: -10px
 
 .slider__navigation-button_next
-  right: -15px
+  right: -10px
 
 .word-card
   text-align: center

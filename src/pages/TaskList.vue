@@ -1,6 +1,6 @@
 <template>
   <q-page class="task-list-page page" padding>
-    <TheHeader class="page__header" :title="subsection.title" />
+    <TheHeader class="page__header" :title="subsection.title" navigation-back />
     <div class="task-list-page__board board">
       <div class="board__wrapper">
         <div class="row" v-if="taskPathes.length === 0">

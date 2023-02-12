@@ -23,13 +23,7 @@
         <q-icon name="navigate_before" class="slider__navigation-button slider__navigation-button_prev" />
         <q-icon name="navigate_next" class="slider__navigation-button slider__navigation-button_next" />
       </template>
-      <swiper-slide
-        class="section-page__slide slider__slide"
-        v-for="subsection in subsections"
-        @click="
-          router.push({ name: 'task-list', params: { section: route.params['section'], subsection: subsection.id } })
-        "
-      >
+      <swiper-slide class="section-page__slide slider__slide" v-for="subsection in subsections">
         <AppCard class="section-page__card text-center" :title="subsection.title">
           <p>
             Description:
@@ -38,6 +32,15 @@
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam placerat, purus vitae feugiat tincidunt, ligula nibh tincidunt mauris, eget placerat urna sem at purus. Phasellus semper euismod suscipit.'
             }}
           </p>
+          <q-btn-group class="q-mb-lg" spread rounded>
+            <q-btn
+              color="primary"
+              label="Words"
+              @click="goTo('subsection-words', subsection)"
+              :disable="subsection.words === undefined || subsection.words.length === 0"
+            />
+            <q-btn color="primary" label="Exercises" @click="goTo('task-list', subsection)" />
+          </q-btn-group>
           <img :src="subsection.image" />
         </AppCard>
       </swiper-slide>
@@ -67,6 +70,13 @@ const modules = [Pagination, Navigation]
 const subsections = computed<Subsection[]>(
   () => store.sections.find((section) => section.id == route.params['section'])?.subsections || []
 )
+
+function goTo(name: string, subsection: Subsection) {
+  router.push({
+    name,
+    params: { section: route.params['section'], subsection: subsection.id },
+  })
+}
 </script>
 
 <style lang="sass" scoped>
@@ -89,10 +99,10 @@ const subsections = computed<Subsection[]>(
   padding: 0 34px
 
 .slider__navigation-button_prev
-  left: -15px
+  left: -10px
 
 .slider__navigation-button_next
-  right: -15px
+  right: -10px
 
 :deep(.section-page__slide)
   display: flex
