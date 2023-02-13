@@ -38,6 +38,11 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/ListenTasksPage.vue'),
       },
       {
+        name: 'dialog-tasks',
+        path: ':section/:subsection/dialog',
+        component: () => import('pages/DialogTasksPage.vue'),
+      },
+      {
         name: 'text-tasks',
         path: ':section/:subsection/text/:text',
         component: () => import('pages/TextTasksPage.vue'),

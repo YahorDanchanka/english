@@ -3,6 +3,7 @@ import { defineStore } from 'pinia'
 import { Exercise, Section } from 'src/types'
 import { wordsFor11 } from 'stores/data/words'
 import { section as softwareSection } from 'stores/data/software'
+import { section as hardwareSection } from 'stores/data/hardware'
 
 export const useStore = defineStore('main', () => {
   const sections = ref<Section[]>([
@@ -1194,7 +1195,7 @@ export const useStore = defineStore('main', () => {
         },
       ],
     },
-    { id: 's3', title: '', subsections: [] },
+    hardwareSection,
     softwareSection,
   ])
 

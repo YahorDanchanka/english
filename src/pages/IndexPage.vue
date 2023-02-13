@@ -45,7 +45,12 @@
           :icon="MonitorIcon"
           @click="visitSection(store.sections[1])"
         />
-        <AppIsland class="islands__item islands__item_right" title="Hardware" :icon="CPUIcon" />
+        <AppIsland
+          class="islands__item islands__item_right"
+          title="Hardware"
+          :icon="CPUIcon"
+          @click="visitSection(store.sections[2])"
+        />
         <AppIsland
           class="islands__item islands__item_center"
           title="Software"

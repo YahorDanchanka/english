@@ -14,7 +14,7 @@ export default boot(({ router }) => {
 
     if (to.name === 'section') {
       next(disallowMiddleware(!store.sections.find((section) => section.id === to.params['section']), to, from))
-    } else if (to.name === 'task-list' || to.name === 'listen-tasks') {
+    } else if (to.name === 'task-list' || to.name === 'listen-tasks' || to.name === 'dialog-tasks') {
       next(disallowMiddleware(!(section && subsection), to, from))
     } else if (to.name === 'text-tasks') {
       next(disallowMiddleware(!(subsection && subsection.texts && subsection.texts[+to.params['text']]), to, from))
