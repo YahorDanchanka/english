@@ -15,14 +15,13 @@
 import { computed } from 'vue'
 import { capitalize } from 'lodash'
 import AppCard from 'components/AppCard.vue'
+import { getType } from 'src/services/test-result'
 
 const props = defineProps<{ score: number; total: number }>()
 defineEmits(['try-again'])
 
 const percentScore = computed(() => (props.score * 100) / props.total)
-const type = computed(() =>
-  percentScore.value >= 100 ? 'excellent' : percentScore.value >= 70 ? 'good' : percentScore.value >= 40 ? 'ok' : 'bad'
-)
+const type = computed(() => getType(percentScore.value))
 const title = computed(() => capitalize(type.value))
 </script>
 

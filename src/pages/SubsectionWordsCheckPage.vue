@@ -6,11 +6,7 @@
         {{ (passageProgress * 100).toFixed(0) + '%' }}
       </div>
     </q-linear-progress>
-    <AppCard
-      v-if="currentWordIndex < words.length"
-      class="word-card app-card_with_circle app-card_bordered"
-      :title="currentWordObject.word"
-    >
+    <AppCard v-if="!isFinish" class="word-card app-card_with_circle app-card_bordered" :title="currentWordObject.word">
       <q-btn
         class="word-card__btn full-width"
         color="primary"
@@ -32,18 +28,20 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { uid } from 'quasar'
 import { sample, shuffle, uniq } from 'lodash'
 import { Section, Subsection } from 'src/types'
 import { useStore } from 'stores/main'
+import { useStatisticsStore } from 'stores/statistics'
 import TheHeader from 'components/TheHeader.vue'
 import AppCard from 'components/AppCard.vue'
 import ResultCard from 'components/ResultCard.vue'
 
 const route = useRoute()
 const store = useStore()
+const statisticsStore = useStatisticsStore()
 
 const currentWordIndex = ref(0)
 const wordsComputedKey = ref(uid())
@@ -84,6 +82,8 @@ const passageProgress = computed(() =>
   currentWordIndex.value === words.value.length ? 1 : currentWordIndex.value / words.value.length
 )
 
+const isFinish = computed(() => currentWordIndex.value >= words.value.length)
+
 function nextWord(selectedOption: string) {
   if (currentWordObject.value.translations.includes(selectedOption)) {
     correctAnswersCount.value++
@@ -98,6 +98,15 @@ function tryAgain() {
   currentWordIndex.value = 0
   correctAnswersCount.value = 0
 }
+
+watch(isFinish, () => {
+  if (isFinish.value) {
+    statisticsStore.statistics.push({
+      title: `${subsection.value.title} words`,
+      percentCorrectAnswers: (correctAnswersCount.value * 100) / words.value.length,
+    })
+  }
+})
 </script>
 
 <style lang="sass" scoped>

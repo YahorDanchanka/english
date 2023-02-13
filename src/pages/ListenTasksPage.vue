@@ -33,7 +33,7 @@ const subsection = computed<Subsection>(
 
 function runExercise(index: number) {
   // @ts-ignore
-  store.activeExercise = subsection.value.listen[index]
+  store.activeExercise = { ...subsection.value.listen[index], title: `Exercise ${index + 1}` }
   router.push({ name: 'exercise' })
 }
 </script>

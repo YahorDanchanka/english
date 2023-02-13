@@ -34,7 +34,7 @@ const subsection = computed<Subsection>(
 const text = computed(() => subsection.value.texts![+route.params['text']])
 
 function runExercise(index: number) {
-  store.activeExercise = text.value.exercises[index]
+  store.activeExercise = { ...text.value.exercises[index], title: `Exercise ${index + 1}` }
   router.push({ name: 'exercise' })
 }
 </script>

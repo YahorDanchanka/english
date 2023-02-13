@@ -1,7 +1,7 @@
 <template>
   <q-page class="exercise-page page" padding>
     <TheHeader class="page__header" navigation-back />
-    <AppCard title="Subsection title">
+    <AppCard :title="title">
       <div v-html="store.activeExercise?.content"></div>
       <template v-for="(task, taskIndex) in store.activeExercise?.tasks">
         <SelectionTask
@@ -49,10 +49,11 @@
 </template>
 
 <script lang="ts" setup>
-import { onUnmounted, ref } from 'vue'
+import { computed, onUnmounted, ref } from 'vue'
 import { useQuasar } from 'quasar'
 import { useRouter } from 'vue-router'
 import { useStore } from 'stores/main'
+import { useStatisticsStore } from 'stores/statistics'
 import {
   isMatchingTask,
   isMultipleSelectionTask,
@@ -73,9 +74,12 @@ import MultipleSelectionTask from 'components/MultipleSelectionTask.vue'
 
 const router = useRouter()
 const store = useStore()
+const statisticsStore = useStatisticsStore()
 const $q = useQuasar()
 
 const isValidated = ref(false)
+
+const title = computed(() => store.activeExercise!.title || 'Exercise')
 
 function acceptAnswer() {
   const tasks = store.activeExercise!.tasks
@@ -148,6 +152,11 @@ function acceptAnswer() {
     }
 
     isValidated.value = true
+  })
+
+  statisticsStore.statistics.push({
+    title: title.value,
+    percentCorrectAnswers: (rightAnswersCount * 100) / totalAnswers,
   })
 
   $q.dialog({

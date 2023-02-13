@@ -4,10 +4,10 @@
       <div class="test-history__list">
         <div v-if="!hasDoneTasks" class="text-center">Not found :(</div>
         <template v-else>
-          <div class="test-history__item done-task shadow-2" v-for="i in 1">
-            <div class="done-task__title">1.1 Ex. 1</div>
-            <div class="done-task__result">Done: 100%</div>
-            <div class="done-task__score">Excellent</div>
+          <div class="test-history__item done-task shadow-2" v-for="result in statisticsStore.latestStatistics">
+            <div class="done-task__title">{{ result.title }}</div>
+            <div class="done-task__result">Done: {{ result.percentCorrectAnswers.toFixed(0) }}%</div>
+            <div class="done-task__score">{{ capitalize(getType(result.percentCorrectAnswers)) }}</div>
           </div>
         </template>
       </div>
@@ -17,9 +17,14 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { capitalize } from 'lodash'
+import { useStatisticsStore } from 'stores/statistics'
+import { getType } from 'src/services/test-result'
 import AppCard from 'components/AppCard.vue'
 
-const hasDoneTasks = computed(() => true)
+const statisticsStore = useStatisticsStore()
+
+const hasDoneTasks = computed(() => statisticsStore.statistics.length > 0)
 </script>
 
 <style lang="sass" scoped>
@@ -46,10 +51,15 @@ const hasDoneTasks = computed(() => true)
 .done-task
   display: flex
   flex-wrap: wrap
+  align-items: center
   justify-content: space-between
   background-color: #C7C7C7
   border-radius: 7px
   padding: 18px 10px
   font-weight: bold
-  font-size: 1rem
+  font-size: 0.9rem
+  gap: 10px
+
+.done-task__title, .done-task__result, .done-task__score
+  width: calc(100% / 3 - 10px + (10px / 3))
 </style>
