@@ -192,4 +192,4 @@ export const wordsFor11: Word[] = [
     content:
       '<p>[]<br><span style="font-size: 16px;">(Квадратные скобки)</span></p> <img src="/assets/images/words/brackets.png" />',
   },
-].slice(0, 2)
+]
