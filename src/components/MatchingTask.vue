@@ -63,7 +63,7 @@ function removeOption(key: string) {
 function handleRenderedHtml() {
   if (!taskElem.value) return
 
-  const optionElems = taskElem.value!.querySelectorAll('.matching-task__content span')
+  const optionElems = taskElem.value!.querySelectorAll('.matching-task__content span[data-option-key]')
   optionElems.forEach((optionElem) => {
     const optionKey = optionElem.getAttribute('data-option-key')!
 
@@ -91,7 +91,7 @@ watch(
 </script>
 
 <style lang="sass" scoped>
-.matching-task__content :deep(span)
+.matching-task__content :deep(span[data-option-key])
   outline: 1px solid
 
 .matching-task__options

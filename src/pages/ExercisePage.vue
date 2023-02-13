@@ -42,7 +42,10 @@
         />
       </template>
       <div class="q-mt-md text-center">
-        <AppButton :label="isValidated ? 'Continue' : 'Accept answer'" @click="acceptAnswer" />
+        <AppButton
+          :label="isNonInteractiveExercise ? 'Continue' : isValidated ? 'Continue' : 'Accept answer'"
+          @click="acceptAnswer"
+        />
       </div>
     </AppCard>
   </q-page>
@@ -80,13 +83,14 @@ const $q = useQuasar()
 const isValidated = ref(false)
 
 const title = computed(() => store.activeExercise!.title || 'Exercise')
+const isNonInteractiveExercise = computed(() => store.activeExercise!.tasks.length === 0)
 
 function acceptAnswer() {
   const tasks = store.activeExercise!.tasks
   let rightAnswersCount = 0
   let totalAnswers = 0
 
-  if (isValidated.value) {
+  if (isNonInteractiveExercise.value || isValidated.value) {
     router.back()
     return
   }
