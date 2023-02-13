@@ -5,7 +5,7 @@ export type Task = (
   | MatchingTask
   | TextInputTask
   | SortableTask
-) & { interface: string }
+) & { interface: string; error?: boolean }
 
 export interface SelectionTask {
   title: string

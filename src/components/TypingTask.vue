@@ -11,6 +11,7 @@
         :value="letter !== '_' ? letter : null"
         :placeholder="formattedWord[letterIndex] === '_' ? '_' : null"
         :disabled="formattedWord[letterIndex] !== '_'"
+        :class="{ 'typing-task__letter_error': task.error && letter !== correctWord[letterIndex] }"
         @input="setModelValue($event, letterIndex)"
       />
     </div>
@@ -22,9 +23,10 @@ import { computed } from 'vue'
 import { TypingTask } from 'src/types'
 import { set } from 'lodash'
 
-const props = defineProps<{ task: TypingTask; taskIndex: number }>()
+const props = defineProps<{ task: TypingTask & { error?: boolean }; taskIndex: number }>()
 const emit = defineEmits(['update:task'])
 
+const correctWord = computed(() => props.task.word.replace(/\[|]/g, ''))
 const formattedWord = computed(() => props.task.word.replace(/\[.+?]/g, '_'))
 const formattedValue = computed(() =>
   props.task.value ? props.task.value.replace(/\[.+?]/g, '_') : formattedWord.value
@@ -61,4 +63,7 @@ function setModelValue(event: InputEvent, letterIndex: number) {
   &:disabled
     color: black
     opacity: 1 !important
+
+.typing-task__letter_error
+  color: var(--q-negative)
 </style>

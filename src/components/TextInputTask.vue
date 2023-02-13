@@ -10,7 +10,7 @@ import Mustache from 'mustache'
 import { cloneDeep, mapValues } from 'lodash'
 import { TextInputTask } from 'src/types'
 
-const props = defineProps<{ task: TextInputTask }>()
+const props = defineProps<{ task: TextInputTask & { error?: boolean } }>()
 const emit = defineEmits(['update:task'])
 
 const taskElem = ref<HTMLElement>()
@@ -37,9 +37,15 @@ function handleRenderedHtml() {
 
   const inputElems = taskElem.value!.querySelectorAll('.input-task__content input')
   inputElems.forEach((inputElem) => {
+    const optionKey = inputElem.getAttribute('data-option-key')!
+
+    if (props.task.error && props.task.value[optionKey].toLowerCase() !== props.task.correct[optionKey].toLowerCase()) {
+      inputElem.classList.add('input_error')
+    }
+
     inputElem.addEventListener('change', (event) => {
       // @ts-ignore
-      updateOption(inputElem.getAttribute('data-option-key')!, event.target.value)
+      updateOption(optionKey, event.target.value)
     })
   })
 }
@@ -49,7 +55,7 @@ onMounted(() => {
 })
 
 watch(
-  content,
+  [content, () => props.task.error],
   () => {
     handleRenderedHtml()
   },
@@ -63,4 +69,7 @@ watch(
   border: none
   outline: none
   width: 67px
+
+:deep(.input_error)
+  outline: 1px solid var(--q-negative) !important
 </style>

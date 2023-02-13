@@ -1,13 +1,21 @@
 <template>
   <div class="sortable-task row q-col-gutter-lg">
     <draggable class="col-6" itemKey="id" v-model="leftCol">
-      <template #item="{ element }">
-        <div class="sortable-task__option" v-html="element.value"></div>
+      <template #item="{ element, index }">
+        <div
+          class="sortable-task__option"
+          v-html="element.value"
+          :class="{ 'sortable-task__option_error': task.error && isErrorOption('left', index) }"
+        ></div>
       </template>
     </draggable>
     <draggable class="col-6" itemKey="id" v-model="rightCol">
-      <template #item="{ element }">
-        <div class="sortable-task__option" v-html="element.value"></div>
+      <template #item="{ element, index }">
+        <div
+          class="sortable-task__option"
+          v-html="element.value"
+          :class="{ 'sortable-task__option_error': task.error && isErrorOption('right', index) }"
+        ></div>
       </template>
     </draggable>
   </div>
@@ -20,7 +28,7 @@ import draggable from 'vuedraggable'
 import { cloneDeep, shuffle } from 'lodash'
 import { SortableTask } from 'src/types'
 
-const props = defineProps<{ task: SortableTask }>()
+const props = defineProps<{ task: SortableTask & { error?: boolean } }>()
 const emit = defineEmits(['update:task'])
 
 const leftCol = computed({
@@ -58,6 +66,14 @@ emit(
   'update:task',
   cloneDeep({ ...props.task, rightCol: rightCol.value.map((v) => v.value), leftCol: leftCol.value.map((v) => v.value) })
 )
+
+function isErrorOption(col: 'left' | 'right', colIndex: number) {
+  return (
+    props.task.options.find(
+      (o) => o.value === props.task.leftCol[colIndex] && o.correct === props.task.rightCol[colIndex]
+    ) === undefined
+  )
+}
 </script>
 
 <style lang="sass" scoped>
@@ -76,4 +92,7 @@ emit(
 
   :deep(img)
     height: 100%
+
+.sortable-task__option_error
+  border: 3px solid var(--q-negative)
 </style>

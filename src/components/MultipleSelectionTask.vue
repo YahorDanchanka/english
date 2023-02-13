@@ -7,7 +7,11 @@
       <li
         class="selection-task__option"
         v-for="(option, optionIndex) in task.options"
-        :class="{ 'selection-task__option_active': task.value?.includes(optionIndex) }"
+        :class="{
+          'selection-task__option_active': task.value?.includes(optionIndex),
+          'selection-task__option_error': task.error && task.value?.includes(optionIndex),
+          'selection-task__option_correct': task.error !== undefined && task.correctOptionIndexes.includes(optionIndex),
+        }"
         @click="toggleOption(optionIndex)"
       >
         {{ option }}
@@ -20,7 +24,7 @@
 import { xor } from 'lodash'
 import { MultipleSelectionTask } from 'src/types'
 
-const props = defineProps<{ task: MultipleSelectionTask; taskIndex: number }>()
+const props = defineProps<{ task: MultipleSelectionTask & { error?: boolean }; taskIndex: number }>()
 const emit = defineEmits(['update:task'])
 
 function toggleOption(optionIndex: number) {
@@ -31,5 +35,13 @@ function toggleOption(optionIndex: number) {
 <style lang="sass" scoped>
 .selection-task__option_active
   outline: 3px solid #A6A6A6
+  border-radius: 10px
+
+.selection-task__option_error
+  outline: 3px solid var(--q-negative)
+  border-radius: 10px
+
+.selection-task__option_correct
+  outline: 3px solid var(--q-positive)
   border-radius: 10px
 </style>

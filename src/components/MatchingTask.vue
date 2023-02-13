@@ -15,7 +15,7 @@ import { cloneDeep, mapValues } from 'lodash'
 import Mustache from 'mustache'
 import { MatchingTask } from 'src/types'
 
-const props = defineProps<{ task: MatchingTask }>()
+const props = defineProps<{ task: MatchingTask & { error?: boolean } }>()
 const emit = defineEmits(['update:task'])
 
 const taskElem = ref<HTMLElement>()
@@ -65,8 +65,14 @@ function handleRenderedHtml() {
 
   const optionElems = taskElem.value!.querySelectorAll('.matching-task__content span')
   optionElems.forEach((optionElem) => {
+    const optionKey = optionElem.getAttribute('data-option-key')!
+
+    if (props.task.error && props.task.value[optionKey].toLowerCase() !== props.task.correct[optionKey].toLowerCase()) {
+      optionElem.classList.add('span_error')
+    }
+
     optionElem.addEventListener('click', () => {
-      removeOption(optionElem.getAttribute('data-option-key')!)
+      removeOption(optionKey)
     })
   })
 }
@@ -76,7 +82,7 @@ onMounted(() => {
 })
 
 watch(
-  content,
+  [content, () => props.task.error],
   () => {
     handleRenderedHtml()
   },
@@ -99,4 +105,7 @@ watch(
   padding: 3px 15px
   border-radius: 7px
   box-shadow: 0 4px 2px rgba(0, 0, 0, 0.5)
+
+:deep(.span_error)
+  outline: 1px solid var(--q-negative) !important
 </style>

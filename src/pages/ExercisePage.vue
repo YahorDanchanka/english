@@ -42,13 +42,14 @@
         />
       </template>
       <div class="q-mt-md text-center">
-        <AppButton label="Accept answer" @click="acceptAnswer" />
+        <AppButton :label="isValidated ? 'Continue' : 'Accept answer'" @click="acceptAnswer" />
       </div>
     </AppCard>
   </q-page>
 </template>
 
 <script lang="ts" setup>
+import { onUnmounted, ref } from 'vue'
 import { useQuasar } from 'quasar'
 import { useRouter } from 'vue-router'
 import { useStore } from 'stores/main'
@@ -74,10 +75,17 @@ const router = useRouter()
 const store = useStore()
 const $q = useQuasar()
 
+const isValidated = ref(false)
+
 function acceptAnswer() {
   const tasks = store.activeExercise!.tasks
   let rightAnswersCount = 0
   let totalAnswers = 0
+
+  if (isValidated.value) {
+    router.back()
+    return
+  }
 
   tasks.forEach((task) => {
     if (isSelectionTask(task)) {
@@ -85,6 +93,8 @@ function acceptAnswer() {
 
       if (task.value !== undefined && task.value === task.correctOptionIndex) {
         rightAnswersCount++
+      } else {
+        task.error = true
       }
     }
 
@@ -97,6 +107,8 @@ function acceptAnswer() {
         task.value.every((valIndex) => task.correctOptionIndexes.includes(valIndex))
       ) {
         rightAnswersCount++
+      } else {
+        task.error = true
       }
     }
 
@@ -105,6 +117,8 @@ function acceptAnswer() {
 
       if (task.value !== undefined && task.value.toLowerCase() === task.word.replace(/\[|]/g, '').toLowerCase()) {
         rightAnswersCount++
+      } else {
+        task.error = true
       }
     }
 
@@ -114,6 +128,8 @@ function acceptAnswer() {
 
         if (task.value[key]?.toLowerCase() === task.correct[key]?.toLowerCase()) {
           rightAnswersCount++
+        } else {
+          task.error = true
         }
       }
     }
@@ -125,18 +141,48 @@ function acceptAnswer() {
 
         if (task.leftCol[colIndex] == option.value && task.rightCol[colIndex] == option.correct) {
           rightAnswersCount++
+        } else {
+          task.error = true
         }
       })
     }
+
+    isValidated.value = true
   })
 
   $q.dialog({
     title: 'Результат',
     message: `${rightAnswersCount}/${totalAnswers}`,
-  }).onDismiss(() => {
-    router.back()
   })
 }
+
+onUnmounted(() => {
+  if (isValidated.value) {
+    const tasks = store.activeExercise!.tasks
+
+    tasks.forEach((task) => {
+      if (isSelectionTask(task)) {
+        task.value = undefined
+      }
+
+      if (isMultipleSelectionTask(task)) {
+        task.value = []
+      }
+
+      if (isTypingTask(task)) {
+        task.value = undefined
+      }
+
+      if (isMatchingTask(task) || isTextInputTask(task)) {
+        for (const key in task.value) {
+          task.value[key] = ''
+        }
+      }
+
+      task.error = undefined
+    })
+  }
+})
 </script>
 
 <style lang="sass" scoped>
