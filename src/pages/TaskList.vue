@@ -98,7 +98,7 @@ const taskPathes = computed<{ label: string; path: string }[]>(() => {
 
   if (subsection.value.texts !== undefined) {
     for (const index in subsection.value.texts) {
-      result.push({ label: 'Text', path: `texts[${index}]` })
+      result.push({ label: subsection.value.texts[index].title || 'Text', path: `texts[${index}]` })
     }
   }
 

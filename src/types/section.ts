@@ -11,7 +11,7 @@ export interface Subsection {
   title: string
   description?: string
   image: string
-  texts?: { text: string; exercises: Exercise[] }[]
+  texts?: { title?: string; text: string; exercises: Exercise[] }[]
   listen?: Exercise[]
   dialog?: Exercise[]
   words?: Word[]

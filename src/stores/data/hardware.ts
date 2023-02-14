@@ -10,6 +10,7 @@ export const section: Section = {
       image: '/assets/images/job-interview.png',
       texts: [
         {
+          title: 'Assembly Instructions',
           text: '<h1>Assembly Instructions</h1> <p style="text-align: justify;">Step #1: First, gather your parts.These include a motherboard, powersupply, processor, case, heat sink,hard drive, and disk drive.Step #2: Next, attach the motherboard tothe case. Then, connect the processor tothe motherboard\'s primary socket.Step #3 Attach the heat sink and cooling fanto the processor.Step #4 Insert the RAM card into an openmemory slot. Put any expansion cards intothe expansion slots.Step #5 Connect your hard drive to the motherboardand power supply.Step #6 Close the case and connect the power supply.</p>',
           exercises: [
             {
@@ -82,6 +83,7 @@ export const section: Section = {
           ],
         },
         {
+          title: 'Inside the Computer',
           text: "<p>Inside the Computer</p><h2>EXTERIOR</h2><p><br>The X900 features a durablematal case.<br>This protects&nbsp;from typical wear and damage.</p><p>Every port has a fitted rubber cover. These prevent interior<br>dust buildup.</p><h2>Interior</h2><p>Your computers power supply connect to the motherboard.<br>This is&nbsp; drives the X200s powerul processor!&nbsp;<br>All that power produces heat. That's why your X800 has<br>an efficient fan and heat sink. These keep<br>internal temperatures at a safe, low level.</p><p>You'll find lots of data storage on&nbsp;the hard drive. Also, transfer&nbsp;<br>files with the built-in&nbsp;CD/DVD drive.</p>",
           exercises: [
             {
