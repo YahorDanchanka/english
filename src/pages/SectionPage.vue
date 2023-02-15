@@ -27,14 +27,7 @@
       </template>
       <swiper-slide class="section-page__slide slider__slide" v-for="subsection in subsections">
         <AppCard class="section-page__card text-center" :title="subsection.title">
-          <p>
-            Description:
-            {{
-              subsection.description ||
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam placerat, purus vitae feugiat tincidunt, ligula nibh tincidunt mauris, eget placerat urna sem at purus. Phasellus semper euismod suscipit.'
-            }}
-          </p>
-          <q-btn-group class="q-mb-lg" spread rounded>
+          <q-btn-group class="section-page__card-buttons" spread rounded>
             <q-btn
               color="primary"
               label="Words"
@@ -118,6 +111,12 @@ function onSlideChange(swiper: SwiperClass) {
   display: flex
   flex-wrap: wrap
   height: auto
+
+.section-page__card
+  width: 100%
+
+.section-page__card-buttons
+  margin-bottom: 100px
 
 .section-page__card p
   font-size: 0.875em
