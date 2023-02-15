@@ -440,3 +440,56 @@ export const wordsFor15: Word[] = [
     content: '<p>Заранее</p><img src="/assets/images/words/previous.png" />',
   },
 ]
+
+export const wordsFor16: Word[] = [
+  {
+    word: 'BEHAVE',
+    translations: ['Вести себя'],
+    content: '<p>Вести себя</p><img src="/assets/images/words/talking.png" />',
+  },
+  {
+    word: 'BEHAVIOR',
+    translations: ['Поведение'],
+    content: '<p>Поведение</p><img src="/assets/images/words/behavior.png" />',
+  },
+  {
+    word: 'BICKER',
+    translations: ['Спорить'],
+    content: '<p>Спорить</p><img src="/assets/images/words/argue.png" />',
+  },
+  {
+    word: 'DISAGREE',
+    translations: ['Не согласиться'],
+    content: '<p>Не согласиться</p><img src="/assets/images/words/disagree.png" />',
+  },
+  {
+    word: 'INTERRUPT',
+    translations: ['Прерывать'],
+    content: '<p>Прерывать</p><img src="/assets/images/words/interruption.png" />',
+  },
+  {
+    word: 'OBJECTION',
+    translations: ['Возражение'],
+    content: '<p>Возражение</p><img src="/assets/images/words/objections.png" />',
+  },
+  {
+    word: 'WORD PROCESSING',
+    translations: ['Обработка текста'],
+    content: '<p>Обработка текста</p><img src="/assets/images/words/word.png" />',
+  },
+  {
+    word: 'SPREADSHEET',
+    translations: ['Таблица в Excel'],
+    content: '<p>Таблица в Excel</p><img src="/assets/images/words/statistics.png" />',
+  },
+  {
+    word: 'WORKSTATION',
+    translations: ['Рабочая станция'],
+    content: '<p>Рабочая станция</p><img src="/assets/images/words/workstation.png" />',
+  },
+  {
+    word: 'CELL PHONE',
+    translations: ['Сотовый телефон'],
+    content: '<p>Сотовый телефон</p><img src="/assets/images/words/smartphone.png" />',
+  },
+]
