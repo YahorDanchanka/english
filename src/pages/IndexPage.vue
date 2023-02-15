@@ -1,10 +1,10 @@
 <template>
   <q-page
     class="start-page page"
-    :padding="!isSplashScreenVisible"
-    :class="{ animate__animated: !isSplashScreenVisible, animate__fadeIn: !isSplashScreenVisible }"
+    :padding="!store.isSplashScreenVisible"
+    :class="{ animate__animated: !store.isSplashScreenVisible, animate__fadeIn: !store.isSplashScreenVisible }"
   >
-    <template v-if="isSplashScreenVisible">
+    <template v-if="store.isSplashScreenVisible">
       <SplashScreen style="min-height: inherit" @finish="onLoadFinish" />
     </template>
     <template v-else>
@@ -91,7 +91,6 @@ import TheHeader from 'components/TheHeader.vue'
 const router = useRouter()
 const store = useStore()
 
-const isSplashScreenVisible = ref(false)
 const pebbles = ref([
   { left: 172, top: 155 },
   { left: 145, top: 176 },
@@ -127,7 +126,8 @@ const pebbles = ref([
 
 function onLoadFinish() {
   setTimeout(() => {
-    isSplashScreenVisible.value = false
+    store.isSplashScreenVisible = false
+    store.backgroundMusic = new Audio('/assets/audio/menu.mp3')
   }, 1000)
 }
 

@@ -1,5 +1,6 @@
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { defineStore } from 'pinia'
+import { useStorage } from '@vueuse/core'
 import { Exercise, Section } from 'src/types'
 import { section as englishForItIndustrySection } from 'stores/data/english-for-it-industry'
 import { section as computersTodaySection } from 'stores/data/computers-today'
@@ -15,9 +16,38 @@ export const useStore = defineStore('main', () => {
   ])
 
   const activeExercise = ref<Exercise>()
+  const isSplashScreenVisible = ref(true)
+  const settings = useStorage('settings', {
+    soundEffects: false,
+    vibration: false,
+    music: true,
+  })
+  const backgroundMusic = ref<HTMLAudioElement>()
+
+  watch(
+    () => settings.value.music,
+    () => {
+      if (backgroundMusic.value) {
+        if (settings.value.music) {
+          backgroundMusic.value.play().catch((error) => {})
+        } else {
+          backgroundMusic.value.pause()
+        }
+      }
+    }
+  )
+
+  watch(backgroundMusic, () => {
+    if (backgroundMusic.value && settings.value.music) {
+      backgroundMusic.value.play().catch((error) => {})
+    }
+  })
 
   return {
     sections,
     activeExercise,
+    isSplashScreenVisible,
+    settings,
+    backgroundMusic,
   }
 })
