@@ -193,3 +193,66 @@ export const wordsFor11: Word[] = [
       '<p>[]<br><span style="font-size: 16px;">(Квадратные скобки)</span></p> <img src="/assets/images/words/brackets.png" />',
   },
 ]
+
+export const wordsFor12: Word[] = [
+  {
+    word: 'DESIGN THE NETWORK',
+    translations: ['Проектировать сетевые ресурсы'],
+    content:
+      '<p>Проектировать сетевые ресурсы</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">Mark <span style="color: rgb(255, 0, 0);">designs the network</span></span></em></p><img src="/assets/images/words/graphic-designer.png" />',
+  },
+  {
+    word: 'USERNAME',
+    translations: ['Имя пользователя'],
+    content:
+      '<p>Имя пользователя</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">Just open the program and create the <span style="color: rgb(255, 0, 0);">username</span></span></em></p><img src="/assets/images/words/user.png" />',
+  },
+  {
+    word: 'FIREWALL',
+    translations: ['Защита контура'],
+    content:
+      '<p>Защита контура</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">Silvia sets up a <span style="color: rgb(255, 0, 0);">firewall</span></span></em></p><img src="/assets/images/words/firewall.png" />',
+  },
+  {
+    word: 'NETWORK',
+    translations: ['Сеть'],
+    content:
+      '<p>Сеть</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">Her job is to plan and design the <span style="color: rgb(255, 0, 0);">network</span></span></em></p><img src="/assets/images/words/neural.png" />',
+  },
+  {
+    word: 'MAKE SURE',
+    translations: ['Убедиться'],
+    content:
+      '<p>Убедиться</p> <p style="line-height: 29px"><em><span style="font-size: 24px;"><span style="color: rgb(255, 0, 0);">Make sure</span> all of the computer s work properly</span></em></p><img src="/assets/images/words/role-model.png" />',
+  },
+  {
+    word: 'DEVELOP',
+    translations: ['Разрабатывать'],
+    content:
+      '<p>Разрабатывать</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">He designs and <span style="color: rgb(255, 0, 0);">develops</span> computer games</span></em></p><img src="/assets/images/words/hammer.png" />',
+  },
+  {
+    word: 'NETWORK ARCHITECT',
+    translations: ['Архитектор компьютерных сетей'],
+    content:
+      '<p>Архитектор компьютерных сетей</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">We work with <span style="color: rgb(255, 0, 0);">network architects</span> project managers</span></em></p><img src="/assets/images/words/global-network.png" />',
+  },
+  {
+    word: 'SOFTWARE DEVELOPER',
+    translations: ['Разработчик ПО'],
+    content:
+      '<p>Разработчик ПО</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">I\'m a <span style="color: rgb(255, 0, 0);">software developer</span> from GGAEK</span></em></p><img src="/assets/images/words/programmer.png" />',
+  },
+  {
+    word: 'DATA PROCESSING',
+    translations: ['Обработка данных'],
+    content:
+      '<p>Обработка данных</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">Mark and Latika are responsible for <span style="color: rgb(255, 0, 0);">data processing</span></span></em></p><img src="/assets/images/words/process.png" />',
+  },
+  {
+    word: 'BURN THE DISC',
+    translations: ['Записать диск'],
+    content:
+      '<p>Записать диск</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">Corky <span style="color: rgb(255, 0, 0);">burns the disc</span> for me</span></em></p><img src="/assets/images/words/compact-disk.png" />',
+  },
+]
