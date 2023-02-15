@@ -387,3 +387,56 @@ export const wordsFor14: Word[] = [
     content: '<p>Средства для существования</p><img src="/assets/images/words/room.png" />',
   },
 ]
+
+export const wordsFor15: Word[] = [
+  {
+    word: 'EXPRESS',
+    translations: ['Выразить'],
+    content: '<p>Выразить</p><img src="/assets/images/words/transformation.png" />',
+  },
+  {
+    word: 'STAFF',
+    translations: ['Персонал'],
+    content: '<p>Персонал</p><img src="/assets/images/words/teamwork.png" />',
+  },
+  {
+    word: 'SENIOR EXECUTIVES',
+    translations: ['Руководитель'],
+    content: '<p>Руководитель</p><img src="/assets/images/words/member.png" />',
+  },
+  {
+    word: 'CHART',
+    translations: ['Схема'],
+    content: '<p>Схема</p><img src="/assets/images/words/growth.png" />',
+  },
+  {
+    word: 'GRAPH',
+    translations: ['График'],
+    content: '<p>График</p><img src="/assets/images/words/graph.png" />',
+  },
+  {
+    word: 'IN GENERAL',
+    translations: ['В целом'],
+    content: '<p>В целом</p><img src="/assets/images/words/relations.png" />',
+  },
+  {
+    word: 'SLIDE',
+    translations: ['Слайд'],
+    content: '<p>Слайд</p><img src="/assets/images/words/slides.png" />',
+  },
+  {
+    word: 'LAPTOP',
+    translations: ['Ноутбук'],
+    content: '<p>Ноутбук</p><img src="/assets/images/words/laptop.png" />',
+  },
+  {
+    word: 'CONNECTION',
+    translations: ['Соединение'],
+    content: '<p>Соединение</p><img src="/assets/images/words/neural.png" />',
+  },
+  {
+    word: 'IN ADVANCE',
+    translations: ['Заранее'],
+    content: '<p>Заранее</p><img src="/assets/images/words/previous.png" />',
+  },
+]
