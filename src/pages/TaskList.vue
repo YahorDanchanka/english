@@ -1,74 +1,15 @@
 <template>
   <q-page class="task-list-page page" padding>
     <TheHeader class="page__header" :title="subsection.title" navigation-back />
-    <div class="task-list-page__board board">
-      <div class="board__wrapper">
+    <div class="task-list-page__wrapper">
+      <div class="task-list-page__list">
         <div class="row" v-if="taskPathes.length === 0">
           <div class="col-12 text-center">Tasks not found :(</div>
         </div>
-        <div class="row q-col-gutter-lg" v-else>
-          <div class="col-6" style="display: none">
-            <div
-              class="board__task board__task_right task"
-              style="margin-top: 0"
-              v-if="subsection.texts?.length"
-              @click="
-                router.push({
-                  name: 'text-tasks',
-                  params: { section: route.params['section'], subsection: route.params['subsection'], text: 0 },
-                })
-              "
-            >
-              <div class="task__circle task__circle_green"></div>
-              <div class="task__caption">Text</div>
-              <hr class="task__hr" />
-              <hr class="task__hr" />
-              <hr class="task__hr" />
-              <hr class="task__hr" />
-              <hr class="task__hr" />
-            </div>
-          </div>
-          <div
-            class="col-6"
-            style="display: none"
-            v-if="subsection.listen?.length"
-            @click="
-              router.push({
-                name: 'listen-tasks',
-                params: { section: route.params['section'], subsection: route.params['subsection'] },
-              })
-            "
-          >
-            <div class="board__task board__task_right task">
-              <div class="task__circle task__circle_blue"></div>
-              <div class="task__caption">Listen</div>
-              <hr class="task__hr" />
-              <hr class="task__hr" />
-              <hr class="task__hr" />
-              <hr class="task__hr" />
-              <hr class="task__hr" />
-            </div>
-          </div>
-          <div class="col-6" v-for="(taskPath, taskPathIndex) in taskPathes">
-            <div
-              class="board__task task"
-              :class="{ board__task_right: taskPathIndex % 2 !== 0 }"
-              :style="taskPathIndex === 0 ? { 'margin-top': '0' } : null"
-              @click="goToCategoryTask(taskPath)"
-            >
-              <div
-                class="task__circle"
-                :class="{
-                  task__circle_green: (taskPathIndex + 1) % 2 === 0,
-                  task__circle_yellow: (taskPathIndex + 1) % 3 === 0,
-                }"
-              ></div>
+        <div class="row q-col-gutter-md" v-else>
+          <div class="col-12" v-for="taskPath in taskPathes">
+            <div class="task-list-page__task task" @click="goToCategoryTask(taskPath)">
               <div class="task__caption">{{ taskPath.label }}</div>
-              <hr class="task__hr" />
-              <hr class="task__hr" />
-              <hr class="task__hr" />
-              <hr class="task__hr" />
-              <hr class="task__hr" />
             </div>
           </div>
         </div>
@@ -98,7 +39,7 @@ const taskPathes = computed<{ label: string; path: string }[]>(() => {
 
   if (subsection.value.texts !== undefined) {
     for (const index in subsection.value.texts) {
-      result.push({ label: subsection.value.texts[index].title || 'Text', path: `texts[${index}]` })
+      result.push({ label: `Text «${subsection.value.texts[index].title}»`, path: `texts[${index}]` })
     }
   }
 
@@ -107,7 +48,7 @@ const taskPathes = computed<{ label: string; path: string }[]>(() => {
   }
 
   if (subsection.value.dialog !== undefined) {
-    result.push({ label: 'Dialog', path: 'dialog' })
+    result.push({ label: 'Dialogue', path: 'dialog' })
   }
 
   return result
@@ -146,61 +87,34 @@ function goToCategoryTask(taskPath: { label: string; path: string }) {
   flex-wrap: wrap
   flex-direction: column
 
-.task-list-page__board
+.task-list-page__wrapper
+  display: flex
+  flex-wrap: wrap
+  flex-direction: column
+  flex-grow: 1
+  background: #C7C7C7
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 4px 1px rgba(0, 0, 0, 0.3)
+  border-radius: 11px
+  padding: 12px
+
+.task-list-page__list
+  padding: 10px 6px
+  box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25)
+  background: #B4B1B1
+  border-radius: 11px
   flex-grow: 1
 
-.board
-  background: #995B31
-  padding: 18px
-  border-radius: 16px
-  border: 5px solid #7A4019
-  height: 80vh
-
-.board__wrapper
-  background: #B56C3A
-  border-radius: 16px
-  padding: 23px
-  border: 5px solid #A35623
-  height: 100%
-
-.board__task
-  margin-top: -50px
-
-  &_right
-    margin-top: 80px
-
 .task
-  background: #D9D9D9
-  border-radius: 16px
-  padding: 6.84px 0 25px 0
+  background: #C7C7C7
+  border-radius: 7px
+  padding: 1.125em 1.3em
   text-align: center
   font-size: 1rem
-
-.task__circle
-  width: 13.81px
-  height: 13.81px
-  background-color: #EA5858
-  border-radius: 50%
-  margin: 0 auto 7px auto
-
-  &_green
-    background-color: #5D9940
-
-  &_yellow
-    background-color: #FFC700
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
+  cursor: pointer
 
 .task__caption
-  color: #3D3030
-  font-size: 0.9375em
-  text-transform: uppercase
-
-.task__hr
-  border: none
-  height: 1px
-  background-color: black
-  margin-bottom: 16.52px
-  width: 60%
-
-  &:last-child
-    margin-bottom: 0
+  color: #4D3A3A
+  font-size: 1.5em
+  text-shadow: 0 5px 4px rgba(0, 0, 0, 0.25)
 </style>
