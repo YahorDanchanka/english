@@ -4,7 +4,8 @@
     <Swiper
       class="page__slider slider"
       :modules="modules"
-      :space-between="34"
+      :spaceBetween="34"
+      :initialSlide="initialSlide"
       :pagination="{
         el: '.pagination',
         bulletClass: 'pagination__bullet',
@@ -17,6 +18,7 @@
       }"
       loop
       navigation
+      @slideChange="onSlideChange"
     >
       <template v-slot:container-start>
         <div class="slider__pagination pagination"></div>
@@ -53,12 +55,14 @@
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { Pagination, Navigation } from 'swiper'
+import { Swiper as SwiperClass } from 'swiper/types'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import { useStore } from 'stores/main'
 import { Subsection } from 'src/types'
+import { useStorage } from '@vueuse/core'
 import TheHeader from 'components/TheHeader.vue'
 import AppCard from 'components/AppCard.vue'
 
@@ -66,6 +70,8 @@ const route = useRoute()
 const router = useRouter()
 const store = useStore()
 const modules = [Pagination, Navigation]
+
+const initialSlide = useStorage(`section[${route.params['section']}].slide`, 0)
 
 const subsections = computed<Subsection[]>(
   () => store.sections.find((section) => section.id == route.params['section'])?.subsections || []
@@ -76,6 +82,10 @@ function goTo(name: string, subsection: Subsection) {
     name,
     params: { section: route.params['section'], subsection: subsection.id },
   })
+}
+
+function onSlideChange(swiper: SwiperClass) {
+  initialSlide.value = swiper.activeIndex - 1
 }
 </script>
 
