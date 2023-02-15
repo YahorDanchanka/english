@@ -10,7 +10,7 @@
       <q-btn
         class="word-card__btn full-width"
         color="primary"
-        v-for="option in options"
+        v-for="option in translations"
         :label="option"
         no-caps
         rounded
@@ -31,7 +31,7 @@
 import { computed, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { uid } from 'quasar'
-import { sample, shuffle, uniq } from 'lodash'
+import { flatMap, sample, shuffle, uniq } from 'lodash'
 import { Section, Subsection } from 'src/types'
 import { useStore } from 'stores/main'
 import { useStatisticsStore } from 'stores/statistics'
@@ -60,22 +60,21 @@ const words = computed(() => {
 
 const currentWordObject = computed(() => words.value[currentWordIndex.value])
 
-const options = computed(() => {
-  const result = [sample(currentWordObject.value.translations)]
+const translations = computed<string[]>(() => {
+  const wordObjects = [currentWordObject.value]
 
-  for (let i = 0; i < 2; i++) {
-    if (words.value.length === 1) break
-
+  for (let i = 0; i < Math.min(words.value.length - 1, 2); i++) {
     let randomWordObject
 
     do {
       randomWordObject = sample(words.value)
-    } while (currentWordObject.value === randomWordObject)
+    } while (wordObjects.includes(randomWordObject!))
 
-    result.push(sample(randomWordObject!.translations))
+    wordObjects.push(randomWordObject!)
   }
 
-  return uniq(shuffle(result))
+  const translationsArray = flatMap(wordObjects, (wordObject) => wordObject.translations)
+  return uniq(shuffle(translationsArray))
 })
 
 const passageProgress = computed(() =>
