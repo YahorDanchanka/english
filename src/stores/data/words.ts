@@ -571,3 +571,81 @@ export const wordsFor21: Word[] = [
     content: '<p>Сделка</p><img src="/assets/images/words/certificate.png" />',
   },
 ]
+
+export const wordsFor31: Word[] = [
+  {
+    word: 'MOTHERBOARD',
+    translations: ['Материнская плата'],
+    content: '<p>Материнская плата</p><img src="/assets/images/words/motherboard.png" />',
+  },
+  {
+    word: 'CASE',
+    translations: ['Корпус'],
+    content: '<p>Корпус</p><img src="/assets/images/words/high-tower.png" />',
+  },
+  {
+    word: 'FAN',
+    translations: ['Вентилятор'],
+    content: '<p>Вентилятор</p><img src="/assets/images/words/fan.png" />',
+  },
+  {
+    word: 'POWER SUPPLY (UNIT)',
+    translations: ['Блок питания'],
+    content: '<p>Блок питания</p><img src="/assets/images/words/power-supply.png" />',
+  },
+  {
+    word: 'HARD DRIVE',
+    translations: ['Жесткий диск'],
+    content: '<p>Жесткий диск</p><img src="/assets/images/words/hard-disk.png" />',
+  },
+  {
+    word: 'DISK DRIVE',
+    translations: ['Дисковод'],
+    content: '<p>Дисковод</p><img src="/assets/images/words/dvd-player.png" />',
+  },
+  {
+    word: 'CABLE',
+    translations: ['Кабель'],
+    content: '<p>Кабель</p><img src="/assets/images/words/usb.png" />',
+  },
+  {
+    word: 'HEATSINK',
+    translations: ['Радиатор, теплоотвод'],
+    content: '<p>Радиатор, теплоотвод</p><img src="/assets/images/words/heatsink.png" />',
+  },
+  {
+    word: 'EXPANSION CARD',
+    translations: ['Карта расширения'],
+    content: '<p>Карта расширения</p><img src="/assets/images/words/micro-sd.png" />',
+  },
+  {
+    word: 'PRIMARY SOCKET',
+    translations: ['Разъем процессора'],
+    content: '<p>Разъем процессора</p><img src="/assets/images/words/microchip.png" />',
+  },
+  {
+    word: 'ATTACH',
+    translations: ['Присоединить'],
+    content: '<p>Присоединить</p><img src="/assets/images/words/export-csv.png" />',
+  },
+  {
+    word: 'APPLY',
+    translations: ['Применять'],
+    content: '<p>Применять</p><img src="/assets/images/words/apply.png" />',
+  },
+  {
+    word: 'DISCONNECT',
+    translations: ['Отсоединить'],
+    content: '<p>Отсоединить</p><img src="/assets/images/words/no-network.png" />',
+  },
+  {
+    word: 'CONNECT',
+    translations: ['Соединить'],
+    content: '<p>Соединить</p><img src="/assets/images/words/computers-connecting.png" />',
+  },
+  {
+    word: 'PLUG IN',
+    translations: ['Подключить к электричеству'],
+    content: '<p>Подключить к электричеству</p><img src="/assets/images/words/connected.png" />',
+  },
+]

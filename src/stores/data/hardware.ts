@@ -1,4 +1,5 @@
 import { Section } from 'src/types'
+import { wordsFor31 } from 'stores/data/words'
 
 export const section: Section = {
   id: 's3',
@@ -7,7 +8,7 @@ export const section: Section = {
     {
       id: 'ss1',
       title: '3.1',
-      image: '/assets/images/job-interview.png',
+      image: '/assets/images/words/hard-disk.png',
       texts: [
         {
           title: 'Assembly Instructions',
@@ -115,6 +116,7 @@ export const section: Section = {
           ],
         },
       ],
+      words: wordsFor31,
     },
   ],
 }
