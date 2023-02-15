@@ -334,3 +334,56 @@ export const wordsFor13: Word[] = [
     content: '<p>Застрять</p><img src="/assets/images/words/cork.png" />',
   },
 ]
+
+export const wordsFor14: Word[] = [
+  {
+    word: 'CONVERSATION',
+    translations: ['Беседа'],
+    content: '<p>Беседа</p><img src="/assets/images/words/talking.png" />',
+  },
+  {
+    word: 'POORLY',
+    translations: ['Плохо'],
+    content: '<p>Плохо</p><img src="/assets/images/words/money-loss.png" />',
+  },
+  {
+    word: 'FLOW',
+    translations: ['Литься'],
+    content: '<p>Литься</p><img src="/assets/images/words/cash-flow.png" />',
+  },
+  {
+    word: 'COLLEGUE',
+    translations: ['Коллега'],
+    content: '<p>Коллега</p><img src="/assets/images/words/slim-body.png" />',
+  },
+  {
+    word: 'I’D LIKE YOU TO MEET',
+    translations: ['Я бы хотел познакомить вас с'],
+    content: '<p>Я бы хотел познакомить вас с</p><img src="/assets/images/words/hi.png" />',
+  },
+  {
+    word: 'RELATIONSHIP',
+    translations: ['Отношения'],
+    content: '<p>Отношения</p><img src="/assets/images/words/relations.png" />',
+  },
+  {
+    word: 'GET BACK',
+    translations: ['Вернуться назад'],
+    content: '<p>Вернуться назад</p><img src="/assets/images/words/left-arrow.png" />',
+  },
+  {
+    word: 'TAKE UP',
+    translations: ['Занимать'],
+    content: '<p>Занимать</p><img src="/assets/images/words/focus.png" />',
+  },
+  {
+    word: 'CO-WORKER',
+    translations: ['Сотрудник'],
+    content: '<p>Сотрудник</p><img src="/assets/images/words/worker.png" />',
+  },
+  {
+    word: 'LIVING',
+    translations: ['Средства для существования'],
+    content: '<p>Средства для существования</p><img src="/assets/images/words/room.png" />',
+  },
+]
