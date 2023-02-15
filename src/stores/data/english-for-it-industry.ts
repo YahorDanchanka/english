@@ -1,5 +1,5 @@
 import { Section } from 'src/types'
-import { wordsFor11, wordsFor12 } from 'stores/data/words'
+import { wordsFor11, wordsFor12, wordsFor13 } from 'stores/data/words'
 
 export const section: Section = {
   id: 's1',
@@ -443,6 +443,7 @@ export const section: Section = {
           ],
         },
       ],
+      words: wordsFor13,
     },
     {
       id: 'ss4',

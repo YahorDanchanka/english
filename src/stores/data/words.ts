@@ -256,3 +256,81 @@ export const wordsFor12: Word[] = [
       '<p>Записать диск</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">Corky <span style="color: rgb(255, 0, 0);">burns the disc</span> for me</span></em></p><img src="/assets/images/words/compact-disk.png" />',
   },
 ]
+
+export const wordsFor13: Word[] = [
+  {
+    word: 'CAUSE',
+    translations: ['Причина'],
+    content: '<p>Причина</p><img src="/assets/images/words/footprints.png" />',
+  },
+  {
+    word: 'AFFECT',
+    translations: ['Отрицательно влиять'],
+    content: '<p>Отрицательно влиять</p><img src="/assets/images/words/interpersonal.png" />',
+  },
+  {
+    word: 'ENVIRONMENT',
+    translations: ['Окружающая среда'],
+    content: '<p>Причина</p><img src="/assets/images/words/planet-earth.png" />',
+  },
+  {
+    word: 'KEEP YOU ON YOUR TOES',
+    translations: ['Держать вас в тонусе'],
+    content: '<p>Держать вас в тонусе</p><img src="/assets/images/words/slim-body.png" />',
+  },
+  {
+    word: 'PREVENT',
+    translations: ['Предотвращать'],
+    content: '<p>Предотвращать</p><img src="/assets/images/words/anti-virus.png" />',
+  },
+  {
+    word: 'WORRY',
+    translations: ['Волноваться'],
+    content: '<p>Волноваться</p><img src="/assets/images/words/worried.png" />',
+  },
+  {
+    word: 'IMPACT',
+    translations: ['Последствие'],
+    content: '<p>Последствие</p><img src="/assets/images/words/target.png" />',
+  },
+  {
+    word: 'IRRITABLE',
+    translations: ['Раздражительный'],
+    content: '<p>Раздражительный</p><img src="/assets/images/words/irritation.png" />',
+  },
+  {
+    word: 'WITHDRAWN',
+    translations: ['Замкнутый'],
+    content: '<p>Замкнутый</p><img src="/assets/images/words/close.png" />',
+  },
+  {
+    word: 'OVERWHELMED',
+    translations: ['Перегружен'],
+    content: '<p>Перегружен</p><img src="/assets/images/words/anxiety.png" />',
+  },
+  {
+    word: 'AVOID',
+    translations: ['Избегать'],
+    content: '<p>Избегать</p><img src="/assets/images/words/avoid.png" />',
+  },
+  {
+    word: 'TENSION',
+    translations: ['Давление'],
+    content: '<p>Давление</p><img src="/assets/images/words/depression.png" />',
+  },
+  {
+    word: 'DRAINED',
+    translations: ['Истощенный'],
+    content: '<p>Истощенный</p><img src="/assets/images/words/thirst.png" />',
+  },
+  {
+    word: 'EXCEED',
+    translations: ['Превышать'],
+    content: '<p>Превышать</p><img src="/assets/images/words/up-arrow.png" />',
+  },
+  {
+    word: 'BE STUCK',
+    translations: ['Застрять'],
+    content: '<p>Застрять</p><img src="/assets/images/words/cork.png" />',
+  },
+]
