@@ -30,7 +30,7 @@
       </swiper-slide>
     </Swiper>
     <div class="text-center">
-      <q-btn class="subsection-words-page__btn" label="Check yourself" no-caps @click="goToCheckPage" />
+      <q-btn class="subsection-words-page__btn q-mb-md" label="Check yourself" no-caps @click="goToCheckPage" />
     </div>
   </q-page>
 </template>

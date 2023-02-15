@@ -1,11 +1,12 @@
 <template>
   <q-page class="subsection-words-check-page page" padding>
     <TheHeader class="page__header" navigation-back />
-    <q-linear-progress color="q-linear-progress" size="16px" :value="passageProgress">
-      <div class="q-linear-progress__label absolute-full flex flex-center">
-        {{ (passageProgress * 100).toFixed(0) + '%' }}
+    <div class="text-center">
+      <div class="q-mb-xs" style="text-shadow: 0 5px 4px rgba(0, 0, 0, 0.25)">
+        {{ passageProgress.toFixed(0) + '%' }}
       </div>
-    </q-linear-progress>
+      <ProgressBar class="subsection-words-check-page__progress-bar" :value="passageProgress" />
+    </div>
     <AppCard v-if="!isFinish" class="word-card app-card_with_circle app-card_bordered" :title="currentWordObject.word">
       <q-btn
         class="word-card__btn full-width"
@@ -38,6 +39,7 @@ import { useStatisticsStore } from 'stores/statistics'
 import TheHeader from 'components/TheHeader.vue'
 import AppCard from 'components/AppCard.vue'
 import ResultCard from 'components/ResultCard.vue'
+import ProgressBar from 'components/ProgressBar.vue'
 
 const route = useRoute()
 const store = useStore()
@@ -78,7 +80,7 @@ const translations = computed<string[]>(() => {
 })
 
 const passageProgress = computed(() =>
-  currentWordIndex.value === words.value.length ? 1 : currentWordIndex.value / words.value.length
+  currentWordIndex.value === words.value.length ? 100 : (currentWordIndex.value * 100) / words.value.length
 )
 
 const isFinish = computed(() => currentWordIndex.value >= words.value.length)
@@ -144,4 +146,8 @@ watch(isFinish, () => {
 
     &:last-of-type
       margin-bottom: 0
+
+.subsection-words-check-page__progress-bar
+  height: 19px
+  margin-bottom: 20px
 </style>
