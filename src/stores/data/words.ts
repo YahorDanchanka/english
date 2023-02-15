@@ -493,3 +493,81 @@ export const wordsFor16: Word[] = [
     content: '<p>Сотовый телефон</p><img src="/assets/images/words/smartphone.png" />',
   },
 ]
+
+export const wordsFor21: Word[] = [
+  {
+    word: 'COMPUTER LITERACY',
+    translations: ['Компьютерная грамотность'],
+    content: '<p>Компьютерная грамотность</p><img src="/assets/images/words/e-book.png" />',
+  },
+  {
+    word: 'COMPUTING',
+    translations: ['Работа на компьютере'],
+    content: '<p>Работа на компьютере</p><img src="/assets/images/words/computer.png" />',
+  },
+  {
+    word: 'GPS',
+    translations: ['Навигатор'],
+    content: '<p>Навигатор</p><img src="/assets/images/words/map.png" />',
+  },
+  {
+    word: 'UPGRADE',
+    translations: ['Обновлять'],
+    content: '<p>Обновлять</p><img src="/assets/images/words/star.png" />',
+  },
+  {
+    word: 'WIRELESS',
+    translations: ['Беспроводной'],
+    content: '<p>Беспроводной</p><img src="/assets/images/words/radio-antenna.png" />',
+  },
+  {
+    word: 'NETWORK',
+    translations: ['Сеть'],
+    content: '<p>Сеть</p><img src="/assets/images/words/neural.png" />',
+  },
+  {
+    word: 'DIGITAL',
+    translations: ['Цифровой'],
+    content: '<p>Цифровой</p><img src="/assets/images/words/virtual.png" />',
+  },
+  {
+    word: 'GENERATE',
+    translations: ['Создавать'],
+    content: '<p>Создавать</p><img src="/assets/images/words/magic-wand.png" />',
+  },
+  {
+    word: 'GRAPH',
+    translations: ['График'],
+    content: '<p>График</p><img src="/assets/images/words/growth.png" />',
+  },
+  {
+    word: 'INTERFACE',
+    translations: ['Взаимодействовать'],
+    content: '<p>Взаимодействовать</p><img src="/assets/images/words/tap.png" />',
+  },
+  {
+    word: 'VIA',
+    translations: ['По средствам'],
+    content: '<p>По средствам</p><img src="/assets/images/words/will.png" />',
+  },
+  {
+    word: 'SURF THE WEB',
+    translations: ['Сидеть в интернете'],
+    content: '<p>Сидеть в интернете</p><img src="/assets/images/words/surf.png" />',
+  },
+  {
+    word: 'DATABASE',
+    translations: ['База данных'],
+    content: '<p>База данных</p><img src="/assets/images/words/database.png" />',
+  },
+  {
+    word: 'SPREADSHEET',
+    translations: ['Таблица в Excel'],
+    content: '<p>Таблица в Excel</p><img src="/assets/images/words/excel.png" />',
+  },
+  {
+    word: 'TRANSACTION',
+    translations: ['Сделка'],
+    content: '<p>Сделка</p><img src="/assets/images/words/certificate.png" />',
+  },
+]
