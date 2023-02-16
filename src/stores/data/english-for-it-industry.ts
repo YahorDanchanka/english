@@ -442,6 +442,11 @@ export const section: Section = {
             },
           ],
         },
+        {
+          title: 'Simple ways to reduce stress',
+          text: '<img src="/assets/images/simple-ways-to-reduce-stress.jpg" />',
+          exercises: [],
+        },
       ],
       words: wordsFor13,
     },

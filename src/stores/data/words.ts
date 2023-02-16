@@ -135,9 +135,9 @@ export const wordsFor11: Word[] = [
   },
   {
     word: 'HASH',
-    translations: ['#'],
+    translations: ['Хэш'],
     content:
-      '<p>#<br><span style="font-size: 16px;">(Хештэг)</span></p> <img src="/assets/images/words/hashtag.png" />',
+      '<p>Хэш<br><span style="font-size: 16px;">(Хештэг)</span></p> <img src="/assets/images/words/hashtag.png" />',
   },
   {
     word: 'RESPONSIBILITY',

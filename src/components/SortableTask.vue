@@ -87,7 +87,7 @@ function isErrorOption(col: 'left' | 'right', colIndex: number) {
   border-radius: 56px
   margin-bottom: 20px
   text-align: center
-  height: 80px
+  height: 90px
   overflow: hidden
 
   :deep(img)
