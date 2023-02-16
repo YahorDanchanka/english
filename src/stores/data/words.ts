@@ -572,6 +572,29 @@ export const wordsFor21: Word[] = [
   },
 ]
 
+export const wordsFor22: Word[] = [
+  {
+    word: 'WIRELESS',
+    translations: ['Беспроводной'],
+    content: '<p>Беспроводной</p><img src="/assets/images/words/radio-antenna.png" />',
+  },
+  {
+    word: 'NETWORK',
+    translations: ['Сеть'],
+    content: '<p>Сеть</p><img src="/assets/images/words/neural.png" />',
+  },
+  {
+    word: 'DIGITAL',
+    translations: ['Цифровой'],
+    content: '<p>Цифровой</p><img src="/assets/images/words/virtual.png" />',
+  },
+  {
+    word: 'CHART',
+    translations: ['Схема'],
+    content: '<p>Схема</p><img src="/assets/images/words/growth.png" />',
+  },
+]
+
 export const wordsFor31: Word[] = [
   {
     word: 'MOTHERBOARD',
@@ -650,4 +673,20 @@ export const wordsFor31: Word[] = [
   },
 ]
 
-export const wordsFor41: Word[] = []
+export const wordsFor41: Word[] = [
+  {
+    word: 'WORD PROCESSING',
+    translations: ['Обработка текста'],
+    content: '<p>Обработка текста</p><img src="/assets/images/words/word.png" />',
+  },
+  {
+    word: 'SPREADSHEET',
+    translations: ['Таблица в Excel'],
+    content: '<p>Таблица в Excel</p><img src="/assets/images/words/statistics.png" />',
+  },
+  {
+    word: 'DATABASE',
+    translations: ['База данных'],
+    content: '<p>База данных</p><img src="/assets/images/words/database.png" />',
+  },
+]

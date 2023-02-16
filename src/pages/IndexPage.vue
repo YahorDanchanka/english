@@ -57,9 +57,21 @@
           :icon="DevOpsIcon"
           @click="visitSection(store.sections[3])"
         />
-        <AppIsland class="islands__item" title="Modern IT" :icon="ReflectionIcon" />
-        <AppIsland class="islands__item islands__item_right" title="Computer programming" :icon="CSharpIcon" />
-        <AppIsland class="islands__item" title="Computer security" :icon="SecurityIcon" />
+        <AppIsland
+          class="islands__item islands__item_disabled islands__item_disabled1"
+          title="Modern IT"
+          :icon="ReflectionIcon"
+        />
+        <AppIsland
+          class="islands__item islands__item_right islands__item_disabled"
+          title="Computer programming"
+          :icon="CSharpIcon"
+        />
+        <AppIsland
+          class="islands__item islands__item_disabled islands__item_disabled3"
+          title="Computer security"
+          :icon="SecurityIcon"
+        />
         <img
           class="islands__pebble"
           src="~assets/images/pebble.png"
@@ -147,6 +159,7 @@ function visitSection(section: Section) {
 .islands__item
   width: max-content
   cursor: pointer
+  position: relative
 
   &.islands__item_center
     margin-left: auto
@@ -154,6 +167,29 @@ function visitSection(section: Section) {
 
   &.islands__item_right
     margin-left: auto
+
+
+.islands__item_disabled
+  //opacity: 0.5
+  cursor: default
+
+.islands__item_disabled::after
+  content: ''
+  display: block
+  background: url("~assets/images/cloud.png") no-repeat center center / contain
+  width: 340px
+  height: 210px
+  position: absolute
+  left: -40px
+  top: 0
+  z-index: 9999
+  opacity: 0.7
+
+.islands__item_disabled1::after
+  left: -100px
+
+.islands__item_disabled3::after
+  left: -70px
 
 .islands__pebble
   position: absolute

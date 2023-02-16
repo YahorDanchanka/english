@@ -16,7 +16,7 @@ export const useStore = defineStore('main', () => {
   ])
 
   const activeExercise = ref<Exercise>()
-  const isSplashScreenVisible = ref(process.env.PROD)
+  const isSplashScreenVisible = ref(!!process.env.PROD)
   const settings = useStorage('settings', {
     soundEffects: false,
     vibration: false,
@@ -29,6 +29,7 @@ export const useStore = defineStore('main', () => {
     () => {
       if (backgroundMusic.value) {
         if (settings.value.music) {
+          backgroundMusic.value.loop = true
           backgroundMusic.value.play().catch((error) => {})
         } else {
           backgroundMusic.value.pause()
@@ -39,6 +40,7 @@ export const useStore = defineStore('main', () => {
 
   watch(backgroundMusic, () => {
     if (backgroundMusic.value && settings.value.music) {
+      backgroundMusic.value.loop = true
       backgroundMusic.value.play().catch((error) => {})
     }
   })
