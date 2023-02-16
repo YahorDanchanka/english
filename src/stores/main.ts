@@ -16,34 +16,32 @@ export const useStore = defineStore('main', () => {
   ])
 
   const activeExercise = ref<Exercise>()
-  const isSplashScreenVisible = ref(!!process.env.PROD)
+  const isSplashScreenVisible = ref(true)
+
   const settings = useStorage('settings', {
     soundEffects: false,
     vibration: false,
     music: true,
   })
-  const backgroundMusic = ref<HTMLAudioElement>()
+
+  const backgroundMusic = ref<HTMLAudioElement>(
+    (() => {
+      const audio = new Audio('/assets/audio/menu.mp3')
+      audio.loop = true
+      return audio
+    })()
+  )
+
+  function playBackgroundMusic() {
+    backgroundMusic.value.play().catch(() => {})
+  }
 
   watch(
     () => settings.value.music,
     () => {
-      if (backgroundMusic.value) {
-        if (settings.value.music) {
-          backgroundMusic.value.loop = true
-          backgroundMusic.value.play().catch((error) => {})
-        } else {
-          backgroundMusic.value.pause()
-        }
-      }
+      settings.value.music ? playBackgroundMusic() : backgroundMusic.value.pause()
     }
   )
-
-  watch(backgroundMusic, () => {
-    if (backgroundMusic.value && settings.value.music) {
-      backgroundMusic.value.loop = true
-      backgroundMusic.value.play().catch((error) => {})
-    }
-  })
 
   return {
     sections,
@@ -51,5 +49,6 @@ export const useStore = defineStore('main', () => {
     isSplashScreenVisible,
     settings,
     backgroundMusic,
+    playBackgroundMusic,
   }
 })

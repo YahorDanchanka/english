@@ -139,7 +139,10 @@ const pebbles = ref([
 function onLoadFinish() {
   setTimeout(() => {
     store.isSplashScreenVisible = false
-    store.backgroundMusic = new Audio('/assets/audio/menu.mp3')
+
+    if (store.settings.music) {
+      store.playBackgroundMusic()
+    }
   }, 1000)
 }
 
