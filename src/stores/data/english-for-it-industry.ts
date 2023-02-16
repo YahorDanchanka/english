@@ -12,7 +12,7 @@ export const section: Section = {
       texts: [
         {
           title: 'Etiquette',
-          text: '<ol> <li>What do you say and do when you meet a friend?</li> <li>Do people kiss when they greet<br />in your country? What do you <br />think of this?</li> </ol> <h1>Etiquette</h1> <p>People around the world say hello and goodbye in different ways. In Asia, many people <strong>bow</strong> when they <strong>greet</strong> each other. This might seem strange to someone in the Middle East. There men sometimes greet each other with a kiss on cheek. In most countries, people shake hands. But in America and Europe the handshake is firm, while in Asia it is often soft. So what do you do when you meet people from other countries? Don&rsquo;t let these customs confuse you. Just be polite. When you meet, say &ldquo;Pleased to meet you&rdquo; and ask &ldquo;How are you&rdquo; When it is time to leave, say &ldquo;It was nice meeting you&rdquo; and &ldquo;I hope we meet again&rdquo;.</p>',
+          text: '<ol> <li>What do you say and do when you meet a friend?</li> <li>Do people kiss when they greet<br>in your country? What do you <br>think of this?</li> </ol> <h1>Etiquette</h1> <p>People around the world say hello and goodbye in different ways. In Asia, many people <strong>bow</strong> when they <strong>greet</strong> each other. This might seem strange to someone in the Middle East. There men sometimes greet each other with a <strong>kiss </strong>on the <strong>cheek</strong>. In most countries, people <strong>shake hands</strong>. But in America and Europe the handshake is <strong>firm</strong>, while in Asia it is often soft. So what do you do when you meet people from other countries? Don&rsquo;t let these <strong>customs </strong>confuse you. Just be <strong>polite</strong>. When you meet, say &ldquo;<strong>Pleased to meet you</strong>&rdquo; and ask &ldquo;How are you&rdquo; When it is time to leave, say &ldquo;<strong>It was nice meeting you</strong>&rdquo; and &ldquo;I hope we meet again&rdquo;.</p>',
           exercises: [
             {
               content:
@@ -93,55 +93,124 @@ export const section: Section = {
           ],
         },
       ],
-      listen: [
+      dialogs: [
         {
-          content:
-            '<p>Listen to a conversation between a manager and his colleague. Complete the conversation.</p><audio controls src="/assets/audio/royale.mp3"></audio>',
-          tasks: [
-            // check
+          title: 'Etiquette',
+          text: '<p><strong>Manager</strong>: When you meet Mr. Yakamoto be very ________. He is very important client.</p><p><strong>Colleague</strong>: It is the Japanese ________ to bow. Should i do that?</p><p><strong>Manager</strong>: No, you don’t have to bow. Just say ‘________ meet you’ and ________.</p><p><strong>Colleague</strong>: Okay.</p><p><strong>Manager</strong>: But don’t make your handshake too ________.Japanese people usually have a softer handshake.</p><p><strong>Colleague</strong>: And when he leaves? What then?</p><p><strong>Manager</strong>: Just say ‘It was ________’ and handshake his hand again.</p><p><strong>Colleague</strong>: Okay, that’s fine.</p>',
+          exercises: [
             {
-              title: 'The manager advises his colleague to bow',
-              options: ['True', 'False'],
-              correctOptionIndex: 0,
-              interface: 'SelectionTask',
+              content:
+                '<p>Listen to a conversation between a manager and his colleague. Complete the conversation.</p><audio controls src="/assets/audio/royale.mp3"></audio>',
+              tasks: [
+                // check
+                {
+                  title: 'The manager advises his colleague to bow',
+                  options: ['True', 'False'],
+                  correctOptionIndex: 0,
+                  interface: 'SelectionTask',
+                },
+                {
+                  title: 'The manager advises his colleague to shake hands softly',
+                  options: ['True', 'False'],
+                  correctOptionIndex: 0,
+                  interface: 'SelectionTask',
+                },
+                {
+                  title: 'The manager suggests shaking hands with Mr. Yakamoto',
+                  options: ['True', 'False'],
+                  correctOptionIndex: 0,
+                  interface: 'SelectionTask',
+                },
+              ],
             },
             {
-              title: 'The manager advises his colleague to shake hands softly',
-              options: ['True', 'False'],
-              correctOptionIndex: 0,
-              interface: 'SelectionTask',
-            },
-            {
-              title: 'The manager suggests shaking hands with Mr. Yakamoto',
-              options: ['True', 'False'],
-              correctOptionIndex: 0,
-              interface: 'SelectionTask',
+              content: '<p>Listen again and complete the conversation</p>',
+              tasks: [
+                {
+                  content:
+                    '<p><strong>Manager</strong>: When you meet Mr. Yakamoto be very {{{option1}}}. He is very important client.</p><p><strong>Colleague</strong>: It is the Japanese {{{option2}}} to bow. Should i do that?</p><p><strong>Manager</strong>: No, you don’t have to bow. Just say ‘{{{option3}}} meet you’ and {{{option4}}}.</p><p><strong>Colleague</strong>: Okay.</p><p><strong>Manager</strong>: But don’t make your handshake too {{{option5}}}.Japanese people usually have a softer handshake.</p><p><strong>Colleague</strong>: And when he leaves? What then?</p><p><strong>Manager</strong>: Just say ‘It was {{{option6}}}’ and handshake his hand again.</p><p><strong>Colleague</strong>: Okay, that’s fine.</p>',
+                  correct: {
+                    option1: 'polite',
+                    option2: 'custom',
+                    option3: 'pleased to',
+                    option4: 'shake hands',
+                    option5: 'firm',
+                    option6: 'nice meeting you',
+                  },
+                  value: {
+                    option1: '',
+                    option2: '',
+                    option3: '',
+                    option4: '',
+                    option5: '',
+                    option6: '',
+                  },
+                  interface: 'TextInputTask',
+                },
+              ],
             },
           ],
         },
         {
-          content: '<p>Listen again and complete the conversation</p>',
-          tasks: [
+          title: 'Meeting people1',
+          text: "<ol><li>Natasha: Hi, my&nbsp;________ Natasha.<br>Khalid: Pleased to ________ you. I'm Khalid Ali.<br>Natasha: Pleased to meet you, ________.</li><li>Philip: Good morning. ________ your name?<br>Ahmed: I'm Ahmed. And ________ are?<br>Philip: My name is Philip. ________ to meet you.</li><li>Tim: Hi everybody, ________ is Ingrid.<br>All: Hi!<br>Tim: Ingrid, this ________ Ahmed, Linda, Mohammed and Mansoor.<br>Ingrid: Nice meeting you ________.<br>Linda: Likewise.<br>Tim: ________ to the team and good luck.</li></ol>",
+          exercises: [
             {
-              content:
-                '<p><strong>Manager</strong>: When you meet Mr. Yakamoto be very {{{option1}}}. He is very important client.</p><p><strong>Colleague</strong>: It is the Japanese {{{option2}}} to bow. Should i do that?</p><p><strong>Manager</strong>: No, you don’t have to bow. Just say ‘{{{option3}}} meet you’ and {{{option4}}}.</p><p><strong>Colleague</strong>: Okay.</p><p><strong>Manager</strong>: But don’t make your handshake too {{{option5}}}.Japanese people usually have a softer handshake.</p><p><strong>Colleague</strong>: And when he leaves? What then?</p><p><strong>Manager</strong>: Just say ‘It was {{{option6}}}’ and handshake his hand again.</p><p><strong>Colleague</strong>: Okay, that’s fine.</p>',
-              correct: {
-                option1: 'polite',
-                option2: 'custom',
-                option3: 'pleased to',
-                option4: 'shake hands',
-                option5: 'firm',
-                option6: 'nice meeting you',
-              },
-              value: {
-                option1: '',
-                option2: '',
-                option3: '',
-                option4: '',
-                option5: '',
-                option6: '',
-              },
-              interface: 'TextInputTask',
+              content: '<p>Complete these dialogues with the words in the box.</p>',
+              tasks: [
+                {
+                  content:
+                    "<ol><li>Natasha: Hi, my&nbsp;{{{option1}}} Natasha.<br>Khalid: Pleased to {{{option2}}} you. I'm Khalid Ali.<br>Natasha: Pleased to meet you, {{{option3}}}.</li><li>Philip: Good morning. {{{option4}}} your name?<br>Ahmed: I'm Ahmed. And {{{option5}}} are?<br>Philip: My name is Philip. {{{option6}}} to meet you.</li><li>Tim: Hi everybody, {{{option7}}} is Ingrid.<br>All: Hi!<br>Tim: Ingrid, this {{{option8}}} Ahmed, Linda, Mohammed and Mansoor.<br>Ingrid: Nice meeting you {{{option9}}}.<br>Linda: Likewise.<br>Tim: {{{option10}}} to the team and good luck.</li></ol>",
+                  correct: {
+                    option1: "name's",
+                    option2: 'meet',
+                    option3: 'too',
+                    option4: "What's",
+                    option5: 'you',
+                    option6: 'nice',
+                    option7: 'this',
+                    option8: 'is',
+                    option9: 'all',
+                    option10: 'Welcome',
+                  },
+                  value: {
+                    option1: '',
+                    option2: '',
+                    option3: '',
+                    option4: '',
+                    option5: '',
+                    option6: '',
+                    option7: '',
+                    option8: '',
+                    option9: '',
+                    option10: '',
+                  },
+                  interface: 'MatchingTask',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          title: 'Meeting people2',
+          text: '<p>Kathryn: Karim, what do you do?</p><p>Karim: I&rsquo;m a ________<em>.</em>&nbsp;Who do you work for?</p><p>Kathryn: I work for CISCO. I&rsquo;m a ________ there. Where are you from,&nbsp;Karim?</p><p>Karim: I am from Kuwait. I work for Microsoft there. And where are you from, Kathryn?</p><p>Kathryn: I&rsquo;m from the ________&nbsp;but now I live in Qatar. Do you know where Glenda&rsquo;s from?</p><p>Karim: She is from the US.</p><p>Kathryn: And what&rsquo;s her job?</p><p>Karim: She works for ________. Her job is to set up new systems.</p>',
+          exercises: [
+            {
+              content: '<p>Listen to this dialogue and choose the correct answers.</p>',
+              tasks: [
+                {
+                  content:
+                    '<p>Kathryn: Karim, what do you do?</p><p>Karim: I&rsquo;m a {{{option1}}}<em>.</em>&nbsp;Who do you work for?</p><p>Kathryn: I work for CISCO. I&rsquo;m a {{{option2}}} there. Where are you from,&nbsp;Karim?</p><p>Karim: I am from Kuwait. I work for Microsoft there. And where are you from, Kathryn?</p><p>Kathryn: I&rsquo;m from the {{{option3}}}&nbsp;but now I live in Qatar. Do you know where Glenda&rsquo;s from?</p><p>Karim: She is from the US.</p><p>Kathryn: And what&rsquo;s her job?</p><p>Karim: She works for {{{option4}}}. Her job is to set up new systems.</p>',
+                  correct: {
+                    option1: 'network administrator',
+                    option2: 'system analyst',
+                    option3: 'UK',
+                    option4: 'IBM',
+                  },
+                  value: { option1: '', option2: '', option3: '', option4: '' },
+                  interface: 'TextInputTask',
+                },
+              ],
             },
           ],
         },

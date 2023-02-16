@@ -23,7 +23,10 @@ const taskElem = ref<HTMLElement>()
 const content = computed(() =>
   Mustache.render(
     props.task.content,
-    mapValues(props.task.value, (value, key) => `<span data-option-key="${key}">${value || '_________'}</span>`)
+    mapValues(
+      props.task.value,
+      (value, key) => `<span data-option-key="${key}">${value.toLowerCase() || '_________'}</span>`
+    )
   )
 )
 
@@ -32,7 +35,7 @@ const options = computed(() => {
 
   for (const key in props.task.correct) {
     if (!Object.values(props.task.value).includes(props.task.correct[key])) {
-      result[key] = props.task.correct[key]
+      result[key] = props.task.correct[key].toLowerCase()
     }
   }
 

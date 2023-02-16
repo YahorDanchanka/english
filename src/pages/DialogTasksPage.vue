@@ -2,9 +2,10 @@
   <q-page class="listen-tasks-page page" padding>
     <TheHeader class="page__header" navigation-back />
     <AppCard class="listen-tasks-page__card" :title="subsection.title">
-      <div class="text-center" v-for="exerciseIndex in subsection.dialog.length">
+      <div v-html="dialog.text"></div>
+      <div class="text-center" v-for="exerciseIndex in dialog.exercises.length">
         <AppButton
-          :class="{ 'q-mb-md': exerciseIndex !== subsection.dialog.length }"
+          :class="{ 'q-mb-md': exerciseIndex !== dialog.exercises.length }"
           :label="`Exercise ${exerciseIndex}`"
           @click="runExercise(exerciseIndex - 1)"
         />
@@ -30,10 +31,11 @@ const section = computed<Section>(() => store.sections.find((section) => section
 const subsection = computed<Subsection>(
   () => section.value.subsections.find((subsection) => subsection.id === route.params['subsection'])!
 )
+const dialog = computed(() => subsection.value.dialogs![+route.params['dialog']])
 
 function runExercise(index: number) {
   // @ts-ignore
-  store.activeExercise = { ...subsection.value.dialog[index], title: `Exercise ${index + 1}` }
+  store.activeExercise = { ...dialog.value.exercises[index], title: `Exercise ${index + 1}` }
   router.push({ name: 'exercise' })
 }
 </script>

@@ -47,8 +47,10 @@ const taskPathes = computed<{ label: string; path: string }[]>(() => {
     result.push({ label: 'Listen', path: 'listen' })
   }
 
-  if (subsection.value.dialog !== undefined) {
-    result.push({ label: 'Dialogue', path: 'dialog' })
+  if (subsection.value.dialogs !== undefined && subsection.value.dialogs.length > 0) {
+    for (const index in subsection.value.dialogs) {
+      result.push({ label: `Dialogue «${subsection.value.dialogs[index].title}»`, path: `dialogs[${index}]` })
+    }
   }
 
   return result
@@ -65,10 +67,11 @@ function goToCategoryTask(taskPath: { label: string; path: string }) {
     return
   }
 
-  if (taskPath.path === 'dialog') {
+  if (taskPath.path.startsWith('dialogs')) {
+    const dialogId = taskPath.path.replace(/\D/g, '')
     router.push({
       name: 'dialog-tasks',
-      params: { section: route.params['section'], subsection: route.params['subsection'] },
+      params: { section: route.params['section'], subsection: route.params['subsection'], dialog: dialogId },
     })
 
     return

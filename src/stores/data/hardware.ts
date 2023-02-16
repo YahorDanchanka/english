@@ -102,20 +102,20 @@ export const section: Section = {
           ],
         },
       ],
-      dialog: [
-        {
-          content: '<p>Listen again and complete the<br>conversation.</p>',
-          tasks: [
-            {
-              content:
-                "<p><strong>Support Specialist</strong>: Technology Support, Ivan<br>speaking. How can i help?<br><strong>Custome</strong>r: i have an old 1 hard drive&nbsp;and need help taking it out.<br><strong>Support Specialist</strong>: Okay. Unplug the connectionto the power supply first, then disconnect the {{{option1}}} cable.<br><strong>Customer:</strong> Which one is the {{{option2}}}?<br><strong>Support Specialist:</strong> It's the smaller black box in&nbsp;he corenr.<br><strong>Customer</strong>:I'm {{{option3}}} both. What's next?<br><strong>Support Specialist</strong>: Next, take out the two small<br>screws. They fasten the hard&nbsp;drive to the {{{option4}}}.<br><strong>Customer</strong>: I see, and then it slides out.&nbsp;Thanks!</p>",
-              correct: { option1: 'motherboard', option2: 'power supply', option3: 'unplugging', option4: 'case' },
-              value: { option1: '', option2: '', option3: '', option4: '' },
-              interface: 'TextInputTask',
-            },
-          ],
-        },
-      ],
+      // dialog: [
+      //   {
+      //     content: '<p>Listen again and complete the<br>conversation.</p>',
+      //     tasks: [
+      //       {
+      //         content:
+      //           "<p><strong>Support Specialist</strong>: Technology Support, Ivan<br>speaking. How can i help?<br><strong>Custome</strong>r: i have an old 1 hard drive&nbsp;and need help taking it out.<br><strong>Support Specialist</strong>: Okay. Unplug the connectionto the power supply first, then disconnect the {{{option1}}} cable.<br><strong>Customer:</strong> Which one is the {{{option2}}}?<br><strong>Support Specialist:</strong> It's the smaller black box in&nbsp;he corenr.<br><strong>Customer</strong>:I'm {{{option3}}} both. What's next?<br><strong>Support Specialist</strong>: Next, take out the two small<br>screws. They fasten the hard&nbsp;drive to the {{{option4}}}.<br><strong>Customer</strong>: I see, and then it slides out.&nbsp;Thanks!</p>",
+      //         correct: { option1: 'motherboard', option2: 'power supply', option3: 'unplugging', option4: 'case' },
+      //         value: { option1: '', option2: '', option3: '', option4: '' },
+      //         interface: 'TextInputTask',
+      //       },
+      //     ],
+      //   },
+      // ],
       words: wordsFor31,
     },
   ],
