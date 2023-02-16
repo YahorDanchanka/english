@@ -85,10 +85,12 @@ function goToCheckPage() {
     color: #030303
     text-shadow: none
     margin-bottom: 120px
+    word-break: break-word
 
   :deep(.app-card__body)
     font-size: 2em
     font-weight: 400
+    word-break: break-word
 
     p
       line-height: 39px

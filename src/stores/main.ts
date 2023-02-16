@@ -16,7 +16,7 @@ export const useStore = defineStore('main', () => {
   ])
 
   const activeExercise = ref<Exercise>()
-  const isSplashScreenVisible = ref(true)
+  const isSplashScreenVisible = ref(process.env.PROD)
   const settings = useStorage('settings', {
     soundEffects: false,
     vibration: false,

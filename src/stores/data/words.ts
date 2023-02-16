@@ -649,3 +649,5 @@ export const wordsFor31: Word[] = [
     content: '<p>Подключить к электричеству</p><img src="/assets/images/words/connected.png" />',
   },
 ]
+
+export const wordsFor41: Word[] = []

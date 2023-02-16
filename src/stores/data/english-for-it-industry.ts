@@ -1007,7 +1007,7 @@ export const section: Section = {
     },
     {
       id: 'ss6',
-      title: 'Meeting etiquette',
+      title: 'Business meetings',
       image: '/assets/images/etiquette.png',
       texts: [
         {

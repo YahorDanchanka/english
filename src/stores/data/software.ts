@@ -6,11 +6,11 @@ export const section: Section = {
   subsections: [
     {
       id: 'ss1',
-      title: '4.1',
-      image: '/assets/images/job-interview.png',
+      title: 'Software',
+      image: '/assets/images/words/excel.png',
       texts: [
         {
-          title: 'What is Computer Software?',
+          title: 'Computer software',
           text: '<h1>What is Computer Software?</h1> <p>Computer software, or simply software, is a set of instructions or encoded information that tells a computer what to do or how to perform a task. It can also mean all software on a computer, including the applications and the operating system.</p> <p>System software. A system software is any program that allows computers to perform basic operations. The earliest computers operated with only basic software support. Users manually entered commands into a computer. This required specialized knowledge and lots of patience.</p> <p>Now, computers come with sophisticated operating systems. These systems manage both hardware and software of a computer. Users control their computer&rsquo;s operations easily with windowing systems. These allow even beginners to perform complicated operations.</p> <p>Most modern computers come with pre-installed device drivers. These control the unit&rsquo;s operating system. Other components ensure that peripherals work with the operating system. Sophisticated BIOS in the firmware performs this function.</p> <p>Application Software.</p> <p>Application software lets you do specific jobs such as writing letters, doing calculations, drawing and playing games. Examples are a word processor or a graphics package.</p> <p>Programming Software.</p> <p>Programming software allows programmers to develop new programs. The most basic programming software is a source code editor. These programs are usually basic text editors. Programmers use them to enter lines of code into a computer. Lines of code are written in a programming language.</p> <p>Other programming software are more complex. An IDE (integrated development environment) provides tools for writing programs. These usually include a text editor and a debugger. Other tools may include a linker, a compiler, or an interpreter.</p>',
           exercises: [
             {

@@ -7,8 +7,8 @@ export const section: Section = {
   subsections: [
     {
       id: 'ss1',
-      title: '3.1',
-      image: '/assets/images/words/hard-disk.png',
+      title: 'Inside the computer',
+      image: '/assets/images/3.1.png',
       texts: [
         {
           title: 'Assembly Instructions',

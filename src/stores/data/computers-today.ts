@@ -7,8 +7,8 @@ export const section: Section = {
   subsections: [
     {
       id: 'ss1',
-      title: '2.1',
-      image: '/assets/images/words/computer.png',
+      title: 'Computer literacy',
+      image: '/assets/images/2.1.png',
       texts: [
         {
           title: 'Computers: friend ...',
@@ -96,8 +96,8 @@ export const section: Section = {
     },
     {
       id: 'ss2',
-      title: '2.2',
-      image: '/assets/images/job-interview.png',
+      title: 'History of the computers',
+      image: '/assets/images/2.2.png',
       texts: [
         {
           title: 'A long Way to Computers',
