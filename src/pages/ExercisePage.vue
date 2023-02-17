@@ -40,6 +40,12 @@
           v-model:task="store.activeExercise.tasks[taskIndex]"
           :task-index="taskIndex"
         />
+        <SelectTask
+          v-if="isSelectTask(task)"
+          class="exercise-page__task"
+          v-model:task="store.activeExercise.tasks[taskIndex]"
+          :task-index="taskIndex"
+        />
       </template>
       <div class="q-mt-md text-center">
         <AppButton
@@ -64,6 +70,7 @@ import {
   isSortableTask,
   isTextInputTask,
   isTypingTask,
+  isSelectTask,
 } from 'src/types'
 import SelectionTask from 'components/SelectionTask.vue'
 import AppButton from 'components/AppButton.vue'
@@ -74,6 +81,7 @@ import TheHeader from 'components/TheHeader.vue'
 import SortableTask from 'components/SortableTask.vue'
 import AppCard from 'components/AppCard.vue'
 import MultipleSelectionTask from 'components/MultipleSelectionTask.vue'
+import SelectTask from 'components/SelectTask.vue'
 
 const router = useRouter()
 const store = useStore()
@@ -155,6 +163,20 @@ function acceptAnswer() {
       })
     }
 
+    if (isSelectTask(task)) {
+      totalAnswers = Object.keys(task.selects).length
+
+      for (const selectKey in task.selects) {
+        const select = task.selects[selectKey]
+
+        if (select.selectedOptionIndex === select.correctOptionIndex) {
+          rightAnswersCount++
+        } else {
+          task.error = true
+        }
+      }
+    }
+
     isValidated.value = true
   })
 
@@ -189,6 +211,13 @@ onUnmounted(() => {
       if (isMatchingTask(task) || isTextInputTask(task)) {
         for (const key in task.value) {
           task.value[key] = ''
+        }
+      }
+
+      if (isSelectTask(task)) {
+        for (const selectKey in task.selects) {
+          const select = task.selects[selectKey]
+          select.selectedOptionIndex = undefined
         }
       }
 

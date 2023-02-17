@@ -200,15 +200,26 @@ export const section: Section = {
               tasks: [
                 {
                   content:
-                    '<p>Kathryn: Karim, what do you do?</p><p>Karim: I&rsquo;m a {{{option1}}}<em>.</em>&nbsp;Who do you work for?</p><p>Kathryn: I work for CISCO. I&rsquo;m a {{{option2}}} there. Where are you from,&nbsp;Karim?</p><p>Karim: I am from Kuwait. I work for Microsoft there. And where are you from, Kathryn?</p><p>Kathryn: I&rsquo;m from the {{{option3}}}&nbsp;but now I live in Qatar. Do you know where Glenda&rsquo;s from?</p><p>Karim: She is from the US.</p><p>Kathryn: And what&rsquo;s her job?</p><p>Karim: She works for {{{option4}}}. Her job is to set up new systems.</p>',
-                  correct: {
-                    option1: 'network administrator',
-                    option2: 'system analyst',
-                    option3: 'UK',
-                    option4: 'IBM',
+                    '<p>Kathryn: Karim, what do you do?</p><p>Karim: I&rsquo;m a {{{select1}}}<em>.</em>&nbsp;Who do you work for?</p><p>Kathryn: I work for CISCO. I&rsquo;m a {{{select2}}} there. Where are you from,&nbsp;Karim?</p><p>Karim: I am from Kuwait. I work for Microsoft there. And where are you from, Kathryn?</p><p>Kathryn: I&rsquo;m from the {{{select3}}}&nbsp;but now I live in Qatar. Do you know where Glenda&rsquo;s from?</p><p>Karim: She is from the US.</p><p>Kathryn: And what&rsquo;s her job?</p><p>Karim: She works for {{{select4}}}. Her job is to set up new systems.</p>',
+                  selects: {
+                    select1: {
+                      correctOptionIndex: 1,
+                      options: ['developer', 'network administrator'],
+                    },
+                    select2: {
+                      correctOptionIndex: 0,
+                      options: ['system analyst', 'website analyst'],
+                    },
+                    select3: {
+                      correctOptionIndex: 0,
+                      options: ['UK', 'US'],
+                    },
+                    select4: {
+                      correctOptionIndex: 0,
+                      options: ['IBM', 'Dell'],
+                    },
                   },
-                  value: { option1: '', option2: '', option3: '', option4: '' },
-                  interface: 'TextInputTask',
+                  interface: 'SelectTask',
                 },
               ],
             },

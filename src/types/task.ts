@@ -5,6 +5,7 @@ export type Task = (
   | MatchingTask
   | TextInputTask
   | SortableTask
+  | SelectTask
 ) & { interface: string; error?: boolean }
 
 export interface SelectionTask {
@@ -63,4 +64,13 @@ export interface SortableTask {
 
 export function isSortableTask(obj: any): obj is SortableTask {
   return obj.interface === 'SortableTask'
+}
+
+export interface SelectTask {
+  content: string
+  selects: { [key: string]: { correctOptionIndex: number; options: string[]; selectedOptionIndex?: number } }
+}
+
+export function isSelectTask(obj: any): obj is SelectTask {
+  return obj.interface === 'SelectTask'
 }
