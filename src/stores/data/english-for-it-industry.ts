@@ -16,7 +16,7 @@ export const section: Section = {
           exercises: [
             {
               content:
-                '<p>Listen and read this extract from an etiquette guide. Then, choose the correct answers. How many customs are mentioned in the text?</p><audio controls src="/assets/audio/royale.mp3"></audio>',
+                '<p>Listen and read this extract from an etiquette guide. Then, choose the correct answers. How many customs are mentioned in the text?</p>',
               tasks: [
                 {
                   title: 'According to the guide, which is not a common way of greeting.',
@@ -96,11 +96,11 @@ export const section: Section = {
       dialogs: [
         {
           title: 'Etiquette',
-          text: '<p><strong>Manager</strong>: When you meet Mr. Yakamoto be very ________. He is very important client.</p><p><strong>Colleague</strong>: It is the Japanese ________ to bow. Should i do that?</p><p><strong>Manager</strong>: No, you don’t have to bow. Just say ‘________ meet you’ and ________.</p><p><strong>Colleague</strong>: Okay.</p><p><strong>Manager</strong>: But don’t make your handshake too ________.Japanese people usually have a softer handshake.</p><p><strong>Colleague</strong>: And when he leaves? What then?</p><p><strong>Manager</strong>: Just say ‘It was ________’ and handshake his hand again.</p><p><strong>Colleague</strong>: Okay, that’s fine.</p>',
+          text: '<audio controls src="/assets/audio/1.1-6(1).mp3"></audio><p><strong>Manager</strong>: When you meet Mr. Yakamoto be very ________. He is very important client.</p><p><strong>Colleague</strong>: It is the Japanese ________ to bow. Should i do that?</p><p><strong>Manager</strong>: No, you don’t have to bow. Just say ‘________ meet you’ and ________.</p><p><strong>Colleague</strong>: Okay.</p><p><strong>Manager</strong>: But don’t make your handshake too ________.Japanese people usually have a softer handshake.</p><p><strong>Colleague</strong>: And when he leaves? What then?</p><p><strong>Manager</strong>: Just say ‘It was ________’ and handshake his hand again.</p><p><strong>Colleague</strong>: Okay, that’s fine.</p>',
           exercises: [
             {
               content:
-                '<p>Listen to a conversation between a manager and his colleague. Complete the conversation.</p><audio controls src="/assets/audio/royale.mp3"></audio>',
+                '<p>Listen to a conversation between a manager and his colleague. Complete the conversation.</p>',
               tasks: [
                 // check
                 {
@@ -124,7 +124,7 @@ export const section: Section = {
               ],
             },
             {
-              content: '<p>Listen again and complete the conversation</p>',
+              content: '<p>Listen again and complete the conversation.</p>',
               tasks: [
                 {
                   content:
@@ -153,14 +153,14 @@ export const section: Section = {
         },
         {
           title: 'Meeting people1',
-          text: "<ol><li>Natasha: Hi, my&nbsp;________ Natasha.<br>Khalid: Pleased to ________ you. I'm Khalid Ali.<br>Natasha: Pleased to meet you, ________.</li><li>Philip: Good morning. ________ your name?<br>Ahmed: I'm Ahmed. And ________ are?<br>Philip: My name is Philip. ________ to meet you.</li><li>Tim: Hi everybody, ________ is Ingrid.<br>All: Hi!<br>Tim: Ingrid, this ________ Ahmed, Linda, Mohammed and Mansoor.<br>Ingrid: Nice meeting you ________.<br>Linda: Likewise.<br>Tim: ________ to the team and good luck.</li></ol>",
+          text: "<ol><li><strong>Natasha</strong>: Hi, my&nbsp;________ Natasha.<br><strong>Khalid</strong>: Pleased to ________ you. I'm Khalid Ali.<br><strong>Natasha</strong>: Pleased to meet you, ________.</li><li><strong>Philip</strong>: Good morning. ________ your name?<br><strong>Ahmed</strong>: I'm Ahmed. And ________ are?<br><strong>Philip</strong>: My name is Philip. ________ to meet you.</li><li><strong>Tim</strong>: Hi everybody, ________ is Ingrid.<br><strong>All</strong>: Hi!<br><strong>Tim</strong>: Ingrid, this ________ Ahmed, Linda, Mohammed and Mansoor.<br><strong>Ingrid</strong>: Nice meeting you ________.<br><strong>Linda</strong>: Likewise.<br><strong>Tim</strong>: ________ to the team and good luck.</li></ol>",
           exercises: [
             {
               content: '<p>Complete these dialogues with the words in the box.</p>',
               tasks: [
                 {
                   content:
-                    "<ol><li>Natasha: Hi, my&nbsp;{{{option1}}} Natasha.<br>Khalid: Pleased to {{{option2}}} you. I'm Khalid Ali.<br>Natasha: Pleased to meet you, {{{option3}}}.</li><li>Philip: Good morning. {{{option4}}} your name?<br>Ahmed: I'm Ahmed. And {{{option5}}} are?<br>Philip: My name is Philip. {{{option6}}} to meet you.</li><li>Tim: Hi everybody, {{{option7}}} is Ingrid.<br>All: Hi!<br>Tim: Ingrid, this {{{option8}}} Ahmed, Linda, Mohammed and Mansoor.<br>Ingrid: Nice meeting you {{{option9}}}.<br>Linda: Likewise.<br>Tim: {{{option10}}} to the team and good luck.</li></ol>",
+                    "<ol><li><strong>Natasha</strong>: Hi, my&nbsp;{{{option1}}} Natasha.<br><strong>Khalid</strong>: Pleased to {{{option2}}} you. I'm Khalid Ali.<br><strong>Natasha</strong>: Pleased to meet you, {{{option3}}}.</li><li><strong>Philip</strong>: Good morning. {{{option4}}} your name?<br><strong>Ahmed</strong>: I'm Ahmed. And {{{option5}}} are?<br><strong>Philip</strong>: My name is Philip. {{{option6}}} to meet you.</li><li><strong>Tim</strong>: Hi everybody, {{{option7}}} is Ingrid.<br><strong>All</strong>: Hi!<br><strong>Tim</strong>: Ingrid, this {{{option8}}} Ahmed, Linda, Mohammed and Mansoor.<br><strong>Ingrid</strong>: Nice meeting you {{{option9}}}.<br><strong>Linda</strong>: Likewise.<br><strong>Tim</strong>: {{{option10}}} to the team and good luck.</li></ol>",
                   correct: {
                     option1: "name's",
                     option2: 'meet',
@@ -193,14 +193,14 @@ export const section: Section = {
         },
         {
           title: 'Meeting people2',
-          text: '<p>Kathryn: Karim, what do you do?</p><p>Karim: I&rsquo;m a ________<em>.</em>&nbsp;Who do you work for?</p><p>Kathryn: I work for CISCO. I&rsquo;m a ________ there. Where are you from,&nbsp;Karim?</p><p>Karim: I am from Kuwait. I work for Microsoft there. And where are you from, Kathryn?</p><p>Kathryn: I&rsquo;m from the ________&nbsp;but now I live in Qatar. Do you know where Glenda&rsquo;s from?</p><p>Karim: She is from the US.</p><p>Kathryn: And what&rsquo;s her job?</p><p>Karim: She works for ________. Her job is to set up new systems.</p>',
+          text: '<audio controls src="/assets/audio/1.1-6.mp3"></audio><p><strong>Kathryn</strong>: Karim, what do you do?</p><p><strong>Karim</strong>: I&rsquo;m a ________<em>.</em>&nbsp;Who do you work for?</p><p><strong>Kathryn</strong>: I work for CISCO. I&rsquo;m a ________ there. Where are you from,&nbsp;Karim?</p><p><strong>Karim</strong>: I am from Kuwait. I work for Microsoft there. And where are you from, Kathryn?</p><p><strong>Kathryn</strong>: I&rsquo;m from the ________&nbsp;but now I live in Qatar. Do you know where Glenda&rsquo;s from?</p><p><strong>Karim</strong>: She is from the US.</p><p><strong>Kathryn</strong>: And what&rsquo;s her job?</p><p><strong>Karim</strong>: She works for ________. Her job is to set up new systems.</p>',
           exercises: [
             {
               content: '<p>Listen to this dialogue and choose the correct answers.</p>',
               tasks: [
                 {
                   content:
-                    '<p>Kathryn: Karim, what do you do?</p><p>Karim: I&rsquo;m a {{{select1}}}<em>.</em>&nbsp;Who do you work for?</p><p>Kathryn: I work for CISCO. I&rsquo;m a {{{select2}}} there. Where are you from,&nbsp;Karim?</p><p>Karim: I am from Kuwait. I work for Microsoft there. And where are you from, Kathryn?</p><p>Kathryn: I&rsquo;m from the {{{select3}}}&nbsp;but now I live in Qatar. Do you know where Glenda&rsquo;s from?</p><p>Karim: She is from the US.</p><p>Kathryn: And what&rsquo;s her job?</p><p>Karim: She works for {{{select4}}}. Her job is to set up new systems.</p>',
+                    '<p><strong>Kathryn</strong>: Karim, what do you do?</p><p><strong>Karim</strong>: I&rsquo;m a {{{select1}}}<em>.</em>&nbsp;Who do you work for?</p><p><strong>Kathryn</strong>: I work for CISCO. I&rsquo;m a {{{select2}}} there. Where are you from,&nbsp;Karim?</p><p><strong>Karim</strong>: I am from Kuwait. I work for Microsoft there. And where are you from, Kathryn?</p><p><strong>Kathryn</strong>: I&rsquo;m from the {{{select3}}} but now I live in Qatar. Do you know where Glenda&rsquo;s from?</p><p><strong>Karim</strong>: She is from the US.</p><p><strong>Kathryn</strong>: And what&rsquo;s her job?</p><p><strong>Karim</strong>: She works for {{{select4}}}. Her job is to set up new systems.</p>',
                   selects: {
                     select1: {
                       correctOptionIndex: 1,

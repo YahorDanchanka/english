@@ -190,7 +190,90 @@ export const wordsFor11: Word[] = [
     word: 'SQUARE BRACKETS',
     translations: ['[]'],
     content:
-      '<p>[]<br><span style="font-size: 16px;">(Квадратные скобки)</span></p> <img src="/assets/images/words/brackets.png" />',
+      '<p>[]<br><span style="font-size: 16px;">(Квадратные скобки)</span></p> <img src="/assets/images/words/square-brackets.png" />',
+  },
+  {
+    word: 'ELLIPSES',
+    translations: ['Многоточие'],
+    content:
+      '<p>...<br><span style="font-size: 16px;">(Многоточие)</span></p> <img src="/assets/images/words/ellipses.png" />',
+  },
+  {
+    word: 'COLON',
+    translations: ['Двоеточие'],
+    content:
+      '<p>:<br><span style="font-size: 16px;">(Двоеточие)</span></p> <img src="/assets/images/words/colon.png" />',
+  },
+  {
+    word: 'SEMICOLON',
+    translations: ['Точка с запятой'],
+    content:
+      '<p>;<br><span style="font-size: 16px;">(Точка с запятой)</span></p> <img src="/assets/images/words/semicolon.png" />',
+  },
+  {
+    word: 'DOUBLE QUOTES',
+    translations: ['Двойные кавычки'],
+    content:
+      '<p>" "<br><span style="font-size: 16px;">(Двойные кавычки)</span></p> <img src="/assets/images/words/quotations.png" />',
+  },
+  {
+    word: 'SINGLE QUOTES',
+    translations: ['Одинарные кавычки'],
+    content:
+      '<p>\' \'<br><span style="font-size: 16px;">(Одинарные кавычки)</span></p> <img src="/assets/images/words/quotes.png" />',
+  },
+  {
+    word: 'BRACKETS',
+    translations: ['Круглые скобки'],
+    content:
+      '<p>()<br><span style="font-size: 16px;">(Круглые скобки)</span></p> <img src="/assets/images/words/brackets.png" />',
+  },
+  {
+    word: 'EXCLAMATION SIGN',
+    translations: ['Восклицательный знак'],
+    content:
+      '<p>!<br><span style="font-size: 16px;">(Восклицательный знак)</span></p> <img src="/assets/images/words/alert.png" />',
+  },
+  {
+    word: 'PERCENT',
+    translations: ['Процент'],
+    content:
+      '<p>%<br><span style="font-size: 16px;">(Процент)</span></p> <img src="/assets/images/words/analytics.png" />',
+  },
+  {
+    word: 'AMPERSAND',
+    translations: ['Амперсант'],
+    content:
+      '<p>&<br><span style="font-size: 16px;">(Амперсант)</span></p> <img src="/assets/images/words/ampersand.png" />',
+  },
+  {
+    word: 'ASTERISK',
+    translations: ['Звездочка'],
+    content:
+      '<p>*<br><span style="font-size: 16px;">(Звездочка)</span></p> <img src="/assets/images/words/asterisk.png" />',
+  },
+  {
+    word: 'CARET',
+    translations: ['Знак вставки'],
+    content:
+      '<p>^<br><span style="font-size: 16px;">(Знак вставки)</span></p> <img src="/assets/images/words/arrow.png" />',
+  },
+  {
+    word: 'TILDE',
+    translations: ['Тильда'],
+    content: '<p>~<br><span style="font-size: 16px;">(Тильда)</span></p> <img src="/assets/images/words/tilde.png" />',
+  },
+  {
+    word: 'SUPERVISOR',
+    translations: ['Руководитель'],
+    content:
+      '<p>Руководитель</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">You should contact your <span style="color: rgb(255, 0, 0);">supervisor</span></span></em></p><img src="/assets/images/words/supervisor.png" />',
+  },
+  {
+    word: 'MAINTAIN',
+    translations: ['Хранить'],
+    content:
+      '<p>Хранить</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">Computer programs generally <span style="color: rgb(255, 0, 0);">maintain</span> data in different formats</span></em></p><img src="/assets/images/words/maintenance.png" />',
   },
 ]
 
