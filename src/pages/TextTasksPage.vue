@@ -1,7 +1,7 @@
 <template>
   <q-page class="text-tasks-page page" padding>
-    <TheHeader class="page__header" navigation-back />
-    <AppCard class="text-tasks-page__card" :title="subsection.title">
+    <TheHeader class="page__header" :title="subsection.title" navigation-back />
+    <AppCard class="text-tasks-page__card">
       <div v-html="text.text"></div>
       <div class="text-center" v-for="exerciseIndex in text.exercises.length">
         <AppButton
