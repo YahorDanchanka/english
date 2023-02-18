@@ -9,7 +9,9 @@
         <div class="row q-col-gutter-md" v-else>
           <div class="col-12" v-for="taskPath in taskPathes">
             <div class="task-list-page__task task" @click="goToCategoryTask(taskPath)">
-              <div class="task__caption">{{ taskPath.label }}</div>
+              <div class="task__caption" :class="{ task__caption_small: taskPath.label.length >= 21 }">
+                {{ taskPath.label }}
+              </div>
             </div>
           </div>
         </div>
@@ -110,7 +112,7 @@ function goToCategoryTask(taskPath: { label: string; path: string }) {
 .task
   background: #C7C7C7
   border-radius: 7px
-  padding: 1.125em 1.3em
+  padding: 1.125em 0.5em
   text-align: center
   font-size: 1rem
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
@@ -120,4 +122,7 @@ function goToCategoryTask(taskPath: { label: string; path: string }) {
   color: #4D3A3A
   font-size: 1.5em
   text-shadow: 0 5px 4px rgba(0, 0, 0, 0.25)
+
+.task__caption_small
+  font-size: 1.25em
 </style>
