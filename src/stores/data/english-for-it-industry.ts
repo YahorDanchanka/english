@@ -234,6 +234,7 @@ export const section: Section = {
       image: '/assets/images/it.png',
       texts: [
         {
+          order: 0,
           title: 'Jobs in IT',
           text: "<h1>Jobs in IT</h1><p>Hi! I'm Sylvia. I create usernames and passwords and I set firewalls. This is Isabelle. Herjob is to plan and design the network. And this is Andrew. His job is to make sure all of the computers work properly. Finally, Mark and Latika. Their area is data processing. We all work for the university. Our offices are in building 8.</p>",
           exercises: [
@@ -293,6 +294,7 @@ export const section: Section = {
           ],
         },
         {
+          order: 5,
           title: 'Information Technology',
           text: '<ol><li>What is Information Technology?</li><li>What do Information Technology professionals do?</li></ol><h1>IT Department Restructuring</h1><p>DataPro Inc. is growing, and so our workload is increasing. Bout our IT department is not dealing with this increase effectively. So I am dividing the IT department into three sections: quality assurance, data processing and information security.</p><p>The responsibilities of each section are:<br><strong>Quality Assurance:</strong><br>Testing hardware<br>Providing technical support<br><strong>Data Processing:</strong><br>Writing code<br>Organizing data<br><strong>Information Security:</strong><br>Encoding online data transfers<br>Updating security software</p>',
           exercises: [
@@ -375,6 +377,7 @@ export const section: Section = {
           ],
         },
         {
+          order: 7,
           title: 'IT workplace rules',
           text: "FROM: Chief Information Officer<br>TO: all staff<br>DATE:16 June<br><strong>SUBJECT: IT security</strong><br><br><p>As you know, many new staff have joined us at XBM Digital recently, so now is a good time for a reminder about some of our rules. Security is important, and these rules will help us to keep our IT systems and data secure. Firstly, passwords are important for keeping the network secure. Don't use common words or numbers as passwords, such as birthdays or names of your children. Passwords must be alphanumeric and be at least eight characters long. You need to change your password every month or more frequently. Also, you should not share it with anyone, including your colleagues.</p>",
           exercises: [
@@ -417,6 +420,7 @@ export const section: Section = {
           ],
         },
         {
+          order: 8,
           title: 'IT organisations',
           text: '<h1>Futachiba</h1><p>Futachiba is а leading intemational provider of computer hardware. Тhе company is among the top five suppliers internationally of servers and among the top te n manufacturers of laptop computers . We have produ ction facilities in six countries and we sell our products to almo t every country in the world. With service centres in all our major markets, we provide а very high level of customer service</p><h1>IBGroup</h1><p>We are а fast-growing private company that supplies cloud computing services internationaJly. Our products include online office applications such as word processing, spreadsheet, presentation and database programs, which people can use on the internet anywhere and at any time. Our clients include major corporations, as well as many smaJI and medium-sized companies</p><h1>Digital world</h1><p>At Digital World we proudly design the most popular games in the world! We аге excited every day Ьу the great feedback we get from our favourite people: our game-playing customers. You сап play our award-winning games on all the major computer operating systems, i ncluding Windows and Мае OS. Many of them аге also availaЫe fo r Apple iOS and Android. Our wonderful staff started developing games in 2005 and continue to work оп new, highly entertaining products. We expect to launch the next version of our Ьiggest game, War of the Suns, next month.</p>',
           exercises: [
@@ -460,6 +464,7 @@ export const section: Section = {
       ],
       listen: [
         {
+          order: 2,
           title: 'Jobs in IT',
           text: '<audio controls src="/assets/audio/1.2-working1.mp3"></audio>',
           exercises: [
@@ -537,6 +542,7 @@ export const section: Section = {
           ],
         },
         {
+          order: 4,
           title: 'IT professionals',
           text: '',
           exercises: [
@@ -583,6 +589,7 @@ export const section: Section = {
       ],
       dialogs: [
         {
+          order: 1,
           title: 'Jobs in IT',
           text: '<audio controls src="/assets/audio/ahmed-betty.mp3"></audio><p><strong>Ahmed</strong>: Where ________ you work, Betty?</p><p><strong>Betty</strong>: I work for Dell in Dubai. What ________ you?</p><p><strong>Ahmed</strong>: I ________ for HP in Budapest. What do you ________, Milo?</p><p><strong>Milo</strong>: I\'m a ________ developer. I work ________ Microsoft in Prague.</p><p><strong>Betty</strong>: Milo, do you ________ Frida?</p><p><strong>Milo</strong>: Yes, I do. What do you do ________ to know?</p><p><strong>Betty</strong>: Where ________ she work?</p><p><strong>Milo</strong>: She works with ________ in Prague. She designs websites for ________</p><p><strong>Ahmed</strong>: I see. Right, let\'s go. The workshop starts in five minutes.</p>',
           exercises: [
@@ -618,6 +625,7 @@ export const section: Section = {
           ],
         },
         {
+          order: 3,
           title: 'My job in IT',
           text: '<p>Listen to an IT employee telling his new manager about his job. What do you think his job is?</p><audio controls src="/assets/audio/1.2-working2.mp3"></audio>',
           exercises: [
@@ -675,6 +683,7 @@ export const section: Section = {
           ],
         },
         {
+          order: 6,
           title: 'Information Technology',
           text: "<audio controls src=\"/assets/audio/1.2-working5.mp3\"></audio><p><strong>Employee</strong>: Excuse me, Mr.Hopkins? I have a question about the ________.</p><p><strong>Hopkins</strong>: Please, come in. What's your question?</p><p><strong>Employee</strong>: Well, I'm now in the ________ section.</p><p><strong>Hopkins</strong>: Yes. You have a great understanding of the hardware.</p><p><strong>Employee</strong>: Thanks, but I have more experience with ________.</p><p><strong>Hopkins</strong>: I see. You want a ________ then?</p><p><strong>Employee</strong>: Exactly. I feel that I'm more valuable there.</p><p><strong>Hopkins</strong>: Let me ________ it.</p>",
           exercises: [
@@ -738,6 +747,7 @@ export const section: Section = {
           ],
         },
         {
+          order: 7,
           title: 'IT workplace rules',
           text: '',
           exercises: [
@@ -759,8 +769,9 @@ export const section: Section = {
           ],
         },
         {
+          order: 9,
           title: 'Acronyms',
-          text: "<p><strong>Andrei</strong>: Bob, can you ________ me, please?</p><p><strong>Bob</strong>: Sure.</p><p><strong>Andrei</strong>: I don't understand this acronym. What does it ________ for?</p><p><strong>Bob</strong>: Let те see. 'WЗ'. l'm not sure. МауЬе WWW, the World Wide Web.</p><p><strong>Andrei</strong>: ОК. What does Р2Р stand for?</p><p><strong>Bob</strong>: ________ stands for person-to-person.</p><p><strong>Andrei</strong>: ОК. What does IP ________?</p><p><strong>Bob</strong>: It means lnternet Protocol.</p><p><strong>Andrei</strong>: How do you ________ 'Protocol'?</p><p><strong>Bob</strong>: р-r-o-t-o-c-o-l.</p><p><strong>Andrei</strong>: Thanks.</p><p><strong>Bob</strong>: You're welcome.</p>",
+          text: "<audio controls src=\"/assets/audio/1.2-working10.mp3\"></audio><p><strong>Andrei</strong>: Bob, can you ________ me, please?</p><p><strong>Bob</strong>: Sure.</p><p><strong>Andrei</strong>: I don't understand this acronym. What does it ________ for?</p><p><strong>Bob</strong>: Let те see. 'WЗ'. l'm not sure. МауЬе WWW, the World Wide Web.</p><p><strong>Andrei</strong>: ОК. What does Р2Р stand for?</p><p><strong>Bob</strong>: ________ stands for person-to-person.</p><p><strong>Andrei</strong>: ОК. What does IP ________?</p><p><strong>Bob</strong>: It means lnternet Protocol.</p><p><strong>Andrei</strong>: How do you ________ 'Protocol'?</p><p><strong>Bob</strong>: р-r-o-t-o-c-o-l.</p><p><strong>Andrei</strong>: Thanks.</p><p><strong>Bob</strong>: You're welcome.</p>",
           exercises: [
             {
               content:

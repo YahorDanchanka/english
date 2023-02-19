@@ -26,6 +26,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { useStore } from 'stores/main'
 import { Section, Subsection } from 'src/types'
 import TheHeader from 'components/TheHeader.vue'
+import { sortBy } from 'lodash'
 
 const route = useRoute()
 const router = useRouter()
@@ -36,28 +37,40 @@ const subsection = computed<Subsection>(
   () => section.value.subsections.find((subsection) => subsection.id === route.params['subsection'])!
 )
 
-const taskPathes = computed<{ label: string; path: string }[]>(() => {
+const taskPathes = computed<{ label: string; path: string; order: number }[]>(() => {
   const result = []
 
   if (subsection.value.texts !== undefined) {
     for (const index in subsection.value.texts) {
-      result.push({ label: `Text «${subsection.value.texts[index].title}»`, path: `texts[${index}]` })
+      result.push({
+        label: `Text «${subsection.value.texts[index].title}»`,
+        path: `texts[${index}]`,
+        order: subsection.value.texts[index].order ?? 0,
+      })
     }
   }
 
   if (subsection.value.listen !== undefined && subsection.value.listen.length > 0) {
     for (const index in subsection.value.listen) {
-      result.push({ label: `Listening «${subsection.value.listen[index].title}»`, path: `listen[${index}]` })
+      result.push({
+        label: `Listening «${subsection.value.listen[index].title}»`,
+        path: `listen[${index}]`,
+        order: subsection.value.listen[index].order ?? 0,
+      })
     }
   }
 
   if (subsection.value.dialogs !== undefined && subsection.value.dialogs.length > 0) {
     for (const index in subsection.value.dialogs) {
-      result.push({ label: `Dialogue «${subsection.value.dialogs[index].title}»`, path: `dialogs[${index}]` })
+      result.push({
+        label: `Dialogue «${subsection.value.dialogs[index].title}»`,
+        path: `dialogs[${index}]`,
+        order: subsection.value.dialogs[index].order ?? 0,
+      })
     }
   }
 
-  return result
+  return sortBy(result.slice(0), ['order'])
 })
 
 function goToCategoryTask(taskPath: { label: string; path: string }) {
