@@ -2,9 +2,10 @@
   <q-page class="listen-tasks-page page" padding>
     <TheHeader class="page__header" :title="subsection.title" navigation-back />
     <AppCard class="listen-tasks-page__card">
-      <div class="text-center" v-for="exerciseIndex in subsection.listen.length">
+      <div v-html="listen.text"></div>
+      <div class="text-center" v-for="exerciseIndex in listen.exercises.length">
         <AppButton
-          :class="{ 'q-mb-md': exerciseIndex !== subsection.listen.length }"
+          :class="{ 'q-mb-md': exerciseIndex !== listen.exercises.length }"
           :label="`Exercise ${exerciseIndex}`"
           @click="runExercise(exerciseIndex - 1)"
         />
@@ -30,10 +31,11 @@ const section = computed<Section>(() => store.sections.find((section) => section
 const subsection = computed<Subsection>(
   () => section.value.subsections.find((subsection) => subsection.id === route.params['subsection'])!
 )
+const listen = computed(() => subsection.value.listen![+route.params['listen']])
 
 function runExercise(index: number) {
   // @ts-ignore
-  store.activeExercise = { ...subsection.value.listen[index], title: `Exercise ${index + 1}` }
+  store.activeExercise = { ...listen.value.exercises[index], title: `Exercise ${index + 1}` }
   router.push({ name: 'exercise' })
 }
 </script>

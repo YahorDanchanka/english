@@ -45,8 +45,10 @@ const taskPathes = computed<{ label: string; path: string }[]>(() => {
     }
   }
 
-  if (subsection.value.listen !== undefined) {
-    result.push({ label: 'Listen', path: 'listen' })
+  if (subsection.value.listen !== undefined && subsection.value.listen.length > 0) {
+    for (const index in subsection.value.listen) {
+      result.push({ label: `Listening «${subsection.value.listen[index].title}»`, path: `listen[${index}]` })
+    }
   }
 
   if (subsection.value.dialogs !== undefined && subsection.value.dialogs.length > 0) {
@@ -59,21 +61,21 @@ const taskPathes = computed<{ label: string; path: string }[]>(() => {
 })
 
 function goToCategoryTask(taskPath: { label: string; path: string }) {
+  const resourceId = taskPath.path.replace(/\D/g, '')
+
   if (taskPath.path.startsWith('texts')) {
-    const textId = taskPath.path.replace(/\D/g, '')
     router.push({
       name: 'text-tasks',
-      params: { section: route.params['section'], subsection: route.params['subsection'], text: textId },
+      params: { section: route.params['section'], subsection: route.params['subsection'], text: resourceId },
     })
 
     return
   }
 
   if (taskPath.path.startsWith('dialogs')) {
-    const dialogId = taskPath.path.replace(/\D/g, '')
     router.push({
       name: 'dialog-tasks',
-      params: { section: route.params['section'], subsection: route.params['subsection'], dialog: dialogId },
+      params: { section: route.params['section'], subsection: route.params['subsection'], dialog: resourceId },
     })
 
     return
@@ -81,7 +83,7 @@ function goToCategoryTask(taskPath: { label: string; path: string }) {
 
   router.push({
     name: 'listen-tasks',
-    params: { section: route.params['section'], subsection: route.params['subsection'] },
+    params: { section: route.params['section'], subsection: route.params['subsection'], listen: resourceId },
   })
 }
 </script>

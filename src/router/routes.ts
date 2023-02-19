@@ -34,7 +34,7 @@ const routes: RouteRecordRaw[] = [
       },
       {
         name: 'listen-tasks',
-        path: ':section/:subsection/listen',
+        path: ':section/:subsection/listen/:listen',
         component: () => import('pages/ListenTasksPage.vue'),
       },
       {

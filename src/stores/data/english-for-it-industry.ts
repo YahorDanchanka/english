@@ -234,7 +234,66 @@ export const section: Section = {
       image: '/assets/images/it.png',
       texts: [
         {
-          title: 'IT Department Restructuring',
+          title: 'Jobs in IT',
+          text: "<h1>Jobs in IT</h1><p>Hi! I'm Sylvia. I create usernames and passwords and I set firewalls. This is Isabelle. Herjob is to plan and design the network. And this is Andrew. His job is to make sure all of the computers work properly. Finally, Mark and Latika. Their area is data processing. We all work for the university. Our offices are in building 8.</p>",
+          exercises: [
+            {
+              content: '<p>List the IT jobs you know.</p>',
+              tasks: [],
+            },
+            {
+              content: '<p>Complete the descriptions with the IT jobs in the box.</p>',
+              tasks: [
+                {
+                  content:
+                    'Sylvia is a {{{option1}}}<div>Isabelle is a {{{option2}}}<br></div><div>Andrew is an {{{option3}}}<br></div><div>Mark and Latika are {{{option4}}}<br></div>',
+                  correct: {
+                    option1: 'network administrator',
+                    option2: 'network architect',
+                    option3: 'IT support officer',
+                    option4: 'database analyst',
+                  },
+                  value: { option1: '', option2: '', option3: '', option4: '' },
+                  interface: 'MatchingTask',
+                },
+              ],
+            },
+            {
+              content:
+                '<p>Listen to three people talking about their jobs. Complete these job descriptions.</p><audio controls src="/assets/audio/karl-heba-wojtek.mp3"></audio>',
+              tasks: [
+                {
+                  content:
+                    '<p>Karl</p><p>Job: software {{{option1}}}</p><p>Responsibilities: the designs and {{{option2}}} computer games.</p>',
+                  correct: { option1: 'developer', option2: 'develops' },
+                  value: { option1: '', option2: '' },
+                  interface: 'TextInputTask',
+                },
+                {
+                  content:
+                    '<p>Heba</p><p>Job: {{{option1}}} analyst</p><p>Responsibilities: he {{{option2}}} computer problems.</p>',
+                  correct: { option1: 'system', option2: 'solves' },
+                  value: { option1: '', option2: '' },
+                  interface: 'TextInputTask',
+                },
+                {
+                  content:
+                    '<p>Wojtek</p><p>Job: database {{{option1}}}</p><p>Responsibilities: he analyses and {{{option2}}} electronic data.</p>',
+                  correct: { option1: 'administrator', option2: 'present' },
+                  value: { option1: '', option2: '' },
+                  interface: 'TextInputTask',
+                },
+              ],
+            },
+            {
+              content:
+                "<p>Ask and answer questions about Karl, Heba and Wojtek.</p><em>Example:</em><br><em>A: What does Karl do?<br></em><em>B: He's: ... .</em>",
+              tasks: [],
+            },
+          ],
+        },
+        {
+          title: 'Information Technology',
           text: '<ol><li>What is Information Technology?</li><li>What do Information Technology professionals do?</li></ol><h1>IT Department Restructuring</h1><p>DataPro Inc. is growing, and so our workload is increasing. Bout our IT department is not dealing with this increase effectively. So I am dividing the IT department into three sections: quality assurance, data processing and information security.</p><p>The responsibilities of each section are:<br><strong>Quality Assurance:</strong><br>Testing hardware<br>Providing technical support<br><strong>Data Processing:</strong><br>Writing code<br>Organizing data<br><strong>Information Security:</strong><br>Encoding online data transfers<br>Updating security software</p>',
           exercises: [
             {
@@ -295,34 +354,132 @@ export const section: Section = {
                 },
               ],
             },
+            // {
+            //   content: '<p>Match the sentence halves 1-8 to a-h</p>',
+            //   tasks: [
+            //     {
+            //       options: [
+            //         { value: 'Hanka is creating', correct: 'a file' },
+            //         { value: 'Philip is inserting an', correct: 'image' },
+            //         { value: 'Rob is troubleshooting', correct: 'the software' },
+            //         { value: 'We are running', correct: 'a check-up' },
+            //         { value: 'Betty is connecting', correct: 'a device' },
+            //         { value: 'They are burning', correct: 'CDs' },
+            //       ],
+            //       leftCol: [],
+            //       rightCol: [],
+            //       interface: 'SortableTask',
+            //     },
+            //   ],
+            // },
+          ],
+        },
+        {
+          title: 'IT workplace rules',
+          text: "FROM: Chief Information Officer<br>TO: all staff<br>DATE:16 June<br><strong>SUBJECT: IT security</strong><br><br><p>As you know, many new staff have joined us at XBM Digital recently, so now is a good time for a reminder about some of our rules. Security is important, and these rules will help us to keep our IT systems and data secure. Firstly, passwords are important for keeping the network secure. Don't use common words or numbers as passwords, such as birthdays or names of your children. Passwords must be alphanumeric and be at least eight characters long. You need to change your password every month or more frequently. Also, you should not share it with anyone, including your colleagues.</p>",
+          exercises: [
             {
-              content: '<p>Complete the descriptions 1-4 with the IT jobs in the box</p>',
+              content:
+                '<p>Read the memo and find words that match these definitions. Then compare answers with а partner.</p>',
               tasks: [
                 {
                   content:
-                    'Sylvia is a {{{option1}}}<div>Isabelle is a {{{option2}}}<br></div><div>Andrew is an {{{option3}}}<br></div><div>Mark and Latika are {{{option4}}}<br></div>',
+                    '<p>1. person in charge of IT {{{option1}}}<br>2. keeping something safe {{{option2}}}<br>3. information such as numbers and details about people {{{option3}}}<br>4. а secret word that you type into а computer before you саn use it {{{option4}}}<br>5. а group of connected computers {{{option5}}}<br>6. having only letters and numbers {{{option6}}}<br>7. letters, numbers, punctuation marks, etc. {{{option7}}}<br>8. people you work with {{{option8}}}</p>',
                   correct: {
-                    option1: 'network administrator',
-                    option2: 'network architect',
-                    option3: 'IT support officer',
-                    option4: 'database analyst',
+                    option1: 'Chief Information Officer',
+                    option2: 'Secure',
+                    option3: 'birthdays or names of your children',
+                    option4: 'passwords',
+                    option5: 'network',
+                    option6: 'alphanumeric',
+                    option7: 'characters',
+                    option8: 'colleagues',
                   },
-                  value: { option1: '', option2: '', option3: '', option4: '' },
+                  value: {
+                    option1: '',
+                    option2: '',
+                    option3: '',
+                    option4: '',
+                    option5: '',
+                    option6: '',
+                    option7: '',
+                    option8: '',
+                  },
                   interface: 'MatchingTask',
                 },
               ],
             },
             {
-              content: '<p>Match the sentence halves 1-8 to a-h</p>',
+              content:
+                '<p>Work in pairs. Write workplace rules for some of these activities. What reasons can you think of for each rule?</p><ul><li>installing new software</li><li>connecting personal devices to company computers</li><li>playing computer games</li><li>using social networking sites such as Facebook</li><li>using mobile phones</li><li>switching off your computer at night</li><li>downloading files</li><li>streaming music or video</li></ul>',
+              tasks: [],
+            },
+          ],
+        },
+        {
+          title: 'IT organisations',
+          text: '<h1>Futachiba</h1><p>Futachiba is а leading intemational provider of computer hardware. Тhе company is among the top five suppliers internationally of servers and among the top te n manufacturers of laptop computers . We have produ ction facilities in six countries and we sell our products to almo t every country in the world. With service centres in all our major markets, we provide а very high level of customer service</p><h1>IBGroup</h1><p>We are а fast-growing private company that supplies cloud computing services internationaJly. Our products include online office applications such as word processing, spreadsheet, presentation and database programs, which people can use on the internet anywhere and at any time. Our clients include major corporations, as well as many smaJI and medium-sized companies</p><h1>Digital world</h1><p>At Digital World we proudly design the most popular games in the world! We аге excited every day Ьу the great feedback we get from our favourite people: our game-playing customers. You сап play our award-winning games on all the major computer operating systems, i ncluding Windows and Мае OS. Many of them аге also availaЫe fo r Apple iOS and Android. Our wonderful staff started developing games in 2005 and continue to work оп new, highly entertaining products. We expect to launch the next version of our Ьiggest game, War of the Suns, next month.</p>',
+          exercises: [
+            {
+              content: '<p>Read the company profiles and find words that match these definitions.</p>',
+              tasks: [
+                {
+                  content:
+                    '<p>1. а company or companies that sell things (Futachiba) {{{option1}}}, {{{option2}}}<br>2. companies that make things to se ll (Futachiba) {{{option3}}}<br>3. factories (Futachiba) {{{option4}}}<br>4. things а company sells (Futachiba) {{{option5}}}<br>5. using software that runs and stores information on the internet (IBGroup) {{{option6}}}<br>6. customers (IBGroup) {{{option7}}}<br>7. start selling а new product (Digital World) {{{option8}}}</p>',
+                  correct: {
+                    option1: 'provider',
+                    option2: 'suppliers',
+                    option3: 'manufactures',
+                    option4: 'production facilities',
+                    option5: 'products',
+                    option6: 'computing services',
+                    option7: 'clients',
+                    option8: 'launch',
+                  },
+                  value: {
+                    option1: '',
+                    option2: '',
+                    option3: '',
+                    option4: '',
+                    option5: '',
+                    option6: '',
+                    option7: '',
+                    option8: '',
+                  },
+                  interface: 'MatchingTask',
+                },
+              ],
+            },
+            {
+              content:
+                '<p>Read the company profiles in Exercise 2 again and answer these questions. Then compare answers with а partner.</p><p>Which company or companies:</p>1. is getting bigger? ________<br>2. develops software? ________, ________<br>3. makes things in more than one country? ________<br>4. has а new product to launch? ________<br>5. sells software for use on the internet? ________',
+              tasks: [],
+            },
+          ],
+        },
+      ],
+      listen: [
+        {
+          title: 'Jobs in IT',
+          text: '<audio controls src="/assets/audio/1.2-working1.mp3"></audio>',
+          exercises: [
+            {
+              content:
+                '<p>Listen to six people introducing themselves. What jobs do they do? Complete the sentences.</p>',
               tasks: [
                 {
                   options: [
-                    { value: 'Hanka is creating', correct: 'a file' },
-                    { value: 'Philip is inserting an', correct: 'image' },
-                    { value: 'Rob is troubleshooting', correct: 'the software' },
-                    { value: 'We are running', correct: 'a check-up' },
-                    { value: 'Betty is connecting', correct: 'a device' },
-                    { value: 'They are burning', correct: 'CDs' },
+                    {
+                      value: '<img src="/assets/images/tasks/maria.jpg" alt="Maria" />',
+                      correct: 'software developer',
+                    },
+                    {
+                      value: '<img src="/assets/images/tasks/ahmed.jpg" alt="Ahmed" />',
+                      correct: 'helpdesk supervisor',
+                    },
+                    { value: '<img src="/assets/images/tasks/freddy.jpg" alt="Freddy" />', correct: 'project manager' },
+                    { value: '<img src="/assets/images/tasks/hana.jpg" alt="Hana" />', correct: 'support technician' },
+                    { value: '<img src="/assets/images/tasks/sophie.jpg" alt="Sophie" />', correct: 'systems analyst' },
                   ],
                   leftCol: [],
                   rightCol: [],
@@ -330,110 +487,302 @@ export const section: Section = {
                 },
               ],
             },
+            {
+              content: '<p>Listen again. Complete these collocations.</p><em>write software</em>',
+              tasks: [
+                {
+                  content:
+                    '<p>1. supervise {{{option1}}}<br>2. have {{{option2}}}<br>3. be responsible {{{option3}}} IT projects<br>4. look {{{option4}}} computers<br>5. install {{{option5}}}<br>6. diagnose {{{option6}}}<br>7. design {{{option7}}}<br>8. maintain {{{option8}}}<br>9. write {{{option9}}} for software</p>',
+                  correct: {
+                    option1: 'a team of technical support people',
+                    option2: 'a problem',
+                    option3: 'our',
+                    option4: 'after all the',
+                    option5: 'software',
+                    option6: 'the problem',
+                    option7: 'databases',
+                    option8: 'then',
+                    option9: 'specification',
+                  },
+                  value: {
+                    option1: '',
+                    option2: '',
+                    option3: '',
+                    option4: '',
+                    option5: '',
+                    option6: '',
+                    option7: '',
+                    option8: '',
+                    option9: '',
+                  },
+                  interface: 'TextInputTask',
+                },
+              ],
+            },
+            {
+              content:
+                '<p>Work in pairs. How many new collocations саn you make with the verbs in 2?<br><em>bе responsible for а department</em></p>',
+              tasks: [],
+            },
+            {
+              content:
+                '<p>Work in pairs. What does each person in 1 do in their job? Use the collocations in 2.<br><em>Аn IT project manager is responsible for IТ projects.</em></p>',
+              tasks: [],
+            },
+            {
+              content:
+                "<p>Work in small groups. List any other IT jobs you саn think of. What do people in these jobs do? Which jobs would/wouldn't you like to do? Why?</p>",
+              tasks: [],
+            },
+          ],
+        },
+        {
+          title: 'IT professionals',
+          text: '',
+          exercises: [
+            {
+              content: '<p>Complete these definitions with jobs from the Ьох.</p>',
+              tasks: [
+                {
+                  content:
+                    '<p>1. A {{{option1}}} designs and develops IT devices.</p><p>2. A {{{option2}}} writes computer programs.</p><p>3. A {{{option3}}} edits and deletes posts made by contributors to а blоg.</p><p>4. A {{{option4}}} manages the hardware and software that comprise а network.</p><p>5. A {{{option5}}} designs and maintains websites.</p><p>6. A {{{option6}}} works with companies to build secure computer systems.</p><p>7. A {{{option7}}} elps end-users with their computer problems in person, bу email or over the phone.</p>',
+                  correct: {
+                    option1: 'hardware engineer',
+                    option2: 'software engineer',
+                    option3: 'blog administrator',
+                    option4: 'network administrator',
+                    option5: 'webmaster',
+                    option6: 'computer security specialist',
+                    option7: 'help desk technician',
+                  },
+                  value: { option1: '', option2: '', option3: '', option4: '', option5: '', option6: '', option7: '' },
+                  interface: 'MatchingTask',
+                },
+              ],
+            },
+            {
+              content:
+                '<p>Listen to four people on а training course introducing themselves and talking about their jobs. Which job in А does each person do?</p><audio controls src="/assets/audio/1.2-working3.mp3"></audio>',
+              tasks: [
+                {
+                  content:
+                    '<p>Speaker 1 {{{option1}}}</p><p>Speaker 2 {{{option2}}}</p><p>Speaker 3 {{{option3}}}</p><p>Speaker 4 {{{option4}}}</p>',
+                  correct: {
+                    option1: 'webmaster',
+                    option2: 'help desk technician',
+                    option3: 'hardware engineer',
+                    option4: 'network administrator',
+                  },
+                  value: { option1: '', option2: '', option3: '', option4: '' },
+                  interface: 'TextInputTask',
+                },
+              ],
+            },
           ],
         },
       ],
-      listen: [
-        // check
+      dialogs: [
         {
-          content:
-            '<p>Listen a conversation between a DataPro Inc. employee and her supervisor. Choose the correct answers.</p>',
-          tasks: [
+          title: 'Jobs in IT',
+          text: '<audio controls src="/assets/audio/ahmed-betty.mp3"></audio><p><strong>Ahmed</strong>: Where ________ you work, Betty?</p><p><strong>Betty</strong>: I work for Dell in Dubai. What ________ you?</p><p><strong>Ahmed</strong>: I ________ for HP in Budapest. What do you ________, Milo?</p><p><strong>Milo</strong>: I\'m a ________ developer. I work ________ Microsoft in Prague.</p><p><strong>Betty</strong>: Milo, do you ________ Frida?</p><p><strong>Milo</strong>: Yes, I do. What do you do ________ to know?</p><p><strong>Betty</strong>: Where ________ she work?</p><p><strong>Milo</strong>: She works with ________ in Prague. She designs websites for ________</p><p><strong>Ahmed</strong>: I see. Right, let\'s go. The workshop starts in five minutes.</p>',
+          exercises: [
             {
-              title: 'What is the dialogue mainly about?',
-              options: [
-                'asking for a raise',
-                'requesting a transfer',
-                'assuring product quality',
-                'improving hardware',
+              content: '<p>Listen and complete this dialogue.</p>',
+              tasks: [
+                {
+                  content:
+                    "<p><strong>Ahmed</strong>: Where {{{option1}}} you work, Betty?</p><p><strong>Betty</strong>: I work for Dell in Dubai. What {{{option2}}} you?</p><p><strong>Ahmed</strong>: I {{{option3}}} for HP in Budapest. What do you {{{option4}}}, Milo?</p><p><strong>Milo</strong>: I'm a {{{option5}}} developer. I work {{{option6}}} Microsoft in Prague.</p><p><strong>Betty</strong>: Milo, do you {{{option7}}} Frida?</p><p><strong>Milo</strong>: Yes, I do. What do you do {{{option8}}} to know?</p><p><strong>Betty</strong>: Where {{{option9}}} she work?</p><p><strong>Milo</strong>: She works with {{{option10}}} in Prague. She designs websites for {{{option11}}}</p><p><strong>Ahmed</strong>: I see. Right, let's go. The workshop starts in five minutes.</p>",
+                  correct: {
+                    option1: 'do',
+                    option2: 'about',
+                    option3: 'pleased to',
+                    option4: 'shake hands',
+                    option5: 'firm',
+                  },
+                  value: {
+                    option1: '',
+                    option2: '',
+                    option3: '',
+                    option4: '',
+                    option5: '',
+                  },
+                  interface: 'TextInputTask',
+                },
               ],
-              correctOptionIndex: 0,
-              interface: 'SelectionTask',
             },
             {
-              title: 'What can you infer about the employee?',
-              options: [
-                'She does not like her new section',
-                'She has experience with hardware',
-                'She does not understand the changes',
-                'She creates valuable software',
+              content:
+                '<p>What is your dream job? Write a job description for the job of your choice.</p><img src="/assets/images/tasks/dream-job.png" />',
+              tasks: [],
+            },
+          ],
+        },
+        {
+          title: 'My job in IT',
+          text: '<p>Listen to an IT employee telling his new manager about his job. What do you think his job is?</p><audio controls src="/assets/audio/1.2-working2.mp3"></audio>',
+          exercises: [
+            {
+              content: '<p>Listen again. Mark the things as True or False that usually happen.</p>',
+              tasks: [
+                {
+                  title: 'Robert checks emails.',
+                  options: ['True', 'False'],
+                  correctOptionIndex: 0,
+                  interface: 'SelectionTask',
+                },
+                {
+                  title: 'Robert has emails waiting for him.',
+                  options: ['True', 'False'],
+                  correctOptionIndex: 0,
+                  interface: 'SelectionTask',
+                },
+                {
+                  title: 'Robert visits people at their desks.',
+                  options: ['True', 'False'],
+                  correctOptionIndex: 0,
+                  interface: 'SelectionTask',
+                },
+                {
+                  title: 'Sales people have problems.',
+                  options: ['True', 'False'],
+                  correctOptionIndex: 1,
+                  interface: 'SelectionTask',
+                },
+                {
+                  title: 'Robert attends meetings.',
+                  options: ['True', 'False'],
+                  correctOptionIndex: 1,
+                  interface: 'SelectionTask',
+                },
+                {
+                  title: 'Robert visits other companies.',
+                  options: ['True', 'False'],
+                  correctOptionIndex: 1,
+                  interface: 'SelectionTask',
+                },
               ],
-              correctOptionIndex: 0,
-              interface: 'SelectionTask',
+            },
+            {
+              content:
+                '<p>Listen again. Write these phrases in the correct place in the sentences in 1.</p><ul><li>from time to time</li><li>generally</li><li>hardly ever</li><li>normally</li><li>occasionally</li><li>usually</li></ul>',
+              tasks: [],
+            },
+            {
+              content:
+                '<p>Write an email message to introduce yourself to the employees in the company using the profile below or your own information.</p><q>You are a new employee in a company. Your position is a network administrator. You are responsible for setting up firewalls, security levels, wireless connection, usernames and passwords.</q>',
+              tasks: [],
             },
           ],
         },
         {
-          content: '',
-          tasks: [
+          title: 'Information Technology',
+          text: "<audio controls src=\"/assets/audio/1.2-working5.mp3\"></audio><p><strong>Employee</strong>: Excuse me, Mr.Hopkins? I have a question about the ________.</p><p><strong>Hopkins</strong>: Please, come in. What's your question?</p><p><strong>Employee</strong>: Well, I'm now in the ________ section.</p><p><strong>Hopkins</strong>: Yes. You have a great understanding of the hardware.</p><p><strong>Employee</strong>: Thanks, but I have more experience with ________.</p><p><strong>Hopkins</strong>: I see. You want a ________ then?</p><p><strong>Employee</strong>: Exactly. I feel that I'm more valuable there.</p><p><strong>Hopkins</strong>: Let me ________ it.</p>",
+          exercises: [
             {
               content:
-                "<p><strong>Employee</strong>: Excuse me, Mr.Hopkins? I have a question about the {{{option1}}}.</p><p><strong>Hopkins</strong>: Please, come in. What's your question?</p><p><strong>Employee</strong>: Well, I'm now in the {{{option2}}} section.</p><p><strong>Hopkins</strong>: Yes. You have a great understanding of the hardware.</p><p><strong>Employee</strong>: Thanks, but I have more experience with {{{option3}}}.</p><p><strong>Hopkins</strong>: I see. You want a {{{option4}}} then?</p><p><strong>Employee</strong>: Exactly. I feel that I'm more valuable there.</p><p><strong>Hopkins</strong>: Let me {{{option5}}} it.</p>",
-              correct: {
-                option1: 'polite',
-                option2: 'custom',
-                option3: 'pleased to',
-                option4: 'shake hands',
-                option5: 'firm',
-              },
-              value: {
-                option1: '',
-                option2: '',
-                option3: '',
-                option4: '',
-                option5: '',
-              },
-              interface: 'TextInputTask',
+                '<p>Listen a conversation between a DataPro Inc. employee and her supervisor. Choose the correct answers.</p>',
+              tasks: [
+                {
+                  title: 'What is the dialogue mainly about?',
+                  options: [
+                    'asking for a raise',
+                    'requesting a transfer',
+                    'assuring product quality',
+                    'improving hardware',
+                  ],
+                  correctOptionIndex: 1,
+                  interface: 'SelectionTask',
+                },
+                {
+                  title: 'What can you infer about the employee?',
+                  options: [
+                    'She does not like her new section',
+                    'She has experience with hardware',
+                    'She does not understand the changes',
+                    'She creates valuable software',
+                  ],
+                  correctOptionIndex: 2,
+                  interface: 'SelectionTask',
+                },
+              ],
+            },
+            {
+              content: '<p>Listen again and complete the conversation.</p>',
+              tasks: [
+                {
+                  content:
+                    "<p><strong>Employee</strong>: Excuse me, Mr.Hopkins? I have a question about the {{{option1}}}.</p><p><strong>Hopkins</strong>: Please, come in. What's your question?</p><p><strong>Employee</strong>: Well, I'm now in the {{{option2}}} section.</p><p><strong>Hopkins</strong>: Yes. You have a great understanding of the hardware.</p><p><strong>Employee</strong>: Thanks, but I have more experience with {{{option3}}}.</p><p><strong>Hopkins</strong>: I see. You want a {{{option4}}} then?</p><p><strong>Employee</strong>: Exactly. I feel that I'm more valuable there.</p><p><strong>Hopkins</strong>: Let me {{{option5}}} it.</p>",
+                  correct: {
+                    option1: 'polite',
+                    option2: 'custom',
+                    option3: 'pleased to',
+                    option4: 'shake hands',
+                    option5: 'firm',
+                  },
+                  value: {
+                    option1: '',
+                    option2: '',
+                    option3: '',
+                    option4: '',
+                    option5: '',
+                  },
+                  interface: 'TextInputTask',
+                },
+              ],
+            },
+            {
+              content:
+                '<p>With a partner, act out the roles below, based on Exercise 2. Then, switch roles.</p><img src="/assets/images/tasks/information-technology.png" alt="Information Technology" />',
+              tasks: [],
             },
           ],
         },
         {
-          content: '<p>Listen to three people talking about their jobs. Complete these job descriptions.</p>',
-          tasks: [
+          title: 'IT workplace rules',
+          text: '',
+          exercises: [
             {
               content:
-                '<p>Karl</p><p>Job: software {{{option1}}}</p><p>Responsibilities: the designs and {{{option2}}} computer games</p>',
-              correct: { option1: 'developer', option2: 'developes' },
-              value: { option1: '', option2: '' },
-              interface: 'TextInputTask',
+                '<p>Listen to two people talking about workplace rules and complete this tаblе. Then compare answers with а partner.</p><audio controls src="/assets/audio/1.2-working7.mp3"></audio><img src="/assets/images/tasks/table.png" alt="Book fragment" />',
+              tasks: [],
             },
             {
               content:
-                '<p>Heba</p><p>Job: {{{option1}}} analyst</p><p>Responsibilities: he {{{option2}}} computer problems</p>',
-              correct: { option1: 'system', option2: 'solves' },
-              value: { option1: '', option2: '' },
-              interface: 'TextInputTask',
+                '<p>How does Lateefa feel about the rules in her workplace? How can you tell? Do you think she likes her manager? Why/Why not?</p>',
+              tasks: [],
             },
             {
               content:
-                '<p>Wojtek</p><p>Job: database {{{option1}}}</p><p>Responsibilities: he analyses and {{{option2}}} electronic data</p>',
-              correct: { option1: 'administrator', option2: 'present' },
-              value: { option1: '', option2: '' },
-              interface: 'TextInputTask',
+                '<p>Work in pairs. Make the dialogues. Follow the instructions.</p><strong>Student A</strong><br>1. Student В is а new employee in your company. Explain these 1Т workplace rules to him/her.<ul><li>use company equipment for personal reasons x</li><li>install software x</li><li>change password frequently ✓</li><li>use Facebook x</li></ul>2. Swap roles. You are а new employee. Listen to Student В explain some 1Т workplace rules.<ul><li>start work by 8 a.m. ✓</li><li>eat at desk x</li><li>keep disk clean ✓</li><li>connect own devices x</li></ul>',
+              tasks: [],
             },
           ],
         },
         {
-          content: '<p>Listen and complete this dialogue</p>',
-          tasks: [
+          title: 'Acronyms',
+          text: "<p><strong>Andrei</strong>: Bob, can you ________ me, please?</p><p><strong>Bob</strong>: Sure.</p><p><strong>Andrei</strong>: I don't understand this acronym. What does it ________ for?</p><p><strong>Bob</strong>: Let те see. 'WЗ'. l'm not sure. МауЬе WWW, the World Wide Web.</p><p><strong>Andrei</strong>: ОК. What does Р2Р stand for?</p><p><strong>Bob</strong>: ________ stands for person-to-person.</p><p><strong>Andrei</strong>: ОК. What does IP ________?</p><p><strong>Bob</strong>: It means lnternet Protocol.</p><p><strong>Andrei</strong>: How do you ________ 'Protocol'?</p><p><strong>Bob</strong>: р-r-o-t-o-c-o-l.</p><p><strong>Andrei</strong>: Thanks.</p><p><strong>Bob</strong>: You're welcome.</p>",
+          exercises: [
             {
               content:
-                "<p><strong>Ahmed</strong>: Where {{{option1}}} you work, Betty?</p><p><strong>Betty</strong>: I work for Dell in Dubai. What {{{option2}}} you?</p><p><strong>Ahmed</strong>: I {{{option3}}} for HP in Budapest. What do you {{{option4}}}, Milo?</p><p><strong>Milo</strong>: I'm a {{{option5}}} developer. I work {{{option6}}} Microsoft in Prague.</p><p><strong>Betty</strong>: Milo, do you {{{option7}}} Frida?</p><p><strong>Milo</strong>: Yes, I do. What do you do {{{option8}}} to know?</p><p><strong>Betty</strong>: Where {{{option9}}} she work?</p><p><strong>Milo</strong>: She works with {{{option10}}} in Prague. She designs websites for {{{option11}}}</p><p><strong>Ahmed</strong>: I see. Right, let's go. The workshop starts in five minutes.</p>",
-              correct: {
-                option1: 'do',
-                option2: 'about',
-                option3: 'pleased to',
-                option4: 'shake hands',
-                option5: 'firm',
-              },
-              value: {
-                option1: '',
-                option2: '',
-                option3: '',
-                option4: '',
-                option5: '',
-              },
-              interface: 'TextInputTask',
+                '<p>Work in small groups. List the IT acronyms you know.</p><img src="/assets/images/tasks/acronyms.png" />',
+              tasks: [],
+            },
+            {
+              content: '<p>Listen and complete this dialogue.</p>',
+              tasks: [
+                {
+                  content:
+                    "<p><strong>Andrei</strong>: Bob, can you {{{option1}}} me, please?</p><p><strong>Bob</strong>: Sure.</p><p><strong>Andrei</strong>: I don't understand this acronym. What does it {{{option2}}} for?</p><p><strong>Bob</strong>: Let те see. 'WЗ'. l'm not sure. МауЬе WWW, the World Wide Web.</p><p><strong>Andrei</strong>: ОК. What does Р2Р stand for?</p><p><strong>Bob</strong>: {{{option3}}} stands for person-to-person.</p><p><strong>Andrei</strong>: ОК. What does IP {{{option4}}}?</p><p><strong>Bob</strong>: It means lnternet Protocol.</p><p><strong>Andrei</strong>: How do you {{{option5}}} 'Protocol'?</p><p><strong>Bob</strong>: р-r-o-t-o-c-o-l.</p><p><strong>Andrei</strong>: Thanks.</p><p><strong>Bob</strong>: You're welcome.</p>",
+                  correct: { option1: 'help', option2: 'stand', option3: 'it', option4: 'mean', option5: 'spell' },
+                  value: { option1: '', option2: '', option3: '', option4: '', option5: '' },
+                  interface: 'TextInputTask',
+                },
+              ],
+            },
+            {
+              content:
+                '<p>Work in pairs. Make а list of acronyms. Ask and answer questions.</p><em>Example:</em><br><em>A: What does HTML stand for/mean?</em><br><em>B: It stands for/means ... .</em>',
+              tasks: [],
             },
           ],
         },
@@ -672,97 +1021,97 @@ export const section: Section = {
           ],
         },
       ],
-      listen: [
-        {
-          content: '',
-          tasks: [
-            // remade
-            {
-              title:
-                'Listen to a conversation between a businessman and a colleague. Check the topics that are suggested to talk about',
-              options: ['age', 'work', 'religion', 'weather', 'marital status', 'education'],
-              correctOptionIndexes: [1, 3],
-              interface: 'MultipleSelectionTask',
-            },
-          ],
-        },
-        {
-          content: '',
-          tasks: [
-            {
-              content:
-                "<p><strong>Businessman</strong>: Sarah, I have to take a phone call, Please make {{{option1}}} with Mr, Jensen until I'm free.</p> <p><strong>Colleague</strong>: But I don't know him! I have nothing to talk to him about.</p> <p><strong>Businessman</strong>: Just ask him what he does for a {{{option2}}}.</p> <p><strong>Colleague</strong>: But I already know what his work {{{option3}}}. After all, he's our consultant.</p> <p><strong>Businessman</strong>: Then why don't you {{{option4}}} weather?</p> <p><strong>Colleague</strong>: It's not a very interesting {{{option5}}}.</p> <p><strong>Businessman</strong>: Well, I'm sure you'll think of something. Just don't up bring up his {{{option6}}}.</p> <p><strong>Colleague</strong>: Good to know, thanks.</p>",
-              correct: {
-                option1: 'small talk',
-                option2: 'living',
-                option3: 'involves',
-                option4: 'discuss',
-                option5: 'topic',
-                option6: 'marital status',
-              },
-              value: {
-                option1: '',
-                option2: '',
-                option3: '',
-                option4: '',
-                option5: '',
-                option6: '',
-              },
-              interface: 'TextInputTask',
-            },
-          ],
-        },
-        {
-          content:
-            '<p>Listen to a conversation between two men and women. Mark the following statements as True or False</p>',
-          tasks: [
-            {
-              title: 'The woman is introduced to the friend of a colleague',
-              options: ['True', 'False'],
-              correctOptionIndex: 0,
-              interface: 'SelectionTask',
-            },
-            {
-              title: "The speakers are at the woman's birthday party",
-              options: ['True', 'False'],
-              correctOptionIndex: 1,
-              interface: 'SelectionTask',
-            },
-            {
-              title: 'All three speakers are in the same soccer league',
-              options: ['True', 'False'],
-              correctOptionIndex: 1,
-              interface: 'SelectionTask',
-            },
-          ],
-        },
-        {
-          content: '',
-          tasks: [
-            {
-              content:
-                "<p><strong>Man 1</strong>: Sarah, I'd like you to meet {{{option1}}}, John. John, this is Sarah.</p> <p><strong>Woman</strong>: Hi John, it's a pleasure to meet you.</p> <p><strong>Man 2</strong>: And nice to meet you, too. How do you do two know {{{option2}}}?</p> <p><strong>Woman</strong>: Oh, we work together.</p> <p><strong>Man 2</strong>: That's right. Bob mentioned that some of his colleagues were coming to {{{option3}}} party.</p> <p><strong>Man 1</strong>: You know, Sarah, you and John have something {{{option4}}}.</p> <p><strong>Woman</strong>: {{{option5}}}? What's that?</p> <p><strong>Man 1</strong>: {{{option6}}} in the same adult soccer league.</p>",
-              correct: {
-                option1: 'my friend',
-                option2: 'one another',
-                option3: 'his birthday',
-                option4: 'in common',
-                option5: 'really',
-                option6: 'you both',
-              },
-              value: {
-                option1: '',
-                option2: '',
-                option3: '',
-                option4: '',
-                option5: '',
-                option6: '',
-              },
-              interface: 'TextInputTask',
-            },
-          ],
-        },
-      ],
+      // listen: [
+      //   {
+      //     content: '',
+      //     tasks: [
+      //       // remade
+      //       {
+      //         title:
+      //           'Listen to a conversation between a businessman and a colleague. Check the topics that are suggested to talk about',
+      //         options: ['age', 'work', 'religion', 'weather', 'marital status', 'education'],
+      //         correctOptionIndexes: [1, 3],
+      //         interface: 'MultipleSelectionTask',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     content: '',
+      //     tasks: [
+      //       {
+      //         content:
+      //           "<p><strong>Businessman</strong>: Sarah, I have to take a phone call, Please make {{{option1}}} with Mr, Jensen until I'm free.</p> <p><strong>Colleague</strong>: But I don't know him! I have nothing to talk to him about.</p> <p><strong>Businessman</strong>: Just ask him what he does for a {{{option2}}}.</p> <p><strong>Colleague</strong>: But I already know what his work {{{option3}}}. After all, he's our consultant.</p> <p><strong>Businessman</strong>: Then why don't you {{{option4}}} weather?</p> <p><strong>Colleague</strong>: It's not a very interesting {{{option5}}}.</p> <p><strong>Businessman</strong>: Well, I'm sure you'll think of something. Just don't up bring up his {{{option6}}}.</p> <p><strong>Colleague</strong>: Good to know, thanks.</p>",
+      //         correct: {
+      //           option1: 'small talk',
+      //           option2: 'living',
+      //           option3: 'involves',
+      //           option4: 'discuss',
+      //           option5: 'topic',
+      //           option6: 'marital status',
+      //         },
+      //         value: {
+      //           option1: '',
+      //           option2: '',
+      //           option3: '',
+      //           option4: '',
+      //           option5: '',
+      //           option6: '',
+      //         },
+      //         interface: 'TextInputTask',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     content:
+      //       '<p>Listen to a conversation between two men and women. Mark the following statements as True or False</p>',
+      //     tasks: [
+      //       {
+      //         title: 'The woman is introduced to the friend of a colleague',
+      //         options: ['True', 'False'],
+      //         correctOptionIndex: 0,
+      //         interface: 'SelectionTask',
+      //       },
+      //       {
+      //         title: "The speakers are at the woman's birthday party",
+      //         options: ['True', 'False'],
+      //         correctOptionIndex: 1,
+      //         interface: 'SelectionTask',
+      //       },
+      //       {
+      //         title: 'All three speakers are in the same soccer league',
+      //         options: ['True', 'False'],
+      //         correctOptionIndex: 1,
+      //         interface: 'SelectionTask',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     content: '',
+      //     tasks: [
+      //       {
+      //         content:
+      //           "<p><strong>Man 1</strong>: Sarah, I'd like you to meet {{{option1}}}, John. John, this is Sarah.</p> <p><strong>Woman</strong>: Hi John, it's a pleasure to meet you.</p> <p><strong>Man 2</strong>: And nice to meet you, too. How do you do two know {{{option2}}}?</p> <p><strong>Woman</strong>: Oh, we work together.</p> <p><strong>Man 2</strong>: That's right. Bob mentioned that some of his colleagues were coming to {{{option3}}} party.</p> <p><strong>Man 1</strong>: You know, Sarah, you and John have something {{{option4}}}.</p> <p><strong>Woman</strong>: {{{option5}}}? What's that?</p> <p><strong>Man 1</strong>: {{{option6}}} in the same adult soccer league.</p>",
+      //         correct: {
+      //           option1: 'my friend',
+      //           option2: 'one another',
+      //           option3: 'his birthday',
+      //           option4: 'in common',
+      //           option5: 'really',
+      //           option6: 'you both',
+      //         },
+      //         value: {
+      //           option1: '',
+      //           option2: '',
+      //           option3: '',
+      //           option4: '',
+      //           option5: '',
+      //           option6: '',
+      //         },
+      //         interface: 'TextInputTask',
+      //       },
+      //     ],
+      //   },
+      // ],
       words: wordsFor14,
     },
     {
@@ -1006,88 +1355,88 @@ export const section: Section = {
           ],
         },
       ],
-      listen: [
-        {
-          content:
-            '<p>Listen to a conversation between a manager and an employee. Mark the following statements as True or False</p>',
-          tasks: [
-            {
-              title: 'The woman needs help preparing her presentation.',
-              options: ['True', 'False'],
-              correctOptionIndex: 1,
-              interface: 'SelectionTask',
-            },
-            {
-              title: 'The woman thinks that handouts are optional',
-              options: ['True', 'False'],
-              correctOptionIndex: 0,
-              interface: 'SelectionTask',
-            },
-            {
-              title: 'The man should create graphs and charts first',
-              options: ['True', 'False'],
-              correctOptionIndex: 1,
-              interface: 'SelectionTask',
-            },
-          ],
-        },
-        {
-          content: '<p>Listen again and complete the conversation</p>',
-          tasks: [
-            {
-              content:
-                "<p><strong>Manager</strong>: I'd like to see our gross earnings and profit margins broken down into graphs and tables. Make it as clear {{{option1}}}.</p> <p><strong>Employee</strong>: Of course. What about {{{option2}}}?</p> <p><strong>Manager</strong>: It's your presentation, so I'll leave that up to you. If you need a {{{option3}}}, use the copy room.</p> <p><strong>Employee</strong>: Okay. I'll do that.</p> <p><strong>Manager</strong>: Oh and Jim! One {{{option4}}}!</p> <p><strong>Employee</strong>: What is it?</p> <p><strong>Manager</strong>: {{{option5}}} to reserve the conference room. Please take care of that before anything else.</p> <p><strong>Employee</strong>: Understood! I'll do that {{{option6}}}.&nbsp;</p>",
-              correct: {
-                option1: 'living',
-                option2: 'involves',
-                option3: 'avoid',
-                option4: 'flow',
-                option5: 'discuss',
-                option6: 'weather',
-                option7: 'introduce',
-              },
-              value: {
-                option1: '',
-                option2: '',
-                option3: '',
-                option4: '',
-                option5: '',
-                option6: '',
-                option7: '',
-              },
-              interface: 'TextInputTask',
-            },
-          ],
-        },
-        {
-          content: '<p>Listen again and complete the conversation</p>',
-          tasks: [
-            {
-              content:
-                "<p><strong>Coworker 1</strong>: Linda, thanks so much for letting me practice my presentation with you. I really appreciate it. So, what {{{option1}}}?</p> <p><strong>Coworker 2</strong>: Well, tor the most part, I thought it was great! Your {{{option2}}}&nbsp;was really good. You kept eye contact really well, and you had an open posture.</p> <p><strong>Coworker 1</strong>: Thanks! That's good to hear. Was there anything that you think I should change?</p> <p><strong>Coworker 2</strong>: Let's see. yeah, there are a few spots {{{option3}}}. First of all, there were parts where you read the slides {{{option4}}}.</p> <p><strong>Coworker 1</strong>: Uh, yes. I find it hard to {{{option5}}}.</p> <p><strong>Coworker 2</strong>: Oh, okay. Well, I think it sounded a little unnatural. So, maybe you could just {{{option6}}} the slides, and then rephrase them in your own words.</p>",
-              correct: {
-                option1: 'did you think',
-                option2: 'body language',
-                option3: 'that need work',
-                // note
-                option4: '',
-                option5: 'memorize staff',
-                option6: 'glance at',
-              },
-              value: {
-                option1: '',
-                option2: '',
-                option3: '',
-                option4: '',
-                option5: '',
-                option6: '',
-                option7: '',
-              },
-              interface: 'TextInputTask',
-            },
-          ],
-        },
-      ],
+      // listen: [
+      //   {
+      //     content:
+      //       '<p>Listen to a conversation between a manager and an employee. Mark the following statements as True or False</p>',
+      //     tasks: [
+      //       {
+      //         title: 'The woman needs help preparing her presentation.',
+      //         options: ['True', 'False'],
+      //         correctOptionIndex: 1,
+      //         interface: 'SelectionTask',
+      //       },
+      //       {
+      //         title: 'The woman thinks that handouts are optional',
+      //         options: ['True', 'False'],
+      //         correctOptionIndex: 0,
+      //         interface: 'SelectionTask',
+      //       },
+      //       {
+      //         title: 'The man should create graphs and charts first',
+      //         options: ['True', 'False'],
+      //         correctOptionIndex: 1,
+      //         interface: 'SelectionTask',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     content: '<p>Listen again and complete the conversation</p>',
+      //     tasks: [
+      //       {
+      //         content:
+      //           "<p><strong>Manager</strong>: I'd like to see our gross earnings and profit margins broken down into graphs and tables. Make it as clear {{{option1}}}.</p> <p><strong>Employee</strong>: Of course. What about {{{option2}}}?</p> <p><strong>Manager</strong>: It's your presentation, so I'll leave that up to you. If you need a {{{option3}}}, use the copy room.</p> <p><strong>Employee</strong>: Okay. I'll do that.</p> <p><strong>Manager</strong>: Oh and Jim! One {{{option4}}}!</p> <p><strong>Employee</strong>: What is it?</p> <p><strong>Manager</strong>: {{{option5}}} to reserve the conference room. Please take care of that before anything else.</p> <p><strong>Employee</strong>: Understood! I'll do that {{{option6}}}.&nbsp;</p>",
+      //         correct: {
+      //           option1: 'living',
+      //           option2: 'involves',
+      //           option3: 'avoid',
+      //           option4: 'flow',
+      //           option5: 'discuss',
+      //           option6: 'weather',
+      //           option7: 'introduce',
+      //         },
+      //         value: {
+      //           option1: '',
+      //           option2: '',
+      //           option3: '',
+      //           option4: '',
+      //           option5: '',
+      //           option6: '',
+      //           option7: '',
+      //         },
+      //         interface: 'TextInputTask',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     content: '<p>Listen again and complete the conversation</p>',
+      //     tasks: [
+      //       {
+      //         content:
+      //           "<p><strong>Coworker 1</strong>: Linda, thanks so much for letting me practice my presentation with you. I really appreciate it. So, what {{{option1}}}?</p> <p><strong>Coworker 2</strong>: Well, tor the most part, I thought it was great! Your {{{option2}}}&nbsp;was really good. You kept eye contact really well, and you had an open posture.</p> <p><strong>Coworker 1</strong>: Thanks! That's good to hear. Was there anything that you think I should change?</p> <p><strong>Coworker 2</strong>: Let's see. yeah, there are a few spots {{{option3}}}. First of all, there were parts where you read the slides {{{option4}}}.</p> <p><strong>Coworker 1</strong>: Uh, yes. I find it hard to {{{option5}}}.</p> <p><strong>Coworker 2</strong>: Oh, okay. Well, I think it sounded a little unnatural. So, maybe you could just {{{option6}}} the slides, and then rephrase them in your own words.</p>",
+      //         correct: {
+      //           option1: 'did you think',
+      //           option2: 'body language',
+      //           option3: 'that need work',
+      //           // note
+      //           option4: '',
+      //           option5: 'memorize staff',
+      //           option6: 'glance at',
+      //         },
+      //         value: {
+      //           option1: '',
+      //           option2: '',
+      //           option3: '',
+      //           option4: '',
+      //           option5: '',
+      //           option6: '',
+      //           option7: '',
+      //         },
+      //         interface: 'TextInputTask',
+      //       },
+      //     ],
+      //   },
+      // ],
       words: wordsFor15,
     },
     {
@@ -1266,92 +1615,92 @@ export const section: Section = {
           ],
         },
       ],
-      listen: [
-        {
-          content:
-            '<p>Listen to a conversation between an employee and a manager. Mark the following statements as true or false.</p>',
-          tasks: [
-            {
-              title: 'The woman feels the meeting are not productive.',
-              options: ['True', 'False'],
-              correctOptionIndex: 0,
-              interface: 'SelectionTask',
-            },
-            {
-              title: 'The man wants people to speak less in meetings.',
-              options: ['True', 'False'],
-              correctOptionIndex: 1,
-              interface: 'SelectionTask',
-            },
-            {
-              title: 'The man will write a set of rules for meetings.',
-              options: ['True', 'False'],
-              correctOptionIndex: 1,
-              interface: 'SelectionTask',
-            },
-          ],
-        },
-        {
-          content: '<p>Listen again and complete the conversation.</p>',
-          tasks: [
-            {
-              content:
-                "<p><strong>Employee:</strong> It's these meetings. They're really getting {{{option1}}}.</p><p><strong>Manager:</strong> What do you mean?</p><p><strong>Employee:</strong> People always {{{option2}}}. It wastes so much time.</p><p><strong>Manager:</strong> I disagree. I want to {{{option3}}} people to speak if they have an objection.</p><p><strong>Employee:</strong> That's good. But they shouldn't {{{option4}}} other people or repeat themselves over and over.</p><p><strong>Manager:</strong> Okay, I agree with that.</p><p><strong>Employee:</strong> Also, it might help if we asked the engineers to use less {{{option5}}}. We lose a lot of time just asking what certain words mean.</p><p><strong>Manager:</strong> Maybe we need to {{{option6}}} some guidelines for meeting etiquette.</p><p>&nbsp;</p>",
-              correct: {
-                option1: 'out of hand',
-                option2: 'bicker and interrupt',
-                option3: 'encourage',
-                option4: 'talk over',
-                option5: 'jargon',
-                option6: 'set up',
-              },
-              value: { option1: '', option2: '', option3: '', option4: '', option5: '', option6: '' },
-              interface: 'TextInputTask',
-            },
-          ],
-        },
-        {
-          content:
-            '<p>Listen to a conversation between an IT professional and a new employee. Choose the correct answers.</p>',
-          tasks: [
-            {
-              title: 'Which of the following computers are NOT shared by employees at TEI Inc. ?',
-              options: ['the server', 'workstation', 'laptops', 'desktop computers'],
-              correctOptionIndexes: [2, 3],
-              interface: 'MultipleSelectionTask',
-            },
-            {
-              title: 'According to the dialogue, employees use the server to',
-              options: ['open programs', 'reserve workstations', 'log onto desktop computers', 'borrow laptops'],
-              correctOptionIndex: 1,
-              interface: 'SelectionTask',
-            },
-          ],
-        },
-        {
-          content: '<p>Listen again and complete the conversation.</p>',
-          tasks: [
-            {
-              content:
-                "<p>A: Here's your new office. Jon works in here, too.</p><p>B: So, everyone has their own {{{option1}}}. Do we have laplops?</p><p>A: Yes. That's your computer there. Laptops are in the {{{option2}}}.</p><p>B: Okay, but I also need a {{{option3}}}.</p><p>A: Right, you work on some powerful programs. Those are next door.</p><p>B: Do I sign up to use them? I mean how do I get access to one?</p><p>A: Just {{{option4}}} to the server. All computers connect to it. Then, click {{{option5}}} workstation.</p><p>B: Thanks!</p>",
-              correct: {
-                option1: 'desktop computer',
-                option2: 'IT department',
-                option3: 'workstation',
-                option4: 'log on',
-                option5: 'reserve',
-              },
-              value: { option1: '', option2: '', option3: '', option4: '', option5: '' },
-              interface: 'MatchingTask',
-            },
-          ],
-        },
-        {
-          content:
-            "<p>With a partner, act out the roles below based on Task. Then, switch roles.</p><p>Strudent A: You are a new employee. Ask Student B about:</p><ul><li>What computers they have</li><li>Where the computers are</li><li>How to access computers</li></ul><p>Student B: You are an IT Professional. Answer Student A's questions about the computers.</p>",
-          tasks: [],
-        },
-      ],
+      // listen: [
+      //   {
+      //     content:
+      //       '<p>Listen to a conversation between an employee and a manager. Mark the following statements as true or false.</p>',
+      //     tasks: [
+      //       {
+      //         title: 'The woman feels the meeting are not productive.',
+      //         options: ['True', 'False'],
+      //         correctOptionIndex: 0,
+      //         interface: 'SelectionTask',
+      //       },
+      //       {
+      //         title: 'The man wants people to speak less in meetings.',
+      //         options: ['True', 'False'],
+      //         correctOptionIndex: 1,
+      //         interface: 'SelectionTask',
+      //       },
+      //       {
+      //         title: 'The man will write a set of rules for meetings.',
+      //         options: ['True', 'False'],
+      //         correctOptionIndex: 1,
+      //         interface: 'SelectionTask',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     content: '<p>Listen again and complete the conversation.</p>',
+      //     tasks: [
+      //       {
+      //         content:
+      //           "<p><strong>Employee:</strong> It's these meetings. They're really getting {{{option1}}}.</p><p><strong>Manager:</strong> What do you mean?</p><p><strong>Employee:</strong> People always {{{option2}}}. It wastes so much time.</p><p><strong>Manager:</strong> I disagree. I want to {{{option3}}} people to speak if they have an objection.</p><p><strong>Employee:</strong> That's good. But they shouldn't {{{option4}}} other people or repeat themselves over and over.</p><p><strong>Manager:</strong> Okay, I agree with that.</p><p><strong>Employee:</strong> Also, it might help if we asked the engineers to use less {{{option5}}}. We lose a lot of time just asking what certain words mean.</p><p><strong>Manager:</strong> Maybe we need to {{{option6}}} some guidelines for meeting etiquette.</p><p>&nbsp;</p>",
+      //         correct: {
+      //           option1: 'out of hand',
+      //           option2: 'bicker and interrupt',
+      //           option3: 'encourage',
+      //           option4: 'talk over',
+      //           option5: 'jargon',
+      //           option6: 'set up',
+      //         },
+      //         value: { option1: '', option2: '', option3: '', option4: '', option5: '', option6: '' },
+      //         interface: 'TextInputTask',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     content:
+      //       '<p>Listen to a conversation between an IT professional and a new employee. Choose the correct answers.</p>',
+      //     tasks: [
+      //       {
+      //         title: 'Which of the following computers are NOT shared by employees at TEI Inc. ?',
+      //         options: ['the server', 'workstation', 'laptops', 'desktop computers'],
+      //         correctOptionIndexes: [2, 3],
+      //         interface: 'MultipleSelectionTask',
+      //       },
+      //       {
+      //         title: 'According to the dialogue, employees use the server to',
+      //         options: ['open programs', 'reserve workstations', 'log onto desktop computers', 'borrow laptops'],
+      //         correctOptionIndex: 1,
+      //         interface: 'SelectionTask',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     content: '<p>Listen again and complete the conversation.</p>',
+      //     tasks: [
+      //       {
+      //         content:
+      //           "<p>A: Here's your new office. Jon works in here, too.</p><p>B: So, everyone has their own {{{option1}}}. Do we have laplops?</p><p>A: Yes. That's your computer there. Laptops are in the {{{option2}}}.</p><p>B: Okay, but I also need a {{{option3}}}.</p><p>A: Right, you work on some powerful programs. Those are next door.</p><p>B: Do I sign up to use them? I mean how do I get access to one?</p><p>A: Just {{{option4}}} to the server. All computers connect to it. Then, click {{{option5}}} workstation.</p><p>B: Thanks!</p>",
+      //         correct: {
+      //           option1: 'desktop computer',
+      //           option2: 'IT department',
+      //           option3: 'workstation',
+      //           option4: 'log on',
+      //           option5: 'reserve',
+      //         },
+      //         value: { option1: '', option2: '', option3: '', option4: '', option5: '' },
+      //         interface: 'MatchingTask',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     content:
+      //       "<p>With a partner, act out the roles below based on Task. Then, switch roles.</p><p>Strudent A: You are a new employee. Ask Student B about:</p><ul><li>What computers they have</li><li>Where the computers are</li><li>How to access computers</li></ul><p>Student B: You are an IT Professional. Answer Student A's questions about the computers.</p>",
+      //     tasks: [],
+      //   },
+      // ],
       words: wordsFor16,
     },
   ],

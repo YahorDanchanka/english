@@ -12,7 +12,7 @@ export interface Subsection {
   description?: string
   image: string
   texts?: { title: string; text: string; exercises: Exercise[] }[]
-  listen?: Exercise[]
+  listen?: { title: string; text: string; exercises: Exercise[] }[]
   dialogs?: { title: string; text: string; exercises: Exercise[] }[]
   words?: Word[]
 }
