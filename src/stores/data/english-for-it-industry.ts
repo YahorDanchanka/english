@@ -149,12 +149,22 @@ export const section: Section = {
                 },
               ],
             },
+            {
+              content:
+                '<p>With а partner, act out the roles below, based оп the dialogue from Exercise 2. Then switch roles.</p><img src="/assets/images/tasks/etiquette.png" />',
+              tasks: [],
+            },
           ],
         },
         {
           title: 'Meeting people1',
           text: "<ol><li><strong>Natasha</strong>: Hi, my&nbsp;________ Natasha.<br><strong>Khalid</strong>: Pleased to ________ you. I'm Khalid Ali.<br><strong>Natasha</strong>: Pleased to meet you, ________.</li><li><strong>Philip</strong>: Good morning. ________ your name?<br><strong>Ahmed</strong>: I'm Ahmed. And ________ are?<br><strong>Philip</strong>: My name is Philip. ________ to meet you.</li><li><strong>Tim</strong>: Hi everybody, ________ is Ingrid.<br><strong>All</strong>: Hi!<br><strong>Tim</strong>: Ingrid, this ________ Ahmed, Linda, Mohammed and Mansoor.<br><strong>Ingrid</strong>: Nice meeting you ________.<br><strong>Linda</strong>: Likewise.<br><strong>Tim</strong>: ________ to the team and good luck.</li></ol>",
           exercises: [
+            {
+              content:
+                '<p>How do you greet people in your country? What do you say when you greet people in English?</p>',
+              tasks: [],
+            },
             {
               content: '<p>Complete these dialogues with the words in the box.</p>',
               tasks: [
@@ -189,6 +199,11 @@ export const section: Section = {
                 },
               ],
             },
+            {
+              content:
+                '<p>Work in small groups. Practise introductions. Follow the instructions below.</p>1. Introduce yourself.<br>2. Introduce a new team member.',
+              tasks: [],
+            },
           ],
         },
         {
@@ -222,6 +237,48 @@ export const section: Section = {
                   interface: 'SelectTask',
                 },
               ],
+            },
+            {
+              content: '<p>Complete this email with am, is, are, their, our or my.</p>',
+              tasks: [
+                {
+                  content:
+                    '<p>Dear Colleagues</p>\n<p>My name {{{option1}}} Jessica Martin and I {{{option2}}}. leader. The IT Support team members {{{option3}}} the IT Support team Mahmoud Al Banawy, Eli Ibrahim and Guido Pitteri. Mahmoud {{{option4}}} our network administrator. Eli and Guido {{{option5}}} system maintenance officers. {{{option6}}} job is to keep our systems going. {{{option7}}} job is to support you. {{{option8}}} contact number {{{option9}}} 675 567 567.</p>\n<p>Best regards<br>Jessica Martin</p>',
+                  correct: {
+                    option1: 'is',
+                    option2: 'am',
+                    option3: 'are',
+                    option4: 'is',
+                    option5: 'are',
+                    option6: 'their',
+                    option7: 'our',
+                    option8: 'my',
+                    option9: 'is',
+                  },
+                  value: {
+                    option1: '',
+                    option2: '',
+                    option3: '',
+                    option4: '',
+                    option5: '',
+                    option6: '',
+                    option7: '',
+                    option8: '',
+                    option9: '',
+                  },
+                  interface: 'TextInputTask',
+                },
+              ],
+            },
+            {
+              content:
+                '<p>Write a reply to the email in Exercise 2. Introduce yourself and three people in your group.</p>',
+              tasks: [],
+            },
+            {
+              content:
+                "<p>Work in pairs. Ask and answer questions about your jobs, companies and nationalities.</p><em>Example:<br>A: Where are you from?<br>B: I'm from ... .</em>",
+              tasks: [],
             },
           ],
         },
@@ -810,7 +867,7 @@ export const section: Section = {
           text: '<p>Speaking about stress we should say that:</p> <ol> <li>&ldquo;Stress as a&nbsp;<em>stimulus.</em>&rdquo;</li> <li>&ldquo;Stress as a&nbsp;<em>response.</em>&rdquo;</li> <li>&ldquo;Stress as an&nbsp;<em>interaction</em>&nbsp;between an organism and its environment.&rdquo;</li> </ol> <p>If we experience too much stress in the workplace, we become psychologically overwhelmed and unable to avoid the tensions found in our jobs.</p> <p><strong>What is workplace stress?</strong></p> <p>Work-related stress happens when your mind and body respond to high work demands you&rsquo;re unable to cope with. Eventually, you may arrive at a point where you can&rsquo;t keep up with your to-do list &mdash; often because there are too many tasks on it.&nbsp;</p> <p>Tight deadlines and larger workloads mean more pressure, increasing workplace stress.</p> <p><strong>When is workplace stress too much?</strong></p> <p>Stress isn\'t always bad. A little bit of stress can help you stay focused, energetic, and able to meet new challenges in the workplace. It\'s what keeps you on your toes during a presentation or alerts to prevent accidents or costly mistakes.</p> <p>But long hours, tight deadlines, and ever-increasing demands can leave you feeling worried, drained, and overwhelmed. And when stress exceeds your ability to cope, it stops being helpful and starts causing damage to your mind and body&mdash;as well as to your job satisfaction.</p> <p>You can&rsquo;t control everything in your work environment, but that doesn&rsquo;t mean you&rsquo;re powerless, even when you&rsquo;re stuck in a difficult situation. If stress on the job is interfering with your work performance, health, or personal life, it&rsquo;s time to take action. No matter what you do for a living, what your ambitions are, or how stressful your job is, there are plenty of things you can do to reduce your overall stress levels and regain a sense of control at work.</p> <p>Common causes of workplace stress include:</p> <ul type="disc"> <li>Longer working hours impacting work&ndash;life balance</li> <li>Job insecurity</li> <li>Low salary</li> <li>Increasing work demands</li> <li>Unrealistic deadlines</li> <li>Limited opportunities for growth, development, or advancement</li> <li>Challenging or difficult colleagues</li> <li>Too many meetings</li> <li>Email overload</li> <li>Incompetent or uncaring managers and supervisors</li> <li>Meaningless targets</li> <li>Constantly changing technology</li> <li>Lack of social support</li> </ul> <p><strong>Stress at work warning signs</strong></p> <p>When you feel overwhelmed at work, you lose confidence and may become angry, irritable, or withdrawn. Other signs and symptoms of stress at work include:</p> <ul> <li>Feeling anxious, irritable, or depressed</li> <li>Apathy, loss of interest in work</li> <li>Problems sleeping</li> <li>Fatigue</li> <li>Trouble concentrating</li> <li>Muscle tension or headaches</li> <li>Stomach problems</li> <li>Social withdrawal</li> <li>Loss of sex drive</li> <li>Using alcohol or drugs to cope</li> <li>Unhealthy eating</li> <li>Recreational drug use</li> </ul>',
           exercises: [
             {
-              content: '<p>Match the words with the definitions</p>',
+              content: '<p>Match the words with the definitions.</p>',
               tasks: [
                 {
                   options: [
@@ -879,6 +936,11 @@ export const section: Section = {
                   interface: 'SelectionTask',
                 },
               ],
+            },
+            {
+              content:
+                '<p>Answer the questions.</p>1. What is stress?<br>2. Can stress be useful?<br>3. Can your work cause the stress?<br>4. What are the main causes of the stress?<br>5. Can stress become dangerous for our health and life?<br>6. How does stress affect us?<br>7. What can we do to reduce stress?',
+              tasks: [],
             },
           ],
         },

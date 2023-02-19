@@ -338,6 +338,180 @@ export const wordsFor12: Word[] = [
     content:
       '<p>Записать диск</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">Corky <span style="color: rgb(255, 0, 0);">burns the disc</span> for me</span></em></p><img src="/assets/images/words/compact-disk.png" />',
   },
+  {
+    word: 'INSERT',
+    translations: ['Вставить'],
+    content:
+      '<p>Вставить</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">Please <span style="color: rgb(255, 0, 0);">insert</span> the DVD disc.</span></em></p><img src="/assets/images/words/image.png" />',
+  },
+  {
+    word: 'DOWNLOAD',
+    translations: ['Загрузить'],
+    content:
+      '<p>Загрузить</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">Can you <span style="color: rgb(255, 0, 0);">download</span> this program?</span></em></p><img src="/assets/images/words/cloud-computing.png" />',
+  },
+  {
+    word: 'TROUBLESHOOT',
+    translations: ['Устранение проблем'],
+    content:
+      '<p>Устранение проблем</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">This can help to <span style="color: rgb(255, 0, 0);">troubleshoot</span> problems with the software.</span></em></p><img src="/assets/images/words/troubleshooting.png" />',
+  },
+  {
+    word: 'IT SUPPORT OFFICER',
+    translations: ['Работник тех. поддержки'],
+    content:
+      '<p>Работник тех. поддержки</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">Jane is our <span style="color: rgb(255, 0, 0);">IT support officer</span>.</span></em></p><img src="/assets/images/words/technical-support.png" />',
+  },
+  {
+    word: 'CONNECT',
+    translations: ['Соединить'],
+    content:
+      '<p>Соединить</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">Betty can’t <span style="color: rgb(255, 0, 0);">connect</span> the device.</span></em></p><img src="/assets/images/words/network.png" />',
+  },
+  {
+    word: 'RUN',
+    translations: ['Запустить'],
+    content:
+      '<p>Запустить</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">Just <span style="color: rgb(255, 0, 0);">run</span> a check-up.</span></em></p><img src="/assets/images/words/code.png" />',
+  },
+  {
+    word: 'INSTALL',
+    translations: ['Установить'],
+    content:
+      '<p>Установить</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">I\'m not <span style="color: rgb(255, 0, 0);">installing</span> the software.</span></em></p><img src="/assets/images/words/drivers.png" />',
+  },
+  {
+    word: 'QUALITY ASSURANCE',
+    translations: ['Обеспечение качества'],
+    content:
+      '<p>Обеспечение качества</p> <p style="line-height: 29px"><em><span style="font-size: 24px;"><span style="color: rgb(255, 0, 0);">Quality assurance </span> is the act of checking products for problems.</span></em></p><img src="/assets/images/words/quality.png" />',
+  },
+  {
+    word: 'RESTRUCTURING',
+    translations: ['Реструктуризация'],
+    content:
+      '<p>Реструктуризация</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">We are <span style="color: rgb(255, 0, 0);">restructuring</span> the IT department.</span></em></p><img src="/assets/images/words/technical-support.png" />',
+  },
+  {
+    word: 'WORKLOAD',
+    translations: ['Рабочая нагрузка'],
+    content:
+      '<p>Рабочая нагрузка</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">Our <span style="color: rgb(255, 0, 0);">workload</span> is increasing.</span></em></p><img src="/assets/images/words/test.png" />',
+  },
+  {
+    word: 'DATABASE ANALYST',
+    translations: ['Аналитик баз данных'],
+    content:
+      '<p>Аналитик баз данных</p> <p style="line-height: 29px"><em><span style="font-size: 24px;"><span style="color: rgb(255, 0, 0);">Database analysts </span> are making good money today.</span></em></p><img src="/assets/images/words/cloud-computing.png" />',
+  },
+  {
+    word: 'INCREASE',
+    translations: ['Увеличить'],
+    content:
+      '<p>Увеличить</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">Your workload will <span style="color: rgb(255, 0, 0);">increase</span>.</span></em></p><img src="/assets/images/words/increase.png" />',
+  },
+  {
+    word: 'REDUCE',
+    translations: ['Снизить'],
+    content:
+      '<p>Снизить</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">We should <span style="color: rgb(255, 0, 0);">reduce </span> their workload.</span></em></p><img src="/assets/images/words/chart-down.png" />',
+  },
+  {
+    word: 'DEAL WITH',
+    translations: ['Иметь дело с'],
+    content:
+      '<p>Иметь дело с</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">Our programmer <span style="color: rgb(255, 0, 0);">deals with </span> tasks more efficiently..</span></em></p><img src="/assets/images/words/handshake.png" />',
+  },
+  {
+    word: 'EFFECTIVELY',
+    translations: ['Эффективно'],
+    content:
+      '<p>Эффективно</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">IT department is not dealing with this problem <span style="color: rgb(255, 0, 0);">effectively</span>.</span></em></p><img src="/assets/images/words/clock.png" />',
+  },
+  {
+    word: 'DIVIDE INTO',
+    translations: ['Разделить на'],
+    content:
+      '<p>Разделить на</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">I am <span style="color: rgb(255, 0, 0);">dividing </span> the IT department <span style="color: rgb(255, 0, 0);">into </span> three sections.</span></em></p><img src="/assets/images/words/cutter.png" />',
+  },
+  {
+    word: 'INFORMATION SECURITY',
+    translations: ['Информационная безопасность'],
+    content:
+      '<p>Информационная безопасность</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">What <span style="color: rgb(255, 0, 0);">information security </span> could he give?</span></em></p><img src="/assets/images/words/cyber-security.png" />',
+  },
+  {
+    word: 'PROVIDE',
+    translations: ['Обеспечивать'],
+    content:
+      '<p>Обеспечивать</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">Mike will <span style="color: rgb(255, 0, 0);">provide </span> you with all the information.</span></em></p><img src="/assets/images/words/ship.png" />',
+  },
+  {
+    word: 'TESTING',
+    translations: ['Тестирование'],
+    content:
+      '<p>Тестирование</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">Let\'s get on with the <span style="color: rgb(255, 0, 0);">testing</span>.</span></em></p><img src="/assets/images/words/test.png" />',
+  },
+  {
+    word: 'HARDWARE',
+    translations: ['Аппаратная часть ПК'],
+    content:
+      '<p>Аппаратная часть ПК</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">Don\'t you want to check your <span style="color: rgb(255, 0, 0);">hardware </span>first?</span></em></p><img src="/assets/images/words/component.png" />',
+  },
+  {
+    word: 'SOFTWARE',
+    translations: ['Программное обеспечение'],
+    content:
+      '<p>Программное обеспечение</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">He is updating our <span style="color: rgb(255, 0, 0);">software</span>.</span></em></p><img src="/assets/images/words/photoshop.png" />',
+  },
+  {
+    word: 'TECHNICAL SUPPORT',
+    translations: ['Техническая поддержка'],
+    content:
+      '<p>Техническая поддержка</p> <p style="line-height: 29px"><em><span style="font-size: 24px;"><span style="color: rgb(255, 0, 0);">Technical support </span> is helping people to use and understand technology.</span></em></p><img src="/assets/images/words/support.png" />',
+  },
+  {
+    word: 'WRITE CODE',
+    translations: ['Писать код'],
+    content:
+      '<p>Писать код</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">He is <span style="color: rgb(255, 0, 0);">writing code</span> at the moment.</span></em></p><img src="/assets/images/words/binary-code.png" />',
+  },
+  {
+    word: 'ORGANIZE DATA',
+    translations: ['Организация данных'],
+    content:
+      '<p>Организация данных</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">He is good at <span style="color: rgb(255, 0, 0);">organizing data</span>.</span></em></p><img src="/assets/images/words/files-and-folders.png" />',
+  },
+  {
+    word: 'ENCODING ONLINE',
+    translations: ['Онлайн кодирование'],
+    content:
+      '<p>Онлайн кодирование</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">I think they\'ve changed their <span style="color: rgb(255, 0, 0);">encoding online</span> system.</span></em></p><img src="/assets/images/words/encoding.png" />',
+  },
+  {
+    word: 'DATA TRANSFER',
+    translations: ['Передача данных'],
+    content:
+      '<p>Передача данных</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">They are encoding <span style="color: rgb(255, 0, 0);">data transfers</span> online.</span></em></p><img src="/assets/images/words/data-copy.png" />',
+  },
+  {
+    word: 'SOLVE COMPUTER PROBLEMS',
+    translations: ['Решать компьютерные проблемы'],
+    content:
+      '<p>Решать компьютерные проблемы</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">Our IT support officer knows how to <span style="color: rgb(255, 0, 0);">solve computer problems</span>.</span></em></p><img src="/assets/images/words/chat-balloon.png" />',
+  },
+  {
+    word: 'UPDATING SECURITY SOFTWARE',
+    translations: ['Обновление сетевой безопасности'],
+    content:
+      '<p>Обновление сетевой безопасности</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">We are in the process of <span style="color: rgb(255, 0, 0);">updating security software</span>.</span></em></p><img src="/assets/images/words/updated.png" />',
+  },
+  {
+    word: 'ASSIGNMENT',
+    translations: ['Назначение'],
+    content:
+      '<p>Назначение</p> <p style="line-height: 29px"><em><span style="font-size: 24px;">I have a question about my new <span style="color: rgb(255, 0, 0);">assignment</span>.</span></em></p><img src="/assets/images/words/delegation.png" />',
+  },
 ]
 
 export const wordsFor13: Word[] = [
@@ -415,6 +589,46 @@ export const wordsFor13: Word[] = [
     word: 'BE STUCK',
     translations: ['Застрять'],
     content: '<p>Застрять</p><img src="/assets/images/words/cork.png" />',
+  },
+  {
+    word: 'ANXIOUS',
+    translations: ['Беспокойный'],
+    content: '<p>Беспокойный</p><img src="/assets/images/words/anxiety.png" />',
+  },
+  {
+    word: 'FATIGUE',
+    translations: ['Переутомление'],
+    content: '<p>Переутомление</p><img src="/assets/images/words/tiredness.png" />',
+  },
+  {
+    word: 'COPE WITH',
+    translations: ['Справляться с'],
+    content: '<p>Справляться с</p><img src="/assets/images/words/coping-with-stress.png" />',
+  },
+  {
+    word: 'TIGHT',
+    translations: ['Жесткий'],
+    content: '<p>Жесткий</p><img src="/assets/images/words/tight-money.png" />',
+  },
+  {
+    word: 'DEADLINE',
+    translations: ['Крайний срок'],
+    content: '<p>Крайний срок</p><img src="/assets/images/words/burning.png" />',
+  },
+  {
+    word: 'INTERFERE',
+    translations: ['Вмешиваться'],
+    content: '<p>Вмешиваться</p><img src="/assets/images/words/intervention.png" />',
+  },
+  {
+    word: 'OVERALL',
+    translations: ['Всесторонний'],
+    content: '<p>Всесторонний</p><img src="/assets/images/words/efficiency.png" />',
+  },
+  {
+    word: 'REGAIN',
+    translations: ['Восстановить'],
+    content: '<p>Восстановить</p><img src="/assets/images/words/regeneration.png" />',
   },
 ]
 
